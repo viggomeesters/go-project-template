@@ -4,7 +4,18 @@
 
 A minimal starter repository for projects that carry their own repo-local `.go/` agent workflow state.
 
-Use this repo as the copyable template when starting a new project that should be understandable by agents from the repository alone.
+Use this repo as the copyable template when starting a new project that should be understandable by agents from the repository alone. It pairs with [`go-workflow-stack`](https://github.com/viggomeesters/go-workflow-stack), which provides the CLI, schemas, validators, and reusable workflow rules.
+
+## Practical architecture in one minute
+
+This repo is the starter structure. The stack repo is the toolbelt. Your real project repo owns its own `.go/` state.
+
+```text
+go-workflow-stack  -> validates/operates -> project repo with .go/
+go-project-template -> seeds/copies ------^
+```
+
+For the full architecture and practical application flow, see [`docs/practical-architecture.md`](docs/practical-architecture.md).
 
 ## What this gives you
 
