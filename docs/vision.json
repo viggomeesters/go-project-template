@@ -1,0 +1,20 @@
+{
+  "schema": "repo.design-vision.v1",
+  "kind": "repo_vision",
+  "title": "Go Project Template",
+  "north_star": "Make agentic engineering state clone-readable and repo-local.",
+  "wedge": "Copyable .go project-state starter, not a full application framework.",
+  "target_audience": "Developers and agents starting or continuing project work from a repository clone.",
+  "principles": [
+    "JSON/JSONL first",
+    "repo-local project state",
+    "public-safe synthetic examples",
+    "local validation before release"
+  ],
+  "non_goals": [
+    "central vault execution database",
+    "private data examples",
+    "broad migration of existing task state"
+  ],
+  "status": "active"
+}
