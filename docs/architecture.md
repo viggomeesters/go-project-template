@@ -7,7 +7,7 @@ This template intentionally contains very little application code. The product i
 - `.go/project.json`: project identity and verification defaults.
 - `.go/architecture-principles.json`: durable constraints.
 - `.go/vision.json`: north star and non-goals.
-- `.go/hierarchy.json`: feature groups and features.
+- `.go/hierarchy.json`: epic-lite work packages and features.
 - `.go/tasks/open/*.json`: claimable work.
 - `.go/evidence/*.jsonl`: append-only evidence stream.
 

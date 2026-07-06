@@ -59,7 +59,7 @@ Edit the `.go/` files:
 - `.go/project.json`: project id, name, default verification.
 - `.go/architecture-principles.json`: project constraints and enforcement rules.
 - `.go/vision.json`: north star, wedge, target user, promise, non-goals.
-- `.go/hierarchy.json`: feature groups and feature/task links.
+- `.go/hierarchy.json`: epic-lite work packages, features, and task links.
 - `.go/tasks/open/*.json`: first executable tasks.
 
 ## Development
