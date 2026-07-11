@@ -1,0 +1,43 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "id": "bootstrap-stack-check",
+  "project": "repo-local-spike-fixture",
+  "status": "done",
+  "summary": "Make template checks self-bootstrap stack",
+  "description": "Allow a fresh go-project-template clone to validate itself by cloning/updating the sibling go-workflow-stack checkout when missing.",
+  "scope": {
+    "read": [
+      ".go/**",
+      "README.md",
+      "Makefile",
+      "scripts/**"
+    ],
+    "modify": [
+      ".go/**",
+      "README.md",
+      "Makefile",
+      "scripts/**"
+    ]
+  },
+  "acceptance": [
+    "scripts/check.sh bootstraps or locates go-workflow-stack before running make check.",
+    "Makefile check validates, readbacks, statuses, and runs stack template-check when available.",
+    "README documents fresh-clone self-check and paired stack validation."
+  ],
+  "verification": [
+    "bash scripts/check.sh",
+    "python3 ../go-workflow-stack/cli/go.py template-check . --json"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-07-11T07:55:47+02:00"
+  },
+  "evidence": [
+    {
+      "created_at": "2026-07-11T07:56:47+02:00",
+      "agent": "hermes",
+      "summary": "bash scripts/check.sh passed; python3 ../go-workflow-stack/cli/go.py template-check . --json ok=true"
+    }
+  ]
+}

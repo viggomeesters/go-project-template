@@ -1,1 +1,2 @@
 {"schema":"go-workflow.repo-local.event.v1","kind":"event","event":"run.checked","created_at":"2026-07-02T00:00:00+00:00","task_id":"task-schema-smoke","agent":"fixture","data":{"result":"seed"}}
+{"schema": "go-workflow.repo-local.event.v1", "kind": "event", "event": "task.finished", "created_at": "2026-07-11T07:56:47+02:00", "task_id": "bootstrap-stack-check", "agent": "hermes", "data": {"evidence": "bash scripts/check.sh passed; python3 ../go-workflow-stack/cli/go.py template-check . --json ok=true"}}

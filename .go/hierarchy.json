@@ -15,7 +15,9 @@
           ]
         }
       ],
-      "tasks": []
+      "tasks": [
+        "bootstrap-stack-check"
+      ]
     }
   ]
 }

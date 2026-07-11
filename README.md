@@ -35,7 +35,21 @@ Use GitHub's template/copy flow or clone the repository directly. Keep the `.go/
 
 ## Usage
 
-Clone this template next to the workflow stack:
+Clone this template and let its check script prepare the sibling stack checkout if it is missing:
+
+```bash
+git clone https://github.com/viggomeesters/go-project-template.git
+cd go-project-template
+bash scripts/check.sh
+```
+
+If you already keep the stack somewhere else, point the template at it:
+
+```bash
+GO_STACK=/path/to/go-workflow-stack bash scripts/check.sh
+```
+
+Manual paired checkout flow:
 
 ```bash
 git clone https://github.com/viggomeesters/go-workflow-stack.git
