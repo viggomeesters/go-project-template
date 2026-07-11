@@ -1,0 +1,38 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "id": "fix-env-go-stack-bootstrap",
+  "project": "repo-local-spike-fixture",
+  "status": "done",
+  "summary": "Honor GO_STACK when bootstrapping missing stack",
+  "description": "Honor GO_STACK when bootstrapping missing stack",
+  "scope": {
+    "read": [
+      ".go/**",
+      "scripts/**",
+      "README.md",
+      "Makefile"
+    ],
+    "modify": [
+      ".go/**",
+      "scripts/check.sh"
+    ]
+  },
+  "acceptance": [
+    "scripts/check.sh bootstraps into a caller-provided missing GO_STACK path."
+  ],
+  "verification": [
+    "fresh clone with GO_STACK pointing at a missing path runs scripts/check.sh"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-07-11T07:57:59+02:00"
+  },
+  "evidence": [
+    {
+      "created_at": "2026-07-11T07:58:37+02:00",
+      "agent": "hermes",
+      "summary": "local working-copy smoke with GO_STACK pointing at missing path cloned stack and ran scripts/check.sh"
+    }
+  ]
+}

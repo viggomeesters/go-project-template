@@ -16,7 +16,8 @@
         }
       ],
       "tasks": [
-        "bootstrap-stack-check"
+        "bootstrap-stack-check",
+        "fix-env-go-stack-bootstrap"
       ]
     }
   ]
