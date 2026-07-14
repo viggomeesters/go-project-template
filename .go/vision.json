@@ -1,7 +1,7 @@
 {
   "schema": "go-workflow.repo-local.vision.v1",
   "kind": "vision",
-  "project": "repo-local-spike-fixture",
+  "project": "go-project-template",
   "status": "active",
   "north_star": "A clone-local agent contract proves repo-local continuation.",
   "wedge": "Self-contained project OS, not a central workflow database.",

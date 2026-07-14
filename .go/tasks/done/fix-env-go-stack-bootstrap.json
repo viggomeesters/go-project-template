@@ -2,7 +2,7 @@
   "schema": "go-workflow.repo-local.task.v1",
   "kind": "task",
   "id": "fix-env-go-stack-bootstrap",
-  "project": "repo-local-spike-fixture",
+  "project": "go-project-template",
   "status": "done",
   "summary": "Honor GO_STACK when bootstrapping missing stack",
   "description": "Honor GO_STACK when bootstrapping missing stack",

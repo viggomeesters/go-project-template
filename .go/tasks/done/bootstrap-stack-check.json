@@ -2,7 +2,7 @@
   "schema": "go-workflow.repo-local.task.v1",
   "kind": "task",
   "id": "bootstrap-stack-check",
-  "project": "repo-local-spike-fixture",
+  "project": "go-project-template",
   "status": "done",
   "summary": "Make template checks self-bootstrap stack",
   "description": "Allow a fresh go-project-template clone to validate itself by cloning/updating the sibling go-workflow-stack checkout when missing.",

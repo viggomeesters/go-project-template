@@ -11,9 +11,23 @@ STACK_REMOTE="${GO_STACK_REMOTE:-https://github.com/viggomeesters/go-workflow-st
 
 if [ ! -d "$GO_STACK/.git" ]; then
   mkdir -p "$(dirname "$GO_STACK")"
-  git clone "$STACK_REMOTE" "$GO_STACK"
+  git clone --branch main "$STACK_REMOTE" "$GO_STACK"
 else
-  git -C "$GO_STACK" fetch --quiet origin main || true
+  if [ -n "$(git -C "$GO_STACK" status --porcelain)" ]; then
+    echo "go-workflow-stack checkout is dirty; commit, stash, or clean it before bootstrap updates" >&2
+    exit 3
+  fi
+  BRANCH="$(git -C "$GO_STACK" branch --show-current)"
+  if [ "$BRANCH" != "main" ]; then
+    echo "go-workflow-stack checkout must be on main for automatic bootstrap updates (current: ${BRANCH:-detached})" >&2
+    exit 3
+  fi
+  git -C "$GO_STACK" fetch --quiet origin main
+  if ! git -C "$GO_STACK" merge-base --is-ancestor HEAD origin/main; then
+    echo "go-workflow-stack main has diverged from origin/main; reconcile it explicitly before continuing" >&2
+    exit 4
+  fi
+  git -C "$GO_STACK" merge --ff-only --quiet origin/main
 fi
 
 if [ ! -f "$GO_STACK/cli/go.py" ]; then

@@ -1,10 +1,11 @@
 {
   "schema": "go-workflow.repo-local.project.v1",
   "kind": "project",
-  "id": "repo-local-spike-fixture",
-  "name": "Repo Local Spike Fixture",
+  "id": "go-project-template",
+  "name": "Go Project Template",
   "source_of_truth": "repo-local",
+  "required_stack_version": "0.2.0",
   "default_verification": [
-    "python -m pytest"
+    "bash scripts/validate-go.sh"
   ]
 }

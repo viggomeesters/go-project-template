@@ -27,6 +27,9 @@ For the full architecture and practical application flow, see [`docs/practical-a
   hierarchy.json
   tasks/open/task-schema-smoke.json
   evidence/events.jsonl
+AGENTS.md
+go
+scripts/validate-go.sh
 ```
 
 ## Installation
@@ -41,7 +44,19 @@ Clone this template and let its check script prepare the sibling stack checkout 
 git clone https://github.com/viggomeesters/go-project-template.git
 cd go-project-template
 bash scripts/check.sh
+./go doctor . --platform wsl --agent hermes --json
 ```
+
+After copying the template to a real project name, replace the template identity with the project's own durable contract:
+
+```bash
+export GO_STACK=../go-workflow-stack
+export GO_EXECUTOR_AGENT=hermes
+./go spike . \
+  --brief "What this project must achieve"
+```
+
+`spike` recognizes the public template identity, removes only the synthetic template `.go` state, and creates project-specific vision, principles, hierarchy, and executable tasks.
 
 If you already keep the stack somewhere else, point the template at it:
 
@@ -70,11 +85,21 @@ python3 cli/go.py readback ../go-project-template
 
 Edit the `.go/` files:
 
-- `.go/project.json`: project id, name, default verification.
+- `.go/project.json`: project id, name, minimum compatible stack version, default verification.
 - `.go/architecture-principles.json`: project constraints and enforcement rules.
 - `.go/vision.json`: north star, wedge, target user, promise, non-goals.
 - `.go/hierarchy.json`: epic-lite work packages, features, and task links.
 - `.go/tasks/open/*.json`: first executable tasks.
+
+Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run `bash scripts/check.sh` for the full stack/template pairing check, including a bounded first `auto --execute` smoke in a temporary clone.
+
+The executable `./go` launcher resolves `GO_STACK` or bootstraps the sibling stack checkout, so commands do not contain machine-specific paths. On a Hermes-first WSL machine:
+
+```bash
+export GO_EXECUTOR_AGENT=hermes
+./go doctor . --platform wsl --agent hermes
+./go go-loop . --execute --agent hermes
+```
 
 ## Development
 
@@ -84,6 +109,8 @@ Use local validation before committing or publishing changes. The check compiles
 make check
 bash scripts/check.sh
 ```
+
+`scripts/bootstrap-stack.sh` clones a missing stack and fast-forwards an existing clean `main`. It stops on dirty, detached, non-main, or diverged checkouts instead of silently continuing on a stale runtime.
 
 ## Privacy and security
 

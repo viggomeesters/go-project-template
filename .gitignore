@@ -1,3 +1,4 @@
 
 # Keep template workflow state tracked.
 !.go/
+.DS_Store

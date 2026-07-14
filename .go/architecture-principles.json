@@ -1,7 +1,7 @@
 {
   "schema": "go-workflow.repo-local.architecture-principles.v1",
   "kind": "architecture_principles",
-  "project": "repo-local-spike-fixture",
+  "project": "go-project-template",
   "principles": [
     {
       "id": "json-first",

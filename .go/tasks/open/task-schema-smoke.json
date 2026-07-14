@@ -1,23 +1,25 @@
 {
   "schema": "go-workflow.repo-local.task.v1",
   "kind": "task",
+  "execution_mode": "mechanical",
   "id": "task-schema-smoke",
-  "project": "repo-local-spike-fixture",
+  "project": "go-project-template",
   "status": "open",
-  "summary": "Prove schema validation",
+  "summary": "Prove the cloned template can execute its repo-local contract",
   "scope": {
     "read": [
-      ".go/**"
+      ".go/**",
+      "scripts/**"
     ],
     "modify": [
       ".go/**"
     ]
   },
   "acceptance": [
-    "go validate passes on fixture"
+    "A fresh clone can locate or bootstrap go-workflow-stack and validate its .go contract"
   ],
   "verification": [
-    "python system/scripts/agent_workflow/repo_local_go.py validate <repo>"
+    "bash scripts/validate-go.sh"
   ],
   "claim": {
     "agent": null,

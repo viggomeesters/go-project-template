@@ -1,7 +1,7 @@
 {
   "schema": "go-workflow.repo-local.hierarchy.v1",
   "kind": "hierarchy",
-  "project": "repo-local-spike-fixture",
+  "project": "go-project-template",
   "epics": [
     {
       "id": "workflow-contract",
