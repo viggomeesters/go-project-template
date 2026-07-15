@@ -17,7 +17,8 @@
       ],
       "tasks": [
         "bootstrap-stack-check",
-        "fix-env-go-stack-bootstrap"
+        "fix-env-go-stack-bootstrap",
+        "local-only-reproducible-template"
       ]
     }
   ]

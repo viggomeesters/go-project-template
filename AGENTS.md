@@ -12,3 +12,7 @@ When the user says `Go`, `Go auto`, `Go loop`, `Next`, or asks to continue auton
 6. Verify, critic/recheck, repair, record evidence, and continue until done, a repository gate, or budget exhaustion.
 
 Run `bash scripts/check.sh` for the stack/template pairing check. Preserve unrelated user changes and do not push without explicit authorization.
+
+## GitHub Actions boundary
+
+GitHub Actions are off limits. Do not create, edit, enable, trigger, dispatch, inspect, wait for, or use GitHub Actions workflows/checks as verification evidence. Existing files under `.github/workflows/` are not authorization to interact with GitHub Actions. Use local checks, a local Linux container, or another explicitly approved verification route instead.

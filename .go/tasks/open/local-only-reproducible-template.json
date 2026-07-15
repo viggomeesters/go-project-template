@@ -1,0 +1,41 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "mechanical",
+  "id": "local-only-reproducible-template",
+  "project": "go-project-template",
+  "status": "open",
+  "summary": "Make the public template local-only, pinned, WSL-ready, and setup-aware",
+  "description": "Make the public template local-only, pinned, WSL-ready, and setup-aware",
+  "scope": {
+    "read": [
+      "README.md",
+      "scripts/**",
+      "go",
+      ".go/**",
+      ".github/**"
+    ],
+    "modify": [
+      "README.md",
+      "scripts/**",
+      "go",
+      "Makefile",
+      ".go/**",
+      ".github/workflows/**"
+    ]
+  },
+  "acceptance": [
+    "No GitHub Actions workflow remains and local Linux or WSL verification is the documented path",
+    "Bootstrap honors stack_ref and refuses an unverified runtime",
+    "A fresh template clone reports setup_required and passes a bounded local pairing acceptance"
+  ],
+  "verification": [
+    "bash scripts/check-linux.sh",
+    "bash scripts/check.sh"
+  ],
+  "claim": {
+    "agent": null,
+    "claimed_at": null
+  },
+  "evidence": []
+}
