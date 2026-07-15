@@ -1,8 +1,9 @@
 GO_STACK ?= ../go-workflow-stack
+PYTHON ?= python3
 
 .PHONY: check
 check:
-	python3 $(GO_STACK)/cli/go.py validate .
-	python3 $(GO_STACK)/cli/go.py readback .
-	python3 $(GO_STACK)/cli/go.py status . --json >/tmp/go-project-template-status.json
-	python3 $(GO_STACK)/cli/go.py template-check . --json >/tmp/go-project-template-pairing.json
+	$(PYTHON) $(GO_STACK)/cli/go.py validate .
+	$(PYTHON) $(GO_STACK)/cli/go.py readback .
+	$(PYTHON) $(GO_STACK)/cli/go.py status . --json >/tmp/go-project-template-status.json
+	$(PYTHON) $(GO_STACK)/cli/go.py template-check . --json >/tmp/go-project-template-pairing.json

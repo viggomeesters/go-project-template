@@ -44,6 +44,7 @@ Clone this template and let its check script prepare the sibling stack checkout 
 git clone https://github.com/viggomeesters/go-project-template.git
 cd go-project-template
 bash scripts/check.sh
+./scripts/check-linux.sh
 ./go doctor . --platform wsl --agent hermes --json
 ```
 
@@ -110,7 +111,9 @@ make check
 bash scripts/check.sh
 ```
 
-`scripts/bootstrap-stack.sh` clones a missing stack and fast-forwards an existing clean `main`. It stops on dirty, detached, non-main, or diverged checkouts instead of silently continuing on a stale runtime.
+`scripts/bootstrap-stack.sh` reads the immutable `stack_ref` from `.go/project.json`. It clones that tag/commit for an automatically managed sibling checkout and verifies an explicit `GO_STACK` provides the same declared runtime. This prevents a WSL machine from silently continuing on a different stack revision.
+
+Hosted automation is not used. `scripts/check-linux.sh` is the authoritative local Linux/WSL verification path. Set `GO_REQUIRE_LIVE_HERMES=1` when the real Hermes binary must also pass `go doctor`.
 
 ## Privacy and security
 
