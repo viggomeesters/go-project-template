@@ -4,6 +4,7 @@
 
 - Pin the template to the exact v0.3.1 stack runtime contract.
 - Reject `GO_STACK_REF` so `.go/project.json` remains the only stack-ref source of truth.
+- Normalize `.go` JSON and JSONL contracts to non-executable file modes.
 
 ## 0.2.0 - 2026-07-14
 
