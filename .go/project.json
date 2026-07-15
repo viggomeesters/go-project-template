@@ -4,9 +4,10 @@
   "id": "go-project-template",
   "name": "Go Project Template",
   "source_of_truth": "repo-local",
+  "contract_version": 2,
   "project_mode": "template",
-  "required_stack_version": "0.2.0",
-  "stack_ref": "v0.2.0",
+  "required_stack_version": "0.3.0",
+  "stack_ref": "v0.3.0",
   "default_verification": [
     "bash scripts/check-linux.sh"
   ]

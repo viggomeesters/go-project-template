@@ -18,7 +18,8 @@
       "tasks": [
         "bootstrap-stack-check",
         "fix-env-go-stack-bootstrap",
-        "local-only-reproducible-template"
+        "local-only-reproducible-template",
+        "adopt-v030-runtime-contract"
       ]
     }
   ]

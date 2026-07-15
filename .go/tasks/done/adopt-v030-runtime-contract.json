@@ -1,0 +1,38 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "mechanical",
+  "id": "adopt-v030-runtime-contract",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Adopt the v0.3 modular runtime contract in the public template",
+  "description": "Adopt the v0.3 modular runtime contract in the public template",
+  "scope": {
+    "read": [
+      ".go/**",
+      "scripts/**"
+    ],
+    "modify": [
+      ".go/**",
+      "scripts/bootstrap-stack.sh"
+    ]
+  },
+  "acceptance": [
+    "Template declares contract version 2 and immutable stack ref v0.3.0",
+    "Bootstrap detects modular runtimes through go version --json and retains legacy fallback"
+  ],
+  "verification": [
+    "GO_STACK=../go-workflow-stack bash scripts/check-linux.sh"
+  ],
+  "claim": {
+    "agent": "codex",
+    "claimed_at": "2026-07-15T09:16:31+02:00"
+  },
+  "evidence": [
+    {
+      "created_at": "2026-07-15T09:16:46+02:00",
+      "agent": "codex",
+      "summary": "Template contract test passed with setup_required, no hosted workflow, and full-SHA bootstrap; v0.3.0 version endpoint reports contract version 2. Full pairing verification follows after active task moves to done."
+    }
+  ]
+}

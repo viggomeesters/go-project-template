@@ -16,7 +16,12 @@ STACK_REMOTE="${GO_STACK_REMOTE:-https://github.com/viggomeesters/go-workflow-st
 STACK_REF="${GO_STACK_REF:-$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["stack_ref"])' "$REPO_ROOT/.go/project.json")}"
 
 runtime_ref() {
-  local version
+  local payload version
+  payload="$(python3 "$1/cli/go.py" version --json 2>/dev/null || true)"
+  if [ -n "$payload" ]; then
+    python3 -c 'import json,sys; print(json.load(sys.stdin)["stack_ref"])' <<<"$payload"
+    return
+  fi
   version="$(sed -n 's/^STACK_VERSION = "\([^"]*\)"/\1/p' "$1/cli/go.py" | head -1)"
   [ -n "$version" ] && printf 'v%s\n' "$version"
 }

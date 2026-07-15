@@ -1,3 +1,4 @@
 {"schema": "go-workflow.repo-local.event.v1", "kind": "event", "event": "task.claimed", "created_at": "2026-07-11T07:55:47+02:00", "task_id": "bootstrap-stack-check", "agent": "hermes", "data": {"report_only_dirty": []}}
 {"schema": "go-workflow.repo-local.event.v1", "kind": "event", "event": "task.claimed", "created_at": "2026-07-11T07:57:59+02:00", "task_id": "fix-env-go-stack-bootstrap", "agent": "hermes", "data": {"report_only_dirty": []}}
 {"schema": "go-workflow.repo-local.event.v1", "kind": "event", "event": "task.claimed", "created_at": "2026-07-15T08:57:14+02:00", "task_id": "local-only-reproducible-template", "agent": "codex", "data": {"report_only_dirty": []}}
+{"schema": "go-workflow.repo-local.event.v1", "kind": "event", "event": "task.claimed", "created_at": "2026-07-15T09:16:31+02:00", "task_id": "adopt-v030-runtime-contract", "agent": "codex", "data": {"report_only_dirty": []}}
