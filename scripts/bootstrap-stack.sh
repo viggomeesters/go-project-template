@@ -15,24 +15,19 @@ fi
 STACK_REMOTE="${GO_STACK_REMOTE:-https://github.com/viggomeesters/go-workflow-stack.git}"
 STACK_REF="${GO_STACK_REF:-$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["stack_ref"])' "$REPO_ROOT/.go/project.json")}"
 
-runtime_ref() {
-  local payload version
-  payload="$(python3 "$1/cli/go.py" version --json 2>/dev/null || true)"
-  if [ -n "$payload" ]; then
-    python3 -c 'import json,sys; print(json.load(sys.stdin)["stack_ref"])' <<<"$payload"
-    return
+runtime_matches() {
+  local checkout="$1" expected_commit head
+  head="$(git -C "$checkout" rev-parse HEAD 2>/dev/null || true)"
+  if [[ "$STACK_REF" =~ ^[0-9a-f]{40}$ ]]; then
+    expected_commit="$STACK_REF"
+  else
+    expected_commit="$(git -C "$checkout" rev-parse -q --verify "refs/tags/$STACK_REF^{commit}" 2>/dev/null || true)"
   fi
-  version="$(sed -n 's/^STACK_VERSION = "\([^"]*\)"/\1/p' "$1/cli/go.py" | head -1)"
-  [ -n "$version" ] && printf 'v%s\n' "$version"
+  [ -n "$expected_commit" ] && [ "$head" = "$expected_commit" ]
 }
 
-runtime_matches() {
-  local checkout="$1"
-  if [[ "$STACK_REF" =~ ^[0-9a-f]{40}$ ]]; then
-    [ "$(git -C "$checkout" rev-parse HEAD 2>/dev/null || true)" = "$STACK_REF" ]
-  else
-    [ "$(runtime_ref "$checkout")" = "$STACK_REF" ]
-  fi
+allow_development_checkout() {
+  [ "$EXPLICIT_STACK" = "1" ] && [ "${GO_STACK_ALLOW_DEV:-0}" = "1" ]
 }
 
 if [ ! -d "$GO_STACK/.git" ]; then
@@ -45,8 +40,12 @@ if [ ! -d "$GO_STACK/.git" ]; then
   fi
 elif [ "$EXPLICIT_STACK" = "1" ]; then
   if ! runtime_matches "$GO_STACK"; then
-    echo "explicit GO_STACK does not provide pinned runtime $STACK_REF" >&2
-    exit 4
+    if allow_development_checkout; then
+      echo "warning: GO_STACK_ALLOW_DEV=1 development override accepts unpinned explicit GO_STACK; expected $STACK_REF" >&2
+    else
+      echo "explicit GO_STACK does not provide pinned runtime $STACK_REF (exact commit required)" >&2
+      exit 4
+    fi
   fi
 else
   if [ -n "$(git -C "$GO_STACK" status --porcelain)" ]; then
@@ -65,8 +64,12 @@ if [ ! -f "$GO_STACK/cli/go.py" ]; then
 fi
 
 if ! runtime_matches "$GO_STACK"; then
-  echo "go-workflow-stack runtime ref mismatch: expected $STACK_REF" >&2
-  exit 4
+  if allow_development_checkout; then
+    echo "warning: development override remains active for unpinned runtime $GO_STACK" >&2
+  else
+    echo "go-workflow-stack runtime commit mismatch: expected exact ref $STACK_REF" >&2
+    exit 4
+  fi
 fi
 
 printf '%s\n' "$GO_STACK"
