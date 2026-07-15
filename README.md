@@ -111,7 +111,7 @@ make check
 bash scripts/check.sh
 ```
 
-`scripts/bootstrap-stack.sh` reads the immutable `stack_ref` from `.go/project.json`. It clones that tag/commit for an automatically managed sibling checkout and verifies an explicit `GO_STACK` provides the same declared runtime. This prevents a WSL machine from silently continuing on a different stack revision.
+`scripts/bootstrap-stack.sh` reads the immutable `stack_ref` only from `.go/project.json`. It rejects the legacy `GO_STACK_REF` environment override, clones the declared tag/commit for an automatically managed sibling checkout, and verifies an explicit `GO_STACK` provides the same declared runtime. This prevents a WSL machine from silently continuing on a different stack revision.
 
 Hosted automation is not used. `scripts/check-linux.sh` is the authoritative local Linux/WSL verification path. Set `GO_REQUIRE_LIVE_HERMES=1` when the real Hermes binary must also pass `go doctor`.
 

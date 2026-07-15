@@ -13,7 +13,11 @@ else
   GO_STACK="$DEFAULT_STACK"
 fi
 STACK_REMOTE="${GO_STACK_REMOTE:-https://github.com/viggomeesters/go-workflow-stack.git}"
-STACK_REF="${GO_STACK_REF:-$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["stack_ref"])' "$REPO_ROOT/.go/project.json")}"
+if [ -n "${GO_STACK_REF:-}" ]; then
+  echo "GO_STACK_REF cannot override .go/project.json; update the repo-local stack_ref contract instead" >&2
+  exit 5
+fi
+STACK_REF="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["stack_ref"])' "$REPO_ROOT/.go/project.json")"
 
 runtime_matches() {
   local checkout="$1" expected_commit head

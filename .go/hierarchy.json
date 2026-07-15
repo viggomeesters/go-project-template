@@ -19,7 +19,8 @@
         "bootstrap-stack-check",
         "fix-env-go-stack-bootstrap",
         "local-only-reproducible-template",
-        "adopt-v030-runtime-contract"
+        "adopt-v030-runtime-contract",
+        "enforce-project-stack-ref-source"
       ]
     }
   ]
