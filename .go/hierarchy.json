@@ -24,7 +24,8 @@
         "normalize-template-data-file-modes",
         "pin-v032-hotfix",
         "pin-v033-native-hermes",
-        "pin-v034-package-provenance"
+        "pin-v034-package-provenance",
+        "isolate-template-bootstrap-runtime"
       ]
     }
   ]

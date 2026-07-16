@@ -1,0 +1,46 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "mechanical",
+  "id": "isolate-template-bootstrap-runtime",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Prevent template bootstrap from detaching sibling development clones",
+  "description": "Route the template-managed stack checkout to a dedicated cache path and regression-test that a sibling go-workflow-stack development clone remains on its branch and commit.",
+  "scope": {
+    "read": [
+      "scripts/bootstrap-stack.sh",
+      "scripts/test-template.sh",
+      "go",
+      "README.md"
+    ],
+    "modify": [
+      "scripts/bootstrap-stack.sh",
+      "scripts/test-template.sh",
+      "README.md",
+      "CHANGELOG.md"
+    ]
+  },
+  "acceptance": [
+    "R-1: Default template bootstrap never fetches into or detaches a sibling go-workflow-stack development checkout.",
+    "R-2: The managed immutable runtime lives in a dedicated user cache keyed by the project stack_ref while explicit GO_STACK behavior remains fail-closed.",
+    "R-3: A regression proves a sibling development clone keeps its branch and HEAD while default bootstrap resolves the exact project tag.",
+    "R-4: Local template and Linux WSL gates pass with GitHub Actions unused."
+  ],
+  "verification": [
+    "bash scripts/test-template.sh",
+    "bash scripts/check.sh",
+    "GO_REQUIRE_LIVE_HERMES=1 bash scripts/check-linux.sh"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-07-16T13:16:26+02:00"
+  },
+  "evidence": [
+    {
+      "created_at": "2026-07-16T13:30:31+02:00",
+      "agent": "hermes",
+      "summary": "R-1 complete: default bootstrap no longer targets ../go-workflow-stack; it uses an isolated tag-keyed XDG or HOME cache and the actual development checkout remained on main 5aab526 with upstream 0/0 throughout final gates. R-2 complete: explicit GO_STACK still requires exact runtime unless the explicit development override is set; managed cache now rejects origin mismatch against GO_STACK_REMOTE. R-3 complete: regression creates annotated v9.9.9, proves cache path and exact peeled commit, preserves sibling main and HEAD, and rejects a different remote reusing the cache. R-4 complete: projected final-state scripts/check.sh and GO_REQUIRE_LIVE_HERMES=1 scripts/check-linux.sh passed from isolated caches; bash syntax and git diff --check passed; GitHub Actions unused. Fresh-eyes re-review verdict A."
+    }
+  ]
+}

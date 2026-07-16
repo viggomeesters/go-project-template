@@ -5,7 +5,12 @@ set -euo pipefail
 # without the user manually cloning the stack first.
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-DEFAULT_STACK="$(cd "$REPO_ROOT/.." && pwd)/go-workflow-stack"
+if [ -n "${GO_STACK_REF:-}" ]; then
+  echo "GO_STACK_REF cannot override .go/project.json; update the repo-local stack_ref contract instead" >&2
+  exit 5
+fi
+STACK_REF="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["stack_ref"])' "$REPO_ROOT/.go/project.json")"
+DEFAULT_STACK="${XDG_CACHE_HOME:-${HOME:?HOME is required}/.cache}/go-workflow-stack/$STACK_REF"
 EXPLICIT_STACK=0
 if [ -n "${GO_STACK:-}" ]; then
   EXPLICIT_STACK=1
@@ -13,11 +18,6 @@ else
   GO_STACK="$DEFAULT_STACK"
 fi
 STACK_REMOTE="${GO_STACK_REMOTE:-https://github.com/viggomeesters/go-workflow-stack.git}"
-if [ -n "${GO_STACK_REF:-}" ]; then
-  echo "GO_STACK_REF cannot override .go/project.json; update the repo-local stack_ref contract instead" >&2
-  exit 5
-fi
-STACK_REF="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["stack_ref"])' "$REPO_ROOT/.go/project.json")"
 
 runtime_matches() {
   local checkout="$1" expected_commit head
@@ -32,6 +32,10 @@ runtime_matches() {
 
 allow_development_checkout() {
   [ "$EXPLICIT_STACK" = "1" ] && [ "${GO_STACK_ALLOW_DEV:-0}" = "1" ]
+}
+
+managed_origin_matches() {
+  [ "$(git -C "$GO_STACK" remote get-url origin 2>/dev/null || true)" = "$STACK_REMOTE" ]
 }
 
 if [ ! -d "$GO_STACK/.git" ]; then
@@ -52,6 +56,10 @@ elif [ "$EXPLICIT_STACK" = "1" ]; then
     fi
   fi
 else
+  if ! managed_origin_matches; then
+    echo "managed go-workflow-stack cache origin does not match GO_STACK_REMOTE: $GO_STACK" >&2
+    exit 6
+  fi
   if [ -n "$(git -C "$GO_STACK" status --porcelain)" ]; then
     echo "go-workflow-stack checkout is dirty; commit, stash, or clean it before bootstrap updates" >&2
     exit 3

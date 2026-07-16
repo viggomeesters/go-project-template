@@ -38,7 +38,7 @@ Use GitHub's template/copy flow or clone the repository directly. Keep the `.go/
 
 ## Usage
 
-Clone this template and let its check script prepare the sibling stack checkout if it is missing:
+Clone this template and let its check script prepare the immutable stack runtime in the user cache if it is missing:
 
 ```bash
 git clone https://github.com/viggomeesters/go-project-template.git
@@ -51,7 +51,6 @@ bash scripts/check.sh
 After copying the template to a real project name, replace the template identity with the project's own durable contract:
 
 ```bash
-export GO_STACK=../go-workflow-stack
 export GO_EXECUTOR_AGENT=hermes
 ./go spike . \
   --brief "What this project must achieve"
@@ -59,7 +58,7 @@ export GO_EXECUTOR_AGENT=hermes
 
 `spike` recognizes the public template identity, removes only the synthetic template `.go` state, and creates project-specific vision, principles, hierarchy, and executable tasks.
 
-If you already keep the stack somewhere else, point the template at it:
+If you already keep the exact tagged stack somewhere else, point the template at it explicitly:
 
 ```bash
 GO_STACK=/path/to/go-workflow-stack bash scripts/check.sh
@@ -94,7 +93,7 @@ Edit the `.go/` files:
 
 Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run `bash scripts/check.sh` for the full stack/template pairing check, including a bounded first `auto --execute` smoke in a temporary clone.
 
-The executable `./go` launcher resolves `GO_STACK` or bootstraps the sibling stack checkout, so commands do not contain machine-specific paths. On a Hermes-first WSL machine:
+The executable `./go` launcher resolves an explicit `GO_STACK` or bootstraps an isolated checkout under `${XDG_CACHE_HOME:-$HOME/.cache}/go-workflow-stack/<stack_ref>`, so it never repurposes a sibling development clone. On a Hermes-first WSL machine:
 
 ```bash
 export GO_EXECUTOR_AGENT=hermes
@@ -111,7 +110,7 @@ make check
 bash scripts/check.sh
 ```
 
-`scripts/bootstrap-stack.sh` reads the immutable `stack_ref` only from `.go/project.json`. It rejects the legacy `GO_STACK_REF` environment override, clones the declared tag/commit for an automatically managed sibling checkout, and verifies an explicit `GO_STACK` provides the same declared runtime. This prevents a WSL machine from silently continuing on a different stack revision.
+`scripts/bootstrap-stack.sh` reads the immutable `stack_ref` only from `.go/project.json`. It rejects the legacy `GO_STACK_REF` environment override, clones the declared tag/commit into a tag-keyed user-cache checkout, and verifies an explicit `GO_STACK` provides the same declared runtime. This prevents a WSL machine from silently continuing on a different stack revision or detaching a sibling `go-workflow-stack` development checkout.
 
 Hosted automation is not used. `scripts/check-linux.sh` is the authoritative local Linux/WSL verification path. Set `GO_REQUIRE_LIVE_HERMES=1` when the real Hermes binary must also pass `go doctor`.
 
