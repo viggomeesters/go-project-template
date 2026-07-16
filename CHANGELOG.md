@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.3.2 - 2026-07-16
+
+- Pin the template to the release-safe v0.3.2 doctor-fixture hotfix.
+- Record the exact resolved stack commit and rollback state through `go stack update`.
+
 ## 0.3.1 - 2026-07-15
 
 - Pin the template to the exact v0.3.1 stack runtime contract.

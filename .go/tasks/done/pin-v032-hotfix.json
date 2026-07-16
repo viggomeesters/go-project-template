@@ -1,0 +1,38 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "mechanical",
+  "id": "pin-v032-hotfix",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Pin template to v0.3.2 hotfix",
+  "description": "Apply the verified local annotated v0.3.2 stack tag through the transactionally recorded stack-update command and document the hotfix pin.",
+  "scope": {
+    "read": [
+      ".go/project.json"
+    ],
+    "modify": [
+      ".go/project.json",
+      ".go/updates",
+      "CHANGELOG.md"
+    ]
+  },
+  "acceptance": [
+    "Template requires stack version 0.3.2 and immutable ref v0.3.2.",
+    "Stack update dry-run and apply record the exact v0.3.2 commit with rollback evidence."
+  ],
+  "verification": [
+    "GO_STACK=/Users/viggomeesters/Dev/go-workflow-stack bash scripts/check.sh"
+  ],
+  "claim": {
+    "agent": "codex",
+    "claimed_at": "2026-07-16T07:04:47+02:00"
+  },
+  "evidence": [
+    {
+      "created_at": "2026-07-16T07:05:10+02:00",
+      "agent": "codex",
+      "summary": "Dry-run resolved annotated v0.3.2 to 194fca97041ed98b97d155606cc4a296af83e3e9; transactional apply recorded .go/updates rollback state and set 0.3.2/v0.3.2. Bash syntax, template self-test, contract validation, and diff check passed."
+    }
+  ]
+}
