@@ -1,0 +1,45 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "mechanical",
+  "id": "pin-v034-package-provenance",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Pin template to go-workflow-stack v0.3.4",
+  "description": "Update the public template to the immutable v0.3.4 release whose package-installed runtime proves exact PEP 610 provenance without GO_STACK_ALLOW_DEV.",
+  "scope": {
+    "read": [
+      ".go/project.json",
+      "CHANGELOG.md",
+      "README.md",
+      "scripts/bootstrap-stack.sh",
+      "scripts/check-linux.sh"
+    ],
+    "modify": [
+      ".go/project.json",
+      ".go/updates/**",
+      "CHANGELOG.md"
+    ]
+  },
+  "acceptance": [
+    "R-1: The template requires stack version 0.3.4 and immutable ref v0.3.4 resolved exactly to release payload e3fc0adb352eeda9a69e04890486db1eb49482b7.",
+    "R-2: The official stack-update transaction records the before and after contract and exact resolved commit without absolute path leakage.",
+    "R-3: Local template, Linux WSL, and live Hermes doctor checks pass from the public v0.3.4 tag with GO_STACK_ALLOW_DEV unset and package provenance exact.",
+    "R-4: Documentation identifies the v0.3.4 pin and package provenance behavior; GitHub Actions remain unused."
+  ],
+  "verification": [
+    "bash scripts/check.sh",
+    "GO_REQUIRE_LIVE_HERMES=1 bash scripts/check-linux.sh"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-07-16T13:06:23+02:00"
+  },
+  "evidence": [
+    {
+      "created_at": "2026-07-16T13:12:39+02:00",
+      "agent": "hermes",
+      "summary": "R-1 complete: official stack update pins required_stack_version 0.3.4 and stack_ref v0.3.4; annotated release tag resolves to payload e3fc0adb352eeda9a69e04890486db1eb49482b7. R-2 complete: rollback record .go/updates/20260716T110629719219Z-v0.3.4-e3fc0adb352e.json preserves v0.3.3 to v0.3.4 before/after state, exact resolved commit, and no absolute paths. R-3 complete: projected final-state scripts/check.sh and GO_REQUIRE_LIVE_HERMES=1 scripts/check-linux.sh passed from fresh public v0.3.4 clones with GO_STACK_ALLOW_DEV unset; fresh uv package doctor ready=true, exact_ref=true, identity_source=pep610-vcs, development_override=false, Hermes path /home/viggo/.local/bin/hermes. Doctor sha256 e78032475872c8ab674ddd3580c6e2cdac69e4dffa7389dc08e055bfd0996995; direct_url sha256 31f139ce1c1b502f66a63410b0e36ae34ccc8c034391780a6e3efaae215307b5. R-4 complete: CHANGELOG documents the v0.3.4 pin and exact official-GitHub PEP 610 provenance; GitHub Actions unused. Fresh-eyes re-review verdict A."
+    }
+  ]
+}

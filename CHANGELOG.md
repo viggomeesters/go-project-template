@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.4 - 2026-07-16
+
+- Pin the template to annotated stack release `v0.3.4`, resolved exactly to `e3fc0adb352eeda9a69e04890486db1eb49482b7`.
+- Allow a package-installed stack runtime to prove the immutable tag through exact PEP 610 VCS provenance from the official GitHub repository, without `GO_STACK_ALLOW_DEV=1`.
+- Preserve the transactional before/after project contract in the generated stack-update rollback record.
+
 ## 0.3.3 - 2026-07-16
 
 - Pin the template to annotated stack release `v0.3.3`, resolved exactly to `697f89baa8d43105a715b662c6f3b46d37ba8a4b`.

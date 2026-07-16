@@ -6,8 +6,8 @@
   "source_of_truth": "repo-local",
   "contract_version": 2,
   "project_mode": "template",
-  "required_stack_version": "0.3.3",
-  "stack_ref": "v0.3.3",
+  "required_stack_version": "0.3.4",
+  "stack_ref": "v0.3.4",
   "default_verification": [
     "bash scripts/check-linux.sh"
   ]
