@@ -22,7 +22,8 @@
         "adopt-v030-runtime-contract",
         "enforce-project-stack-ref-source",
         "normalize-template-data-file-modes",
-        "pin-v032-hotfix"
+        "pin-v032-hotfix",
+        "pin-v033-native-hermes"
       ]
     }
   ]
