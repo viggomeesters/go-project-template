@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.3 - 2026-07-16
+
+- Pin the template to annotated stack release `v0.3.3`, resolved exactly to `697f89baa8d43105a715b662c6f3b46d37ba8a4b`.
+- Adopt native Hermes prompt-capability detection and the validated WSL proof without requiring `GO_STACK_ALLOW_DEV=1`.
+- Preserve the transactional before/after project contract in the generated stack-update rollback record.
+
 ## 0.3.2 - 2026-07-16
 
 - Pin the template to the release-safe v0.3.2 doctor-fixture hotfix.

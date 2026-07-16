@@ -1,0 +1,45 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "mechanical",
+  "id": "pin-v033-native-hermes",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Pin template to go-workflow-stack v0.3.3",
+  "description": "Update the public template from v0.3.2 to the immutable v0.3.3 stack release that contains native Hermes prompt-capability detection and validated WSL proof.",
+  "scope": {
+    "read": [
+      ".go/project.json",
+      "CHANGELOG.md",
+      "scripts/bootstrap-stack.sh",
+      "scripts/check-linux.sh"
+    ],
+    "modify": [
+      ".go/project.json",
+      ".go/updates/20260716T085634105634Z-v0.3.3-697f89baa8d4.json",
+      "CHANGELOG.md"
+    ]
+  },
+  "acceptance": [
+    "R-1: The template requires stack version 0.3.3 and immutable ref v0.3.3 resolved to the published release commit.",
+    "R-2: The stack-update record preserves the before/after contract and exact resolved commit without absolute path leakage.",
+    "R-3: Clone-local, Linux/WSL, stack pairing, and live Hermes doctor checks pass without GO_STACK_ALLOW_DEV=1."
+  ],
+  "verification": [
+    "TMP=\"$(mktemp -d)\" && STACK=\"$TMP/go-workflow-stack\" && env -u GO_STACK_ALLOW_DEV GO_STACK=\"$STACK\" bash scripts/bootstrap-stack.sh >/dev/null && test \"$(git -C \"$STACK\" cat-file -t v0.3.3)\" = tag && test \"$(git -C \"$STACK\" rev-parse 'v0.3.3^{commit}')\" = 697f89baa8d43105a715b662c6f3b46d37ba8a4b",
+    "python3 -c \"import json; p=json.load(open('.go/updates/20260716T085634105634Z-v0.3.3-697f89baa8d4.json')); assert p['target']=='.go/project.json'; assert p['from_ref']=='v0.3.2' and p['to_ref']=='v0.3.3'; assert p['resolved_commit']=='697f89baa8d43105a715b662c6f3b46d37ba8a4b'; assert p['before_project']['required_stack_version']=='0.3.2'; assert p['after_project']['required_stack_version']=='0.3.3'\"",
+    "TMP=\"$(mktemp -d)\" && env -u GO_STACK_ALLOW_DEV GO_STACK=\"$TMP/go-workflow-stack\" GO_REQUIRE_LIVE_HERMES=1 bash scripts/check-linux.sh",
+    "TMP=\"$(mktemp -d)\" && env -u GO_STACK_ALLOW_DEV GO_STACK=\"$TMP/go-workflow-stack\" bash scripts/check.sh"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-07-16T10:56:11+02:00"
+  },
+  "evidence": [
+    {
+      "created_at": "2026-07-16T11:02:40+02:00",
+      "agent": "hermes",
+      "summary": "R-1: official dry-run/apply updated the template to required_stack_version 0.3.3 and stack_ref v0.3.3, resolving the public annotated tag exactly to 697f89baa8d43105a715b662c6f3b46d37ba8a4b. R-2: generated rollback record .go/updates/20260716T085634105634Z-v0.3.3-697f89baa8d4.json validates target=.go/project.json, v0.3.2 to v0.3.3 before/after values, exact resolved commit, and no absolute paths. R-3 pre-close proof: projected final-state clone passed scripts/check.sh, GO_REQUIRE_LIVE_HERMES=1 scripts/check-linux.sh, fresh clone contract tests, native Hermes doctor ready with prompt -z, and template-check ok=true, all using an exact public v0.3.3 clone with GO_STACK_ALLOW_DEV unset. Post-close gates passed on the real done-state: fresh public v0.3.3 bootstrap, clone-local check, Linux/WSL check, live Hermes doctor, and template-check all succeeded without GO_STACK_ALLOW_DEV. Initial devil review B findings were repaired; final re-review verdict A."
+    }
+  ]
+}
