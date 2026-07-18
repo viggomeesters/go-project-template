@@ -25,7 +25,8 @@
         "pin-v032-hotfix",
         "pin-v033-native-hermes",
         "pin-v034-package-provenance",
-        "isolate-template-bootstrap-runtime"
+        "isolate-template-bootstrap-runtime",
+        "pin-v035-task-first"
       ]
     }
   ]
