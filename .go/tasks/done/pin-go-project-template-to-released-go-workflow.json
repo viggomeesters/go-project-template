@@ -1,0 +1,66 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "id": "pin-go-project-template-to-released-go-workflow",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Pin go-project-template to released go-workflow-stack v0.3.7 using the installed runtime and GO_STACK source resolution, verify fresh-clone template pairing, and publish the final latest template.",
+  "description": "Created from bare go intent:\n\nPin go-project-template to released go-workflow-stack v0.3.7 using the installed runtime and GO_STACK source resolution, verify fresh-clone template pairing, and publish the final latest template.",
+  "scope": {
+    "read": [
+      ".go/**",
+      "README.md",
+      "docs/**",
+      "tests/**",
+      "scripts/**",
+      "CHANGELOG.md",
+      "Makefile"
+    ],
+    "modify": [
+      ".go/**",
+      "README.md",
+      "docs/**",
+      "tests/**",
+      "scripts/**",
+      "CHANGELOG.md",
+      "Makefile"
+    ]
+  },
+  "requested_outcomes": [
+    {
+      "id": "R1",
+      "text": "Pin go-project-template to released go-workflow-stack v0.3.7 using the installed runtime and GO_STACK source resolution, verify fresh-clone template pairing, and publish the final latest template.",
+      "source": "intent"
+    }
+  ],
+  "decomposition_policy": {
+    "mode": "semantic",
+    "default": "bundle_when_coherent",
+    "split_when": [
+      "outcomes_can_ship_independently",
+      "outcomes_require_different_verification",
+      "outcomes_touch_distinct_components_or_repositories",
+      "combined_scope_is_too_large_for_one_safe_claim"
+    ],
+    "rule": "List numbering is acceptance coverage, not an automatic task boundary."
+  },
+  "acceptance": [
+    "R1: Pin go-project-template to released go-workflow-stack v0.3.7 using the installed runtime and GO_STACK source resolution, verify fresh-clone template pairing, and publish the final latest template.",
+    "All requested outcomes are verified or explicitly blocked with evidence."
+  ],
+  "verification": [
+    "bash scripts/check-linux.sh"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-07-18T12:26:21+02:00"
+  },
+  "evidence": [
+    {
+      "created_at": "2026-07-18T12:26:38+02:00",
+      "agent": "hermes",
+      "summary": "Installed v0.3.7 runtime honored GO_STACK without --stack-repo, resolved immutable commit 307672f443d1b9297315fd17cce9704fc06b7fd2, applied template pin, validate passed, doctor ready=true; fresh-clone pairing check follows after task closeout"
+    }
+  ]
+}
