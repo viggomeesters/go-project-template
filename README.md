@@ -93,6 +93,8 @@ Edit the `.go/` files:
 
 Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run `bash scripts/check.sh` for the full stack/template pairing check, including a bounded first `auto --execute` smoke in a temporary clone.
 
+The v0.3.8 template intentionally uses `bash scripts/validate-go.sh` as `.go/project.json`'s per-task `default_verification`. The broader `scripts/check-linux.sh` remains the outer repository/pairing gate. This lets auto-finish run a bounded project audit without recursively invoking another template-check. Projects created from this template also inherit v0.3.8 capacity planning, separate work/review state, and runtime/billing-attributed finish evidence from the pinned stack runtime.
+
 The executable `./go` launcher resolves an explicit `GO_STACK` or bootstraps an isolated checkout under `${XDG_CACHE_HOME:-$HOME/.cache}/go-workflow-stack/<stack_ref>`, so it never repurposes a sibling development clone. On a Hermes-first WSL machine:
 
 ```bash

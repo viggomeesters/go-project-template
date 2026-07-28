@@ -1,0 +1,96 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "id": "pin-go-project-template-to-v038-defaults",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Adopt go-workflow-stack v0.3.8 defaults in the project template",
+  "description": "Propagate the released v0.3.8 capacity planning review lifecycle and attributed finish-evidence defaults so fresh projects inherit them automatically.",
+  "scope": {
+    "read": [
+      ".go/**",
+      "README.md",
+      "CHANGELOG.md",
+      "docs/**",
+      "scripts/**",
+      "Makefile"
+    ],
+    "modify": [
+      ".go/**",
+      "README.md",
+      "CHANGELOG.md",
+      "docs/**",
+      "scripts/**",
+      "Makefile"
+    ]
+  },
+  "acceptance": [
+    "R-1: Project contract pins exact stack version 0.3.8 and ref v0.3.8 through a rollback-recorded stack update.",
+    "R-2: Fresh-clone template checks exercise the v0.3.8 capacity review and attributed finish-evidence defaults.",
+    "R-3: Installed-runtime doctor reports pep610-vcs exact_ref compatible and ready with no development override.",
+    "R-4: Local pairing and fresh-template checks pass and documentation describes the inherited behavior."
+  ],
+  "verification": [
+    "bash scripts/check-linux.sh",
+    "bash scripts/check.sh",
+    "env -u GO_STACK_ALLOW_DEV go-workflow doctor . --platform wsl --agent hermes --json"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-07-28T20:01:43+02:00"
+  },
+  "work_status": "completed",
+  "review_status": "approved",
+  "review_history": [
+    {
+      "created_at": "2026-07-28T20:04:49+02:00",
+      "agent": "hermes",
+      "status": "approved",
+      "evidence": "Prior B had no product/config blocker; its lifecycle-artifact blocker was resolved by finishing through v0.3.8 with attributed evidence."
+    }
+  ],
+  "evidence": [
+    {
+      "schema": "go-workflow.finish-evidence.v1",
+      "created_at": "2026-07-28T20:04:48+02:00",
+      "task_id": "pin-go-project-template-to-v038-defaults",
+      "agent": "hermes",
+      "summary": "changed_files=.go/project.json,.go/hierarchy.json,.go/runs/events.jsonl,.go/updates/20260728T180154093798Z-v0.3.8-c30e11d58016.json,README.md,CHANGELOG.md; verification_command=bash scripts/test-template.sh and go-workflow validate and doctor; verification_result=passed template contract tests validate and exact PEP610 v0.3.8 doctor ready; critic=VERDICT B required lifecycle completion before ship and this finish supplies the missing task artifact and finish evidence; runtime=hermes; model=gpt-5.6-sol; billing_mode=subscription; owner=viggo",
+      "changed_files": [
+        ".go/project.json",
+        ".go/hierarchy.json",
+        ".go/runs/events.jsonl",
+        ".go/updates/20260728T180154093798Z-v0.3.8-c30e11d58016.json",
+        "README.md",
+        "CHANGELOG.md"
+      ],
+      "no_diff": false,
+      "verification": {
+        "command": "bash scripts/test-template.sh and go-workflow validate and doctor",
+        "result": "passed template contract tests validate and exact PEP610 v0.3.8 doctor ready"
+      },
+      "runtime": {
+        "agent": "hermes",
+        "runtime": "hermes",
+        "model": "gpt-5.6-sol",
+        "billing_mode": "subscription"
+      },
+      "usage": {
+        "schema": "go-workflow.usage-attribution.v1",
+        "runtime_kind": "hermes",
+        "billing_mode": "subscription",
+        "owner": "viggo",
+        "model": "gpt-5.6-sol",
+        "token_estimate": null,
+        "api_equivalent_cost_usd": null,
+        "provider_invoice_cost_usd": null,
+        "cost_label": "api_equivalent_not_invoice_cost"
+      },
+      "review": {
+        "outcome": "VERDICT B required lifecycle completion before ship and this finish supplies the missing task artifact and finish evidence",
+        "skip_reason": null
+      }
+    }
+  ]
+}

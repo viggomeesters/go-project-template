@@ -28,7 +28,8 @@
         "isolate-template-bootstrap-runtime",
         "pin-v035-task-first",
         "pin-go-project-template-to-go-workflow-stack-v0.",
-        "pin-go-project-template-to-released-go-workflow"
+        "pin-go-project-template-to-released-go-workflow",
+        "pin-go-project-template-to-v038-defaults"
       ]
     }
   ]
