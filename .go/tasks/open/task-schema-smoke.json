@@ -16,7 +16,10 @@
     ]
   },
   "acceptance": [
-    "A fresh clone can locate or bootstrap go-workflow-stack and validate its .go contract"
+    "R-1: A fresh clone locates or bootstraps the exact pinned go-workflow-stack runtime.",
+    "R-2: The fixture completes with work_status completed and an explicit approved review_status.",
+    "R-3: Completion records go-workflow.finish-evidence.v1 with verification, runtime, billing, usage, and review attribution.",
+    "R-4: The source template retains this task as its reusable open first-run fixture."
   ],
   "verification": [
     "bash scripts/validate-go.sh"

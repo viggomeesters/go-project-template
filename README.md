@@ -91,7 +91,7 @@ Edit the `.go/` files:
 - `.go/hierarchy.json`: epic-lite work packages, features, and task links.
 - `.go/tasks/open/*.json`: first executable tasks.
 
-Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run `bash scripts/check.sh` for the full stack/template pairing check, including a bounded first `auto --execute` smoke in a temporary clone.
+Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run `bash scripts/check.sh` for the full stack/template pairing check. The template test executes `task-schema-smoke` in an isolated fresh copy and asserts completed work state, approved review state, and structured runtime/billing-attributed finish evidence while preserving the source task as the reusable open fixture.
 
 The v0.3.8 template intentionally uses `bash scripts/validate-go.sh` as `.go/project.json`'s per-task `default_verification`. The broader `scripts/check-linux.sh` remains the outer repository/pairing gate. This lets auto-finish run a bounded project audit without recursively invoking another template-check. Projects created from this template also inherit v0.3.8 capacity planning, separate work/review state, and runtime/billing-attributed finish evidence from the pinned stack runtime.
 

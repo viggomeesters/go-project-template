@@ -11,7 +11,8 @@
           "id": "schema-validation",
           "title": "Schema validation",
           "tasks": [
-            "task-schema-smoke"
+            "task-schema-smoke",
+            "prove-v038-task-lifecycle-defaults"
           ]
         }
       ],

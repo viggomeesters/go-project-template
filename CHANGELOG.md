@@ -5,6 +5,7 @@
 - Pin the template to annotated stack release `v0.3.8`, resolved exactly to `c30e11d580167a1b088cd84a5487ae02cb904449`.
 - Let fresh projects inherit the stack's capacity planning, separate work/review lifecycle, and attributed finish-evidence contract.
 - Use `bash scripts/validate-go.sh` as the bounded per-task project verification; keep `scripts/check-linux.sh` as the outer template/pairing gate to avoid recursive auto verification.
+- Mechanically execute the reusable first-run task in an isolated fresh copy and assert v0.3.8 work/review state plus runtime, billing, usage, and review-attributed finish evidence.
 
 ## 0.3.4 - 2026-07-16
 
