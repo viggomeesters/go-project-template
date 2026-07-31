@@ -6,6 +6,17 @@ A minimal starter repository for projects that carry their own repo-local `.go/`
 
 Use this repo as the copyable template when starting a new project that should be understandable by agents from the repository alone. It pairs with [`go-workflow-stack`](https://github.com/viggomeesters/go-workflow-stack), which provides the CLI, schemas, validators, and reusable workflow rules.
 
+For project work, `Go` is the single public repository-work command:
+
+- `Go <outcome>` — infer discovery, planning, or execution and continue;
+- `Go plan <work>` — prepare durable state and stop before implementation;
+- `Go T123` — resume or execute a named repo-local task;
+- `Go loop 2h <work>` — use a bounded autonomous loop.
+
+Commands such as `auto`, `task create`, and `go-loop` remain internal stack
+primitives for agents, scripts, and tests. Users should not have to sequence
+them manually.
+
 ## Practical architecture in one minute
 
 This repo is the starter structure. The stack repo is the toolbelt. Your real project repo owns its own `.go/` state.
@@ -95,7 +106,7 @@ Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run
 
 The v0.3.8 template intentionally uses `bash scripts/validate-go.sh` as `.go/project.json`'s per-task `default_verification`. The broader `scripts/check-linux.sh` remains the outer repository/pairing gate. This lets auto-finish run a bounded project audit without recursively invoking another template-check. Projects created from this template also inherit v0.3.8 capacity planning, separate work/review state, and runtime/billing-attributed finish evidence from the pinned stack runtime.
 
-The executable `./go` launcher resolves an explicit `GO_STACK` or bootstraps an isolated checkout under `${XDG_CACHE_HOME:-$HOME/.cache}/go-workflow-stack/<stack_ref>`, so it never repurposes a sibling development clone. On a Hermes-first WSL machine:
+The executable `./go` launcher resolves an explicit `GO_STACK` or bootstraps an isolated checkout under `${XDG_CACHE_HOME:-$HOME/.cache}/go-workflow-stack/<stack_ref>`, so it never repurposes a sibling development clone. On a Hermes-first WSL machine, tell the coding agent `Go`; internally it can use:
 
 ```bash
 export GO_EXECUTOR_AGENT=hermes

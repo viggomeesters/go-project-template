@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Document one public `Go` command with plan, task-id, loop-budget, and internal routing semantics for every repo created from the template.
+
 ## 0.3.8 - 2026-07-28
 
 - Pin the template to annotated stack release `v0.3.8`, resolved exactly to `c30e11d580167a1b088cd84a5487ae02cb904449`.

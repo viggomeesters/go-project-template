@@ -4,6 +4,10 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 test ! -d "$ROOT/.github/workflows"
+grep -Fq 'single public repository-work command' "$ROOT/AGENTS.md"
+grep -Fq 'single public repository-work command' "$ROOT/README.md"
+grep -Fq '`Go plan ' "$ROOT/README.md"
+grep -Fq '`Go loop 2h ' "$ROOT/README.md"
 python3 - "$ROOT/.go/project.json" <<'PY'
 import json
 import sys
