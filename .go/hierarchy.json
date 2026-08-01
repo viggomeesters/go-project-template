@@ -32,6 +32,17 @@
         "pin-go-project-template-to-released-go-workflow",
         "pin-go-project-template-to-v038-defaults"
       ]
+    },
+    {
+      "id": "complete-advice-to-outcome-model",
+      "title": "Portable advice-to-outcome template contract",
+      "description": "Expose the completed runtime behavior to every fresh project clone.",
+      "features": [],
+      "tasks": [
+        "advice-model-07-template",
+        "advice-model-10-authority-source-template",
+        "advice-model-12-template-pin-v038"
+      ]
     }
   ]
 }

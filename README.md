@@ -6,12 +6,22 @@ A minimal starter repository for projects that carry their own repo-local `.go/`
 
 Use this repo as the copyable template when starting a new project that should be understandable by agents from the repository alone. It pairs with [`go-workflow-stack`](https://github.com/viggomeesters/go-workflow-stack), which provides the CLI, schemas, validators, and reusable workflow rules.
 
+This template pins `go-workflow-stack` `v0.3.8`, the first immutable runtime
+contract with durable advice-to-outcome promotion.
+
 For project work, `Go` is the single public repository-work command:
 
 - `Go <outcome>` — infer discovery, planning, or execution and continue;
 - `Go plan <work>` — prepare durable state and stop before implementation;
 - `Go T123` — resume or execute a named repo-local task;
 - `Go loop 2h <work>` — use a bounded autonomous loop.
+
+Questions enter an advice route: they do not authorize implementation, but an
+agent may store one compact chosen recommendation under
+`.go/recommendations/pending.json`. Explicit `alleen advies` or `read-only`
+writes nothing. A later bare `Go` or Codex **Sent as goal** promotes the pending
+record into semantic tasks and executes them without another “maak taken” or
+“aan de slag” relay.
 
 Commands such as `auto`, `task create`, and `go-loop` remain internal stack
 primitives for agents, scripts, and tests. Users should not have to sequence
@@ -113,6 +123,19 @@ export GO_EXECUTOR_AGENT=hermes
 ./go doctor . --platform wsl --agent hermes
 ./go go-loop . --execute --agent hermes
 ```
+
+The internal advice handoff is:
+
+```bash
+./go recommendation create . --brief /tmp/execution-brief.json \
+  --authority advice --authority-source question
+./go recommendation status . --json
+./go go . --execute
+```
+
+The final command needs no chat transcript or brief path. It archives the
+recommendation only after its tasks validate; successful verification and
+critic then attach evidence to every requested outcome.
 
 ## Development
 
