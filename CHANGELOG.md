@@ -3,6 +3,7 @@
 ## Unreleased
 
 - Document one public `Go` command with plan, task-id, loop-budget, and internal routing semantics for every repo created from the template.
+- Pin the template to stack release candidate `v0.3.9` at `56ee33b95a3f7c068a241e8dadcc7d9c59e6fb18`, preserving durable recommendation promotion and same-invocation execution.
 
 ## 0.3.8 - 2026-07-28
 
