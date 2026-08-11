@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 0.3.11 - 2026-08-11
+
+- Pin the template to annotated stack release `v0.3.11`, resolved exactly to `8155f449f78ea57af38b407c30c8ad3ad56e0e48`.
+- Make restricted stakeholder delivery automatic for substantial approved agent tasks, with explicit policy overrides, immutable versions, fail-closed rollback, and per-epic concurrency serialization.
+
 ## 0.3.10 - 2026-08-11
 
 - Pin the template to annotated stack release `v0.3.10`, resolved exactly to `fa451abc9f4f44174d4cfb14f42767fcd1391cee`.

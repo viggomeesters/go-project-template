@@ -1,0 +1,97 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "shareable_delivery": "none",
+  "id": "pin-stack-v0311-automatic-delivery",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Pin project template to go-workflow-stack v0.3.11",
+  "description": "Transactionally update the public template from immutable v0.3.10 to immutable v0.3.11 and prove fresh-copy behavior.",
+  "scope": {
+    "read": [
+      ".go/project.json",
+      "README.md",
+      "CHANGELOG.md",
+      "scripts/test-template.sh"
+    ],
+    "modify": [
+      ".go/project.json",
+      "README.md",
+      "CHANGELOG.md",
+      "scripts/test-template.sh",
+      ".go/updates/*.json",
+      ".go/hierarchy.json",
+      ".go/runs/events.jsonl",
+      ".go/evidence/events.jsonl",
+      ".go/tasks/open/pin-stack-v0311-automatic-delivery.json",
+      ".go/tasks/active/pin-stack-v0311-automatic-delivery.json",
+      ".go/tasks/done/pin-stack-v0311-automatic-delivery.json"
+    ]
+  },
+  "acceptance": [
+    "R-1: Template pins required_stack_version 0.3.11 and stack_ref v0.3.11 with rollback metadata to v0.3.10.",
+    "R-2: Template checks, template-check and fresh-copy first auto execution pass against the published v0.3.11 stack.",
+    "R-3: Task is finished and explicitly approved before push."
+  ],
+  "verification": [
+    "bash scripts/check.sh",
+    "python3 ../go-workflow-stack/cli/go.py template-check . --json"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-08-11T23:03:15+02:00"
+  },
+  "work_status": "completed",
+  "review_status": "approved",
+  "review_history": [
+    {
+      "created_at": "2026-08-11T23:09:15+02:00",
+      "agent": "critic",
+      "status": "approved",
+      "evidence": "VERDICT A: annotated v0.3.11 peels to 8155f449f78ea57af38b407c30c8ad3ad56e0e48; rollback and docs exact; active-task first_auto block is expected and must clear after closeout",
+      "transaction_id": "4b42c502e0c7425f94ba6aeb7dc8a062"
+    }
+  ],
+  "evidence": [
+    {
+      "schema": "go-workflow.finish-evidence.v1",
+      "created_at": "2026-08-11T23:09:14+02:00",
+      "task_id": "pin-stack-v0311-automatic-delivery",
+      "agent": "hermes",
+      "summary": "summary=Transactionally pinned go-project-template from v0.3.10 to public annotated v0.3.11 at 8155f449f78ea57af38b407c30c8ad3ad56e0e48 with exact rollback metadata and updated docs; changed_files=.go/project.json,.go/updates/20260811T210336134587Z-v0.3.11-8155f449f78e.json,README.md,CHANGELOG.md; verification_command=bash scripts/validate-go.sh; verification_result=passed; critic=VERDICT A exact tag/commit, rollback, docs, history and scope verified; post-closeout fresh-copy/full gates required before push",
+      "changed_files": [
+        ".go/project.json",
+        ".go/updates/20260811T210336134587Z-v0.3.11-8155f449f78e.json",
+        "README.md",
+        "CHANGELOG.md"
+      ],
+      "no_diff": false,
+      "verification": {
+        "command": "bash scripts/validate-go.sh",
+        "result": "passed"
+      },
+      "runtime": {
+        "agent": "hermes",
+        "runtime": null,
+        "model": null,
+        "billing_mode": "unknown"
+      },
+      "usage": {
+        "schema": "go-workflow.usage-attribution.v1",
+        "runtime_kind": "unknown",
+        "billing_mode": "unknown",
+        "owner": "hermes",
+        "model": null,
+        "token_estimate": null,
+        "api_equivalent_cost_usd": null,
+        "provider_invoice_cost_usd": null,
+        "cost_label": "api_equivalent_not_invoice_cost"
+      },
+      "review": {
+        "outcome": "VERDICT A exact tag/commit, rollback, docs, history and scope verified",
+        "skip_reason": null
+      }
+    }
+  ]
+}
