@@ -42,8 +42,15 @@
     "claimed_at": "2026-08-11T16:38:13+02:00"
   },
   "work_status": "completed",
-  "review_status": "review",
-  "review_history": [],
+  "review_status": "approved",
+  "review_history": [
+    {
+      "created_at": "2026-08-11T16:43:33+02:00",
+      "agent": "hermes",
+      "status": "approved",
+      "evidence": "VERDICT A: public annotated v0.3.10 resolves exactly to fa451abc9f4f44174d4cfb14f42767fcd1391cee; rollback record, documentation claims, public-data safety and task scope are consistent; files modified by review: none."
+    }
+  ],
   "evidence": [
     {
       "schema": "go-workflow.finish-evidence.v1",
