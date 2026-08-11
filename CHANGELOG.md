@@ -2,8 +2,15 @@
 
 ## Unreleased
 
+## 0.3.10 - 2026-08-11
+
+- Pin the template to annotated stack release `v0.3.10`, resolved exactly to `fa451abc9f4f44174d4cfb14f42767fcd1391cee`.
+- Expose deterministic standalone stakeholder delivery HTML, strict manifest validation, restricted-by-default disclosure, immutable superseding releases, and fail-closed publication through the pinned stack runtime.
+
+## 0.3.9 - 2026-08-01
+
 - Document one public `Go` command with plan, task-id, loop-budget, and internal routing semantics for every repo created from the template.
-- Pin the template to stack release candidate `v0.3.9` at `0448d2ea727ffe3f318484cbf97de6b563899557`, preserving durable recommendation promotion and same-invocation execution.
+- Pin the template to annotated stack release `v0.3.9` at `0448d2ea727ffe3f318484cbf97de6b563899557`, preserving durable recommendation promotion and same-invocation execution.
 
 ## 0.3.8 - 2026-07-28
 

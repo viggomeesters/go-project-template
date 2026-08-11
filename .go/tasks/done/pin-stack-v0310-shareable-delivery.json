@@ -1,0 +1,92 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "mechanical",
+  "id": "pin-stack-v0310-shareable-delivery",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Pin public project template to go-workflow-stack v0.3.10",
+  "description": "Transactionally move the template runtime contract from v0.3.9 to immutable v0.3.10 at fa451abc9f4f44174d4cfb14f42767fcd1391cee, document shareable delivery output, and prove a fresh template clone executes through the tagged stack.",
+  "scope": {
+    "read": [
+      ".go/project.json",
+      "README.md",
+      "CHANGELOG.md",
+      "scripts/check.sh",
+      "scripts/test-template.sh"
+    ],
+    "modify": [
+      ".go/project.json",
+      ".go/hierarchy.json",
+      ".go/runs/events.jsonl",
+      ".go/evidence/events.jsonl",
+      ".go/updates/*.json",
+      ".go/tasks/active/pin-stack-v0310-shareable-delivery.json",
+      ".go/tasks/done/pin-stack-v0310-shareable-delivery.json",
+      "README.md",
+      "CHANGELOG.md"
+    ]
+  },
+  "acceptance": [
+    "R-1: .go/project.json pins required_stack_version 0.3.10 and stack_ref v0.3.10 resolved exactly to fa451abc9f4f44174d4cfb14f42767fcd1391cee through transactional stack update.",
+    "R-2: README and changelog describe v0.3.10 shareable delivery output without rewriting historical release notes.",
+    "R-3: After task closeout and commit, full template checks and an isolated fresh-clone execution must pass against the public v0.3.10 tag before push."
+  ],
+  "verification": [
+    "bash scripts/check.sh",
+    "python3 ../go-workflow-stack/cli/go.py template-check . --json",
+    "bash scripts/validate-go.sh"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-08-11T16:38:13+02:00"
+  },
+  "work_status": "completed",
+  "review_status": "review",
+  "review_history": [],
+  "evidence": [
+    {
+      "schema": "go-workflow.finish-evidence.v1",
+      "created_at": "2026-08-11T16:42:16+02:00",
+      "task_id": "pin-stack-v0310-shareable-delivery",
+      "agent": "hermes",
+      "summary": "summary=Transactionally pinned go-project-template from stack v0.3.9 to public annotated v0.3.10 at fa451abc9f4f44174d4cfb14f42767fcd1391cee, recorded exact before/after update state, and documented shareable delivery output; changed_files=.go/project.json,.go/updates/20260811T143823926504Z-v0.3.10-fa451abc9f4f.json,README.md,CHANGELOG.md,.go/hierarchy.json,.go/runs/events.jsonl,.go/evidence/events.jsonl,.go/tasks/done/pin-stack-v0310-shareable-delivery.json; verification_command=GO_STACK=/home/viggo/.cache/go-workflow-stack/v0.3.10 bash scripts/test-template.sh && bash scripts/validate-go.sh; verification_result=template contract tests ok, clone-local validation ok, stack tag bootstrapped at exact commit; critic=VERDICT A no blockers, immutable pair exact, rollback/docs/public-data/scope consistent; runtime=hermes; model=gpt-5.6-sol; billing_mode=subscription; owner=viggo",
+      "changed_files": [
+        ".go/project.json",
+        ".go/updates/20260811T143823926504Z-v0.3.10-fa451abc9f4f.json",
+        "README.md",
+        "CHANGELOG.md",
+        ".go/hierarchy.json",
+        ".go/runs/events.jsonl",
+        ".go/evidence/events.jsonl",
+        ".go/tasks/done/pin-stack-v0310-shareable-delivery.json"
+      ],
+      "no_diff": false,
+      "verification": {
+        "command": "GO_STACK=/home/viggo/.cache/go-workflow-stack/v0.3.10 bash scripts/test-template.sh && bash scripts/validate-go.sh",
+        "result": "template contract tests ok, clone-local validation ok, stack tag bootstrapped at exact commit"
+      },
+      "runtime": {
+        "agent": "hermes",
+        "runtime": "hermes",
+        "model": "gpt-5.6-sol",
+        "billing_mode": "subscription"
+      },
+      "usage": {
+        "schema": "go-workflow.usage-attribution.v1",
+        "runtime_kind": "hermes",
+        "billing_mode": "subscription",
+        "owner": "viggo",
+        "model": "gpt-5.6-sol",
+        "token_estimate": null,
+        "api_equivalent_cost_usd": null,
+        "provider_invoice_cost_usd": null,
+        "cost_label": "api_equivalent_not_invoice_cost"
+      },
+      "review": {
+        "outcome": "VERDICT A no blockers, immutable pair exact, rollback/docs/public-data/scope consistent",
+        "skip_reason": null
+      }
+    }
+  ]
+}

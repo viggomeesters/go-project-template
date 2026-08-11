@@ -1,0 +1,37 @@
+{
+  "schema": "go-workflow.stack-update-rollback.v1",
+  "status": "applied",
+  "created_at": "2026-08-11T14:38:23.926559+00:00",
+  "target": ".go/project.json",
+  "from_ref": "v0.3.9",
+  "to_ref": "v0.3.10",
+  "resolved_commit": "fa451abc9f4f44174d4cfb14f42767fcd1391cee",
+  "before_project": {
+    "schema": "go-workflow.repo-local.project.v1",
+    "kind": "project",
+    "id": "go-project-template",
+    "name": "Go Project Template",
+    "source_of_truth": "repo-local",
+    "contract_version": 2,
+    "project_mode": "template",
+    "required_stack_version": "0.3.9",
+    "stack_ref": "v0.3.9",
+    "default_verification": [
+      "bash scripts/validate-go.sh"
+    ]
+  },
+  "after_project": {
+    "schema": "go-workflow.repo-local.project.v1",
+    "kind": "project",
+    "id": "go-project-template",
+    "name": "Go Project Template",
+    "source_of_truth": "repo-local",
+    "contract_version": 2,
+    "project_mode": "template",
+    "required_stack_version": "0.3.10",
+    "stack_ref": "v0.3.10",
+    "default_verification": [
+      "bash scripts/validate-go.sh"
+    ]
+  }
+}
