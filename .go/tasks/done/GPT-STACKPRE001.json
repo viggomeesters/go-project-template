@@ -1,0 +1,82 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "shareable_delivery": "none",
+  "id": "GPT-STACKPRE001",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Require stack freshness before repo work",
+  "description": "Pin the public template to v0.3.12 and make every clone instruct agents to update stale pins before routing, task creation, claim or product edits.",
+  "scope": {
+    "read": [
+      "AGENTS.md,README.md,scripts/validate-go.sh,.go/**"
+    ],
+    "modify": [
+      "AGENTS.md,README.md,scripts/validate-go.sh,.go/**"
+    ]
+  },
+  "acceptance": [
+    "Template is pinned to v0.3.12; AGENTS and README require the repo-local freshness preflight before work; validation asserts the invariant; doctor exact_ref=true compatible=true ready=true; fresh-copy validation passes."
+  ],
+  "verification": [
+    "bash scripts/validate-go.sh; ./go doctor . --platform wsl --agent hermes --json; ./go validate .; git diff --check"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-08-17T07:01:54+02:00"
+  },
+  "work_status": "completed",
+  "review_status": "approved",
+  "review_history": [
+    {
+      "created_at": "2026-08-17T07:03:50+02:00",
+      "agent": "hermes",
+      "status": "approved",
+      "evidence": "Approved after transactional v0.3.12 migration, exact doctor proof and policy validation; full fresh-copy gate follows with done+approved state.",
+      "transaction_id": "82e7eba36a4641f2acec2971674d8e90"
+    }
+  ],
+  "evidence": [
+    {
+      "schema": "go-workflow.finish-evidence.v1",
+      "created_at": "2026-08-17T07:03:50+02:00",
+      "task_id": "GPT-STACKPRE001",
+      "agent": "hermes",
+      "summary": "changed_files=.go/project.json,.go/updates/20260817T050123432223Z-v0.3.12-367d8bee0217.json,AGENTS.md,README.md,scripts/validate-go.sh; verification_command=bash scripts/validate-go.sh && ./go doctor . --platform wsl --agent hermes --json && ./go validate . && git diff --check; verification_result=passed: v0.3.12 exact_ref=true compatible=true ready=true and policy assertions; critic_outcome=passed: migration rollback record and fail-closed startup wording reviewed; runtime=hermes; billing_mode=subscription",
+      "changed_files": [
+        ".go/project.json",
+        ".go/updates/20260817T050123432223Z-v0.3.12-367d8bee0217.json",
+        "AGENTS.md",
+        "README.md",
+        "scripts/validate-go.sh"
+      ],
+      "no_diff": false,
+      "verification": {
+        "command": "bash scripts/validate-go.sh && ./go doctor . --platform wsl --agent hermes --json && ./go validate . && git diff --check",
+        "result": "passed: v0.3.12 exact_ref=true compatible=true ready=true and policy assertions"
+      },
+      "runtime": {
+        "agent": "hermes",
+        "runtime": "hermes",
+        "model": null,
+        "billing_mode": "subscription"
+      },
+      "usage": {
+        "schema": "go-workflow.usage-attribution.v1",
+        "runtime_kind": "hermes",
+        "billing_mode": "subscription",
+        "owner": "hermes",
+        "model": null,
+        "token_estimate": null,
+        "api_equivalent_cost_usd": null,
+        "provider_invoice_cost_usd": null,
+        "cost_label": "api_equivalent_not_invoice_cost"
+      },
+      "review": {
+        "outcome": "passed: migration rollback record and fail-closed startup wording reviewed",
+        "skip_reason": null
+      }
+    }
+  ]
+}

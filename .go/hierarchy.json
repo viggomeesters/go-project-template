@@ -32,7 +32,8 @@
         "pin-go-project-template-to-released-go-workflow",
         "pin-go-project-template-to-v038-defaults",
         "pin-stack-v0310-shareable-delivery",
-        "pin-stack-v0311-automatic-delivery"
+        "pin-stack-v0311-automatic-delivery",
+        "GPT-STACKPRE001"
       ]
     },
     {

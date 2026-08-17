@@ -6,9 +6,9 @@ A minimal starter repository for projects that carry their own repo-local `.go/`
 
 Use this repo as the copyable template when starting a new project that should be understandable by agents from the repository alone. It pairs with [`go-workflow-stack`](https://github.com/viggomeesters/go-workflow-stack), which provides the CLI, schemas, validators, and reusable workflow rules.
 
-This template pins `go-workflow-stack` `v0.3.11`, the immutable runtime
-contract with durable advice-to-outcome promotion and automatic restricted
-shareable delivery output for substantial approved tasks.
+This template pins `go-workflow-stack` `v0.3.12`, the immutable runtime
+contract that requires stale repository pins to be updated before route,
+task creation, claim, or product edits.
 
 For project work, `Go` is the single public repository-work command:
 
@@ -70,6 +70,25 @@ bash scripts/check.sh
 ./go doctor . --platform wsl --agent hermes --json
 ```
 
+Before normal work in an existing repo-local Go project, use a trusted current
+stack checkout as the update control plane. The update is deliberately separate
+from the old pinned runtime so schema drift cannot masquerade as repository
+corruption:
+
+```bash
+STACK_REPO=/path/to/go-workflow-stack
+git -C "$STACK_REPO" fetch origin --tags
+python3 "$STACK_REPO/cli/go.py" stack update . --latest --stack-repo "$STACK_REPO" --json
+# Apply only when the dry run reports up_to_date=false:
+python3 "$STACK_REPO/cli/go.py" stack update . --latest --stack-repo "$STACK_REPO" --apply --agent hermes --json
+./go doctor . --platform wsl --agent hermes --json
+```
+
+Only after doctor reports `exact_ref=true`, `compatible=true`, and `ready=true`
+may route, task creation, claim, or product editing begin. If the trusted source
+checkout or annotated release cannot be verified, stop; do not continue through
+mutable `main`, an old global runtime, or `GO_STACK_ALLOW_DEV=1`.
+
 After copying the template to a real project name, replace the template identity with the project's own durable contract:
 
 ```bash
@@ -115,7 +134,7 @@ Edit the `.go/` files:
 
 Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run `bash scripts/check.sh` for the full stack/template pairing check. The template test executes `task-schema-smoke` in an isolated fresh copy and asserts completed work state, approved review state, and structured runtime/billing-attributed finish evidence while preserving the source task as the reusable open fixture.
 
-The v0.3.11 template intentionally uses `bash scripts/validate-go.sh` as `.go/project.json`'s per-task `default_verification`. The broader `scripts/check-linux.sh` remains the outer repository/pairing gate. This lets auto-finish run a bounded project audit without recursively invoking another template-check. Projects created from this template retain capacity planning, separate work/review state, runtime/billing-attributed finish evidence, and automatically build deterministic standalone stakeholder HTML for substantial approved agent tasks. The pinned runtime defaults disclosure to restricted, supports explicit `required`/`none` overrides, versions successors immutably, and serializes approval/build/ship/rollback per epic.
+The v0.3.12 template intentionally uses `bash scripts/validate-go.sh` as `.go/project.json`'s per-task `default_verification`. The broader `scripts/check-linux.sh` remains the outer repository/pairing gate. This lets auto-finish run a bounded project audit without recursively invoking another template-check. Projects created from this template retain capacity planning, separate work/review state, runtime/billing-attributed finish evidence, and automatically build deterministic standalone stakeholder HTML for substantial approved agent tasks. The pinned runtime defaults disclosure to restricted, supports explicit `required`/`none` overrides, versions successors immutably, and serializes approval/build/ship/rollback per epic.
 
 The executable `./go` launcher resolves an explicit `GO_STACK` or bootstraps an isolated checkout under `${XDG_CACHE_HOME:-$HOME/.cache}/go-workflow-stack/<stack_ref>`, so it never repurposes a sibling development clone. On a Hermes-first WSL machine, tell the coding agent `Go`; internally it can use:
 
