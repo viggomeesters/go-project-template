@@ -1,0 +1,57 @@
+{
+  "schema": "go-workflow.architecture-brief.v1",
+  "kind": "architecture_brief",
+  "id": "project-boundary",
+  "project": "go-project-template",
+  "title": "Template workflow contract boundary",
+  "status": "accepted",
+  "owner": "go-project-template maintainers",
+  "outcomes": [
+    "Consequential changes remain traceable from concern to decision to verification."
+  ],
+  "scope": {
+    "in": [
+      "Repository-owned product and workflow state"
+    ],
+    "out": [
+      "External systems until explicitly added"
+    ],
+    "systems": [
+      "{NTB} primary product system"
+    ],
+    "boundaries": [
+      "Repository boundary"
+    ]
+  },
+  "stakeholders": [
+    {
+      "role": "product-owner",
+      "concerns": [
+        "scope",
+        "risk",
+        "decision authority"
+      ],
+      "decision_rights": [
+        "accept material architecture decisions and risk"
+      ]
+    }
+  ],
+  "constraints": [
+    "Canonical execution state stays in repo-local .go JSON and JSONL."
+  ],
+  "quality_attributes": [
+    {
+      "id": "architecture-traceability",
+      "scenario": "A material task changes a system boundary, contract, integration, data ownership, security or privacy behavior.",
+      "measure": "Unlinked accepted decisions or missing conformance checks",
+      "threshold": 0
+    }
+  ],
+  "risks": [
+    "This synthetic template scope remains generic until project adoption customizes its real boundaries and authority."
+  ],
+  "open_questions": [
+    "{NTB}: What systems, data owners, trust boundaries and irreversible choices actually apply?"
+  ],
+  "decision_ids": []
+}

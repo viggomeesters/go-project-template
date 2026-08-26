@@ -2,6 +2,14 @@
   "schema": "go-workflow.repo-local.task.v1",
   "kind": "task",
   "execution_mode": "mechanical",
+  "architecture": {
+    "impact": "none",
+    "scope_refs": [],
+    "concerns": [],
+    "decision_ids": [],
+    "conformance_required": false,
+    "human_gate": "none"
+  },
   "id": "task-schema-smoke",
   "project": "go-project-template",
   "status": "open",

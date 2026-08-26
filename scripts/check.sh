@@ -4,9 +4,24 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 GO_STACK="$(GO_STACK="${GO_STACK:-}" bash "$SCRIPT_DIR/bootstrap-stack.sh")"
 export GO_STACK
-make -C "$REPO_ROOT" check
-
 PYTHON="${PYTHON:-python3}"
+make -C "$REPO_ROOT" check
+"$PYTHON" "$GO_STACK/cli/go.py" architecture validate "$REPO_ROOT" --json >"${TMPDIR:-/tmp}/go-template-architecture-validate.json"
+"$PYTHON" "$GO_STACK/cli/go.py" architecture readback "$REPO_ROOT" --task-id task-schema-smoke --json >"${TMPDIR:-/tmp}/go-template-architecture-readback.json"
+"$PYTHON" "$GO_STACK/cli/go.py" architecture status "$REPO_ROOT" --json >"${TMPDIR:-/tmp}/go-template-architecture-status.json"
+"$PYTHON" - "${TMPDIR:-/tmp}/go-template-architecture-readback.json" "${TMPDIR:-/tmp}/go-template-architecture-status.json" <<'PY'
+import json
+import sys
+
+readback = json.load(open(sys.argv[1], encoding="utf-8"))
+status = json.load(open(sys.argv[2], encoding="utf-8"))
+assert readback["applicable_architecture"]["classification"]["impact"] == "none"
+assert readback["status"]["briefs"] == {"total": 1, "accepted": 1, "draft": 0}
+assert status["open_deviations"] == 0 and status["active_waivers"] == 0
+PY
+
+echo "architecture lane template contract: ok"
+
 TMP_REPO="$(mktemp -d "${TMPDIR:-/tmp}/go-advice-template-check.XXXXXX")"
 trap 'rm -rf "$TMP_REPO"' EXIT
 git init -q "$TMP_REPO"

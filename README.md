@@ -6,7 +6,7 @@ A minimal starter repository for projects that carry their own repo-local `.go/`
 
 Use this repo as the copyable template when starting a new project that should be understandable by agents from the repository alone. It pairs with [`go-workflow-stack`](https://github.com/viggomeesters/go-workflow-stack), which provides the CLI, schemas, validators, and reusable workflow rules.
 
-This template pins `go-workflow-stack` `v0.3.12`, the immutable runtime
+This template pins `go-workflow-stack` `v0.3.13`, the immutable runtime
 contract that requires stale repository pins to be updated before route,
 task creation, claim, or product edits.
 
@@ -47,6 +47,9 @@ For the full architecture and practical application flow, see [`docs/practical-a
   architecture-principles.json
   vision.json
   hierarchy.json
+  architecture/
+    briefs/project-boundary.json
+    events.jsonl
   tasks/open/task-schema-smoke.json
   evidence/events.jsonl
 AGENTS.md
@@ -130,11 +133,13 @@ Edit the `.go/` files:
 - `.go/architecture-principles.json`: project constraints and enforcement rules.
 - `.go/vision.json`: north star, wedge, target user, promise, non-goals.
 - `.go/hierarchy.json`: epic-lite work packages, features, and task links.
-- `.go/tasks/open/*.json`: first executable tasks.
+- `.go/architecture/briefs/project-boundary.json`: accepted synthetic template-maintainer boundary with a measurable traceability attribute; customize it for the real project during adoption or remove `.go/architecture/` to keep the legacy lane disabled.
+- `.go/architecture/events.jsonl`: append-only classification, review, conformance, deviation, and waiver events.
+- `.go/tasks/open/*.json`: first executable tasks with explicit architecture impact where relevant.
 
 Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run `bash scripts/check.sh` for the full stack/template pairing check. The template test executes `task-schema-smoke` in an isolated fresh copy and asserts completed work state, approved review state, and structured runtime/billing-attributed finish evidence while preserving the source task as the reusable open fixture.
 
-The v0.3.12 template intentionally uses `bash scripts/validate-go.sh` as `.go/project.json`'s per-task `default_verification`. The broader `scripts/check-linux.sh` remains the outer repository/pairing gate. This lets auto-finish run a bounded project audit without recursively invoking another template-check. Projects created from this template retain capacity planning, separate work/review state, runtime/billing-attributed finish evidence, and automatically build deterministic standalone stakeholder HTML for substantial approved agent tasks. The pinned runtime defaults disclosure to restricted, supports explicit `required`/`none` overrides, versions successors immutably, and serializes approval/build/ship/rollback per epic.
+The v0.3.13 template intentionally uses `bash scripts/validate-go.sh` as `.go/project.json`'s per-task `default_verification`. The broader `scripts/check-linux.sh` remains the outer repository/pairing gate. This lets auto-finish run a bounded project audit without recursively invoking another template-check. Projects created from this template retain capacity planning, separate work/review state, runtime/billing-attributed finish evidence, and automatically build deterministic standalone stakeholder HTML for substantial approved agent tasks. The pinned runtime defaults disclosure to restricted, supports explicit `required`/`none` overrides, versions successors immutably, and serializes approval/build/ship/rollback per epic.
 
 The executable `./go` launcher resolves an explicit `GO_STACK` or bootstraps an isolated checkout under `${XDG_CACHE_HOME:-$HOME/.cache}/go-workflow-stack/<stack_ref>`, so it never repurposes a sibling development clone. On a Hermes-first WSL machine, tell the coding agent `Go`; internally it can use:
 

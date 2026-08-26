@@ -46,6 +46,15 @@
         "advice-model-10-authority-source-template",
         "advice-model-12-template-pin-v038"
       ]
+    },
+    {
+      "id": "architecture-lane",
+      "title": "Architecture Lane Starter Contract",
+      "description": "Expose the released conditional architecture lane to fresh project clones without forcing ceremony on ordinary tasks.",
+      "features": [],
+      "tasks": [
+        "adopt-v0313-architecture-lane"
+      ]
     }
   ]
 }
