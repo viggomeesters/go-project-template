@@ -1,0 +1,117 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "shareable_delivery": "auto",
+  "id": "adopt-v0314-governing-decision-gate",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Adopt v0.3.14 governing decision gate",
+  "description": "Pin the official project template to immutable go-workflow-stack v0.3.14 and prove the generated template activates the governing-decision claim contract without inheriting a fake generic project decision.",
+  "scope": {
+    "read": [
+      ".go/**",
+      "README.md",
+      "scripts/**"
+    ],
+    "modify": [
+      ".go/**",
+      "README.md",
+      "scripts/check.sh",
+      "scripts/validate-go.sh"
+    ]
+  },
+  "acceptance": [
+    "R-1: .go/project.json and template validation require exactly 0.3.14 and v0.3.14.",
+    "R-2: A fresh generated clone passes validate, doctor, architecture status/readback, first-auto and finish smoke with the tagged runtime.",
+    "R-3: The generic project-boundary brief remains decision-free; the template adoption decision is task-local and does not masquerade as a downstream architecture choice.",
+    "R-4: Documentation states that material/foundational tasks need an exact accepted governing decision."
+  ],
+  "verification": [
+    "bash scripts/check.sh",
+    "go-workflow template-check . --json",
+    "env -u GO_STACK_ALLOW_DEV go-workflow doctor . --platform wsl --agent hermes --json"
+  ],
+  "claim": {
+    "agent": "hermes",
+    "claimed_at": "2026-08-27T14:11:15+02:00"
+  },
+  "work_status": "completed",
+  "review_status": "approved",
+  "review_history": [
+    {
+      "created_at": "2026-08-27T14:14:37+02:00",
+      "agent": "hermes",
+      "status": "approved",
+      "evidence": "Approved after finalized candidate /tmp/go-project-template-v0314-candidate.oXO5h4/repo passed first-auto, full scripts/check.sh, exact v0.3.14 doctor and architecture conformance while preserving an empty generic brief decision_ids list.",
+      "transaction_id": "ab6cbd6074484377b1587f8129719734",
+      "delivery": {
+        "delivery_id": "architecture-lane-v1",
+        "html": ".go/deliveries/architecture-lane-v1/index.html",
+        "manifest": ".go/deliveries/architecture-lane-v1/manifest.json",
+        "source_sha256": "b7bf630de6d9e50851770bb5cf95c13ca75d416a2fbcb6678f7c89a43840a027",
+        "html_sha256": "bd664aa5ed146273cb2f839d409dc9703b0917b4929e1a0573e0eae8e2da816c"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "schema": "go-workflow.finish-evidence.v1",
+      "created_at": "2026-08-27T14:14:37+02:00",
+      "task_id": "adopt-v0314-governing-decision-gate",
+      "agent": "hermes",
+      "summary": "changed_files=.go/project.json,.go/updates/20260827T120806394831Z-v0.3.14-2fb25c5b447e.json,.go/decisions/events.jsonl,.go/architecture/events.jsonl,.go/hierarchy.json,.go/runs/events.jsonl,.go/tasks/done/adopt-v0314-governing-decision-gate.json,README.md,scripts/validate-go.sh; verification_command=bash scripts/validate-go.sh && finalized-candidate go-workflow template-check . --json && bash scripts/check.sh && doctor; verification_result=PASS: candidate first_auto_execute done, exact v0.3.14 PEP610 doctor ready, architecture/readback and template pairing green; critic_outcome=PASS: task-local accepted adoption decision does not leak into decision-free generic project brief.",
+      "changed_files": [
+        ".go/project.json",
+        ".go/updates/20260827T120806394831Z-v0.3.14-2fb25c5b447e.json",
+        ".go/decisions/events.jsonl",
+        ".go/architecture/events.jsonl",
+        ".go/hierarchy.json",
+        ".go/runs/events.jsonl",
+        ".go/tasks/done/adopt-v0314-governing-decision-gate.json",
+        "README.md",
+        "scripts/validate-go.sh"
+      ],
+      "no_diff": false,
+      "verification": {
+        "command": "bash scripts/validate-go.sh && finalized-candidate go-workflow template-check . --json && bash scripts/check.sh && doctor",
+        "result": "PASS: candidate first_auto_execute done, exact v0.3.14 PEP610 doctor ready, architecture/readback and template pairing green"
+      },
+      "runtime": {
+        "agent": "hermes",
+        "runtime": null,
+        "model": null,
+        "billing_mode": "unknown"
+      },
+      "usage": {
+        "schema": "go-workflow.usage-attribution.v1",
+        "runtime_kind": "unknown",
+        "billing_mode": "unknown",
+        "owner": "hermes",
+        "model": null,
+        "token_estimate": null,
+        "api_equivalent_cost_usd": null,
+        "provider_invoice_cost_usd": null,
+        "cost_label": "api_equivalent_not_invoice_cost"
+      },
+      "review": {
+        "outcome": "PASS: task-local accepted adoption decision does not leak into decision-free generic project brief.",
+        "skip_reason": null
+      }
+    }
+  ],
+  "architecture": {
+    "impact": "material",
+    "scope_refs": [
+      "project-boundary"
+    ],
+    "concerns": [
+      "Default workflow contract for future generated repositories"
+    ],
+    "decision_ids": [
+      "adopt-v0314-governing-decision-gate-v1"
+    ],
+    "conformance_required": true,
+    "human_gate": "none"
+  }
+}

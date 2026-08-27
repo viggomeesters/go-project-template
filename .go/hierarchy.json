@@ -53,7 +53,8 @@
       "description": "Expose the released conditional architecture lane to fresh project clones without forcing ceremony on ordinary tasks.",
       "features": [],
       "tasks": [
-        "adopt-v0313-architecture-lane"
+        "adopt-v0313-architecture-lane",
+        "adopt-v0314-governing-decision-gate"
       ]
     }
   ]

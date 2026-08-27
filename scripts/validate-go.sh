@@ -11,10 +11,11 @@ import sys
 
 root = pathlib.Path(sys.argv[1])
 project = json.loads((root / ".go" / "project.json").read_text(encoding="utf-8"))
-assert project["required_stack_version"] == "0.3.13"
-assert project["stack_ref"] == "v0.3.13"
+assert project["required_stack_version"] == "0.3.14"
+assert project["stack_ref"] == "v0.3.14"
 architecture_brief = json.loads((root / ".go" / "architecture" / "briefs" / "project-boundary.json").read_text(encoding="utf-8"))
 assert architecture_brief["status"] == "accepted"
+assert architecture_brief["decision_ids"] == []
 assert architecture_brief["quality_attributes"][0]["threshold"] == 0
 assert (root / ".go" / "architecture" / "events.jsonl").is_file()
 surfaces = "\n".join(
@@ -28,6 +29,7 @@ for required in (
     "compatible=true",
     "ready=true",
     "GO_STACK_ALLOW_DEV=1",
+    "accepted governing decision",
 ):
     assert required in surfaces, required
 PY
