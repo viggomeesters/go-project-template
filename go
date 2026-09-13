@@ -10,4 +10,4 @@ if [ -z "$STACK" ] || [ ! -f "$STACK/cli/go.py" ]; then
 fi
 
 export GO_STACK="$STACK"
-exec python3 "$STACK/cli/go.py" "$@"
+exec "${PYTHON:-python3}" "$STACK/cli/go.py" "$@"

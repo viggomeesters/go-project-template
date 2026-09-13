@@ -9,7 +9,7 @@ if [ -n "${GO_STACK_REF:-}" ]; then
   echo "GO_STACK_REF cannot override .go/project.json; update the repo-local stack_ref contract instead" >&2
   exit 5
 fi
-STACK_REF="$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["stack_ref"])' "$REPO_ROOT/.go/project.json")"
+STACK_REF="$("${PYTHON:-python3}" -c 'import json,sys; print(json.load(open(sys.argv[1]))["stack_ref"])' "$REPO_ROOT/.go/project.json")"
 DEFAULT_STACK="${XDG_CACHE_HOME:-${HOME:?HOME is required}/.cache}/go-workflow-stack/$STACK_REF"
 EXPLICIT_STACK=0
 if [ -n "${GO_STACK:-}" ]; then
@@ -25,6 +25,7 @@ runtime_matches() {
   if [[ "$STACK_REF" =~ ^[0-9a-f]{40}$ ]]; then
     expected_commit="$STACK_REF"
   else
+    [ "$(git -C "$checkout" cat-file -t "refs/tags/$STACK_REF" 2>/dev/null || true)" = "tag" ] || return 1
     expected_commit="$(git -C "$checkout" rev-parse -q --verify "refs/tags/$STACK_REF^{commit}" 2>/dev/null || true)"
   fi
   [ -n "$expected_commit" ] && [ "$head" = "$expected_commit" ]
@@ -38,7 +39,7 @@ managed_origin_matches() {
   [ "$(git -C "$GO_STACK" remote get-url origin 2>/dev/null || true)" = "$STACK_REMOTE" ]
 }
 
-if [ ! -d "$GO_STACK/.git" ]; then
+if ! { [ -e "$GO_STACK/.git" ] && [ "$(git -C "$GO_STACK" rev-parse --is-inside-work-tree 2>/dev/null || true)" = "true" ]; }; then
   mkdir -p "$(dirname "$GO_STACK")"
   if [[ "$STACK_REF" =~ ^[0-9a-f]{40}$ ]]; then
     git clone --no-checkout "$STACK_REMOTE" "$GO_STACK"
@@ -47,6 +48,10 @@ if [ ! -d "$GO_STACK/.git" ]; then
     git clone --branch "$STACK_REF" --depth 1 "$STACK_REMOTE" "$GO_STACK"
   fi
 elif [ "$EXPLICIT_STACK" = "1" ]; then
+  if [ -n "$(git -C "$GO_STACK" status --porcelain)" ] && ! allow_development_checkout; then
+    echo "explicit GO_STACK has uncommitted changes; preserve them and select a clean pinned runtime" >&2
+    exit 3
+  fi
   if ! runtime_matches "$GO_STACK"; then
     if allow_development_checkout; then
       echo "warning: GO_STACK_ALLOW_DEV=1 development override accepts unpinned explicit GO_STACK; expected $STACK_REF" >&2

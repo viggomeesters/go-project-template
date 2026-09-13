@@ -1,0 +1,10 @@
+{
+  "model": {
+    "id": "CHOOSE_SUPPORTED_MODEL",
+    "effort": "high"
+  },
+  "critic_model": {
+    "id": "CHOOSE_SUPPORTED_CRITIC_MODEL",
+    "effort": "medium"
+  }
+}

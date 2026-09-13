@@ -1,0 +1,238 @@
+{
+  "schema": "go-workflow.lifecycle-settings.v1",
+  "execution_defaults": {
+    "schema": "go-workflow.execution-contract.v1",
+    "task_kind": "product",
+    "model": {
+      "id": "CHOOSE_SUPPORTED_MODEL",
+      "effort": "high"
+    },
+    "release": {
+      "mode": "required",
+      "profile": "project-release"
+    },
+    "workspace": {
+      "mode": "task_worktree",
+      "control_state": "repo_local_single_writer",
+      "base_branch": "CHOOSE_BASE_BRANCH"
+    },
+    "phase_profile": "standard"
+  },
+  "release_profiles": {
+    "project-release": {
+      "provider": "git-tag",
+      "remote": "CHOOSE_REMOTE",
+      "branch": "CHOOSE_BASE_BRANCH",
+      "publication": {
+        "version": {
+          "path": "VERSION",
+          "format": "text"
+        },
+        "bump": "minor",
+        "tag_prefix": "v",
+        "changelog": "CHANGELOG.md"
+      },
+      "deployment": {
+        "mode": "none",
+        "reason": "Choose this only when this project has no required deployment; otherwise configure explicit target/package/deploy/observe adapters"
+      }
+    }
+  },
+  "phase_profiles": {
+    "standard": [
+      {
+        "schema": "go-workflow.phase-contract.v1",
+        "id": "build",
+        "inputs": [
+          "Canonical task contract and verified context snapshot",
+          "Current code and raw prior findings"
+        ],
+        "outputs": [
+          "Current phase result; downstream shipping remains pending until observed"
+        ],
+        "required_evidence": [
+          "Executed commands and raw outputs bound to current code",
+          "Requirement coverage for this phase"
+        ],
+        "stop_conditions": [
+          "Failed or stale checks",
+          "Scope or ownership mismatch",
+          "Unknown required remote or deployment observation"
+        ],
+        "handoff": [
+          "Canonical context/evidence references and remaining lifecycle phase"
+        ],
+        "scope": {
+          "read": [
+            ".go/**",
+            "app.py",
+            "VERSION",
+            "CHANGELOG.md",
+            "tests/**"
+          ],
+          "modify": [
+            "app.py",
+            "tests/**"
+          ]
+        },
+        "required_outcomes": [
+          "Only current phase requirements are proven; final task completion requires all required release evidence"
+        ]
+      },
+      {
+        "schema": "go-workflow.phase-contract.v1",
+        "id": "verify",
+        "inputs": [
+          "Canonical task contract and verified context snapshot",
+          "Current code and raw prior findings"
+        ],
+        "outputs": [
+          "Current phase result; downstream shipping remains pending until observed"
+        ],
+        "required_evidence": [
+          "Executed commands and raw outputs bound to current code",
+          "Requirement coverage for this phase"
+        ],
+        "stop_conditions": [
+          "Failed or stale checks",
+          "Scope or ownership mismatch",
+          "Unknown required remote or deployment observation"
+        ],
+        "handoff": [
+          "Canonical context/evidence references and remaining lifecycle phase"
+        ],
+        "scope": {
+          "read": [
+            ".go/**",
+            "app.py",
+            "VERSION",
+            "CHANGELOG.md",
+            "tests/**"
+          ],
+          "modify": []
+        },
+        "required_outcomes": [
+          "Only current phase requirements are proven; final task completion requires all required release evidence"
+        ]
+      },
+      {
+        "schema": "go-workflow.phase-contract.v1",
+        "id": "critic",
+        "inputs": [
+          "Canonical task contract and verified context snapshot",
+          "Current code and raw prior findings"
+        ],
+        "outputs": [
+          "Current phase result; downstream shipping remains pending until observed"
+        ],
+        "required_evidence": [
+          "Executed commands and raw outputs bound to current code",
+          "Requirement coverage for this phase"
+        ],
+        "stop_conditions": [
+          "Failed or stale checks",
+          "Scope or ownership mismatch",
+          "Unknown required remote or deployment observation"
+        ],
+        "handoff": [
+          "Canonical context/evidence references and remaining lifecycle phase"
+        ],
+        "scope": {
+          "read": [
+            ".go/**",
+            "app.py",
+            "VERSION",
+            "CHANGELOG.md",
+            "tests/**"
+          ],
+          "modify": []
+        },
+        "required_outcomes": [
+          "Only current phase requirements are proven; final task completion requires all required release evidence"
+        ]
+      },
+      {
+        "schema": "go-workflow.phase-contract.v1",
+        "id": "repair",
+        "inputs": [
+          "Canonical task contract and verified context snapshot",
+          "Current code and raw prior findings"
+        ],
+        "outputs": [
+          "Current phase result; downstream shipping remains pending until observed"
+        ],
+        "required_evidence": [
+          "Executed commands and raw outputs bound to current code",
+          "Requirement coverage for this phase"
+        ],
+        "stop_conditions": [
+          "Failed or stale checks",
+          "Scope or ownership mismatch",
+          "Unknown required remote or deployment observation"
+        ],
+        "handoff": [
+          "Canonical context/evidence references and remaining lifecycle phase"
+        ],
+        "scope": {
+          "read": [
+            ".go/**",
+            "app.py",
+            "VERSION",
+            "CHANGELOG.md",
+            "tests/**"
+          ],
+          "modify": [
+            "app.py",
+            "tests/**"
+          ]
+        },
+        "required_outcomes": [
+          "Only current phase requirements are proven; final task completion requires all required release evidence"
+        ]
+      },
+      {
+        "schema": "go-workflow.phase-contract.v1",
+        "id": "release",
+        "inputs": [
+          "Canonical task contract and verified context snapshot",
+          "Current code and raw prior findings"
+        ],
+        "outputs": [
+          "Current phase result; downstream shipping remains pending until observed"
+        ],
+        "required_evidence": [
+          "Executed commands and raw outputs bound to current code",
+          "Requirement coverage for this phase"
+        ],
+        "stop_conditions": [
+          "Failed or stale checks",
+          "Scope or ownership mismatch",
+          "Unknown required remote or deployment observation"
+        ],
+        "handoff": [
+          "Canonical context/evidence references and remaining lifecycle phase"
+        ],
+        "scope": {
+          "read": [
+            ".go/**",
+            "app.py",
+            "VERSION",
+            "CHANGELOG.md",
+            "tests/**"
+          ],
+          "modify": [
+            "VERSION",
+            "CHANGELOG.md"
+          ]
+        },
+        "required_outcomes": [
+          "Only current phase requirements are proven; final task completion requires all required release evidence"
+        ]
+      }
+    ]
+  },
+  "default_verification": [
+    "CHOOSE_PROJECT_VERIFICATION_COMMAND",
+    "git diff --check"
+  ]
+}

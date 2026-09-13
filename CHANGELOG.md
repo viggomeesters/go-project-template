@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.15 — explicit lifecycle onboarding and linked runtimes
+
+- Pin the released v0.3.26 stack with real ordered model/task release proof.
+- Add explicit lifecycle, model and complete task examples without active defaults.
+- Accept valid linked runtime worktrees; reject mismatched or dirty explicit runtimes
+  without resetting user work, and honor an explicit Python executable.
+- Keep the starter smoke reusable and source maintenance non-executable in clones.
+
 ## Unreleased
 
 ## 0.3.11 - 2026-08-11

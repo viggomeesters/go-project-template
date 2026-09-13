@@ -1,0 +1,57 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "id": "deliver-release",
+  "project": "CUSTOMIZED_PROJECT_ID",
+  "status": "open",
+  "execution_mode": "agent",
+  "shareable_delivery": "auto",
+  "summary": "Deliver the agreed app change as a verified independent release",
+  "description": "Replace the placeholder acceptance/check with an observable app behavior before intake; use the explicit configured product profile. The controller owns canonical state, versioning and publication.",
+  "scope": {
+    "read": [
+      "AGENTS.md",
+      ".go/**",
+      "app.py",
+      "tests/**",
+      "VERSION",
+      "CHANGELOG.md"
+    ],
+    "modify": [
+      "app.py",
+      "tests/**",
+      "VERSION",
+      "CHANGELOG.md"
+    ]
+  },
+  "acceptance": [
+    "CHOOSE_OBSERVABLE_APP_BEHAVIOR",
+    "Current verification and critic pass; the configured release and any required deployment are independently observed before done"
+  ],
+  "verification": [
+    "CHOOSE_PROJECT_VERIFICATION_COMMAND",
+    "git diff --check"
+  ],
+  "execution_contract": {
+    "schema": "go-workflow.execution-contract.v1",
+    "task_kind": "product",
+    "model": {
+      "id": "CHOOSE_SUPPORTED_MODEL",
+      "effort": "high"
+    },
+    "release": {
+      "mode": "required",
+      "profile": "project-release"
+    },
+    "workspace": {
+      "mode": "task_worktree",
+      "control_state": "repo_local_single_writer",
+      "base_branch": "CHOOSE_BASE_BRANCH"
+    },
+    "phase_profile": "standard"
+  },
+  "claim": {
+    "agent": null,
+    "claimed_at": null
+  }
+}

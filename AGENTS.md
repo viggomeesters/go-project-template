@@ -32,3 +32,25 @@ Run `bash scripts/check.sh` for the stack/template pairing check. Preserve unrel
 ## GitHub Actions boundary
 
 GitHub Actions are off limits. Do not create, edit, enable, trigger, dispatch, inspect, wait for, or use GitHub Actions workflows/checks as verification evidence. Existing files under `.github/workflows/` are not authorization to interact with GitHub Actions. Use local checks, a local Linux container, or another explicitly approved verification route instead.
+
+## Source maintenance and project onboarding
+
+When maintaining the `go-project-template` source, keep `project_mode: template`. Step 4 applies to a copied
+starter being customized into a new project; it does not authorize turning this
+source repository into an app. Follow `docs/abc-onboarding.md` for explicit settings.
+No execution_defaults, user model/account, publication command or production target
+is selected by the starter. The named source maintenance Git verifier and dependency
+mapping are source metadata; `spike` replaces inherited `.go` during customization.
+
+Keep active/pending source maintenance tasks out of published starter trees. Publish
+completed maintenance records and raw proof as non-executable history in `.go/evidence/`.
+Retain canonical records while dependent source work still needs them; archive the
+completed source queue only after dependent work and its proof are complete. Preserve
+all source evidence and the reusable open smoke task. A copied project must not
+inherit source maintenance claims, run authority or runnable tasks.
+
+For product intake, include actual version/changelog paths in task modify scope and
+use real project checks. Workers report R# evidence; the canonical controller owns
+outcome writes, publication/readback and final completion. A critic before publication
+judges candidate readiness and leaves downstream shipping proof pending. Keep one
+owned worktree across build/critic/repair; do not create one per model change.

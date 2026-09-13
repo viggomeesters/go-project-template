@@ -99,3 +99,12 @@ Instead, the project repo carries its own operational contract.
 - Improve the stack when commands/schemas need to change.
 - Improve the template when the starter `.go/` shape should change.
 - Improve a real project's `.go/` files when that project direction/tasks/evidence changes.
+
+## Explicit task lifecycle
+
+The v0.3.26 stack provides opt-in per-task model/effort, one owned worktree,
+canonical contexts, bounded resume, executed verification, critic/repair and
+configured publication/deployment readback. See `abc-onboarding.md`. The source
+starter carries no execution_defaults; example contracts are inputs to customize,
+not authorization. Source maintenance profiles, decisions and history describe this
+template and are removed from the inherited `.go` when `spike` customizes a copy.

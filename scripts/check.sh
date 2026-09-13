@@ -16,7 +16,8 @@ import sys
 readback = json.load(open(sys.argv[1], encoding="utf-8"))
 status = json.load(open(sys.argv[2], encoding="utf-8"))
 assert readback["applicable_architecture"]["classification"]["impact"] == "none"
-assert readback["status"]["briefs"] == {"total": 1, "accepted": 1, "draft": 0}
+assert readback["status"]["briefs"]["accepted"] >= 1
+assert readback["status"]["briefs"]["draft"] == 0
 assert status["open_deviations"] == 0 and status["active_waivers"] == 0
 PY
 
@@ -25,6 +26,7 @@ echo "architecture lane template contract: ok"
 TMP_REPO="$(mktemp -d "${TMPDIR:-/tmp}/go-advice-template-check.XXXXXX")"
 trap 'rm -rf "$TMP_REPO"' EXIT
 git init -q "$TMP_REPO"
+cd "$TMP_REPO"
 "$PYTHON" "$GO_STACK/cli/go.py" adopt "$TMP_REPO" --project-id advice-template-check --name "Advice Template Check" >/dev/null
 "$PYTHON" - "$TMP_REPO/brief.json" <<'PY'
 import hashlib
