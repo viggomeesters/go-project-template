@@ -1,0 +1,94 @@
+{
+  "schema": "go-workflow.architecture-brief.v1",
+  "kind": "architecture_brief",
+  "id": "abc-onboarding",
+  "project": "go-project-template",
+  "title": "Explicit lifecycle onboarding in a reusable pinned starter",
+  "status": "accepted",
+  "owner": "go-workflow-stack maintainers",
+  "outcomes": [
+    "Fresh clones select their own lifecycle settings and retain one task workspace across model phases."
+  ],
+  "scope": {
+    "in": [
+      "Released v0.3.26 pin, ordinary/linked runtime discovery, explicit example settings and task intake, reusable smoke and preserved source maintenance history"
+    ],
+    "out": [
+      "Default user model/provider/account/production target",
+      "Persistent-session/subagent adapters",
+      "Global skill installation",
+      "Source template customization into an app"
+    ],
+    "systems": [
+      "go-project-template",
+      "go-workflow-stack"
+    ],
+    "boundaries": [
+      "Template source remains template; spike customization creates a new .go and drops source maintenance profiles/history; canonical source owns maintenance state"
+    ]
+  },
+  "stakeholders": [
+    {
+      "role": "workflow-user",
+      "concerns": [
+        "Self-contained verified task releases",
+        "Explicit model choice"
+      ],
+      "decision_rights": [
+        "Authorize execution and choose model; GO on 2026-09-13"
+      ]
+    },
+    {
+      "role": "executing-agent",
+      "concerns": [
+        "Backward compatibility",
+        "Verifiable state transitions"
+      ],
+      "decision_rights": [
+        "Implement bounded contract choices and document compatibility behavior"
+      ]
+    }
+  ],
+  "constraints": [
+    "Keep project_mode template and no execution_defaults. Example settings are explicit inputs, not active defaults.",
+    "Only the reusable smoke task is published as open work. Active/pending maintenance tasks remain local; completed records and raw proof are archived as non-executable .go/evidence history. Retain canonical records until dependent source work completes, then archive the completed source queue with its evidence intact. Do not export source run authority into new project onboarding.",
+    "Source maintenance uses a read-only local Git-tag verifier (origin/main) with no model or publication defaults; actual hosted release creation/readback is a separate authorized source maintenance action. Spike replaces the source .go when customizing a copied template.",
+    "Use exact released stack ref and commit, accept valid .git directories or linked-worktree files, reject mismatched/dirty explicit runtimes without silently resetting user work.",
+    "Document explicit model/effort, version source, release target, verification, base/workspace, phase inputs/evidence and optional deployment policy; no inferred execution rights.",
+    "No GitHub Actions. Model examples need actual runtime catalog validation."
+  ],
+  "quality_attributes": [
+    {
+      "id": "exact-runtime",
+      "scenario": "Launch ordinary and linked pinned checkouts",
+      "measure": "Accepted mismatched runtime or overwritten user work",
+      "threshold": 0
+    },
+    {
+      "id": "explicit-onboarding",
+      "scenario": "Customize a fresh copied starter",
+      "measure": "Inherited source model/account/execution authority",
+      "threshold": 0
+    },
+    {
+      "id": "starter-queue",
+      "scenario": "Clone published product tree",
+      "measure": "Runnable source maintenance backlog",
+      "threshold": 0
+    },
+    {
+      "id": "phase-continuity",
+      "scenario": "Configure lifecycle workspace and phase contracts",
+      "measure": "Implicit worktree-per-model or canonical worker writes",
+      "threshold": 0
+    }
+  ],
+  "risks": [
+    "Example commands/settings need project-specific values and checks before execution.",
+    "Template source maintenance planning is local until completed records can be published; archived evidence and releases preserve completed work."
+  ],
+  "open_questions": [],
+  "decision_ids": [
+    "abc-template-d01-opt-in-starter"
+  ]
+}

@@ -6,9 +6,19 @@
   "source_of_truth": "repo-local",
   "contract_version": 2,
   "project_mode": "template",
-  "required_stack_version": "0.3.14",
-  "stack_ref": "v0.3.14",
+  "required_stack_version": "0.3.26",
+  "stack_ref": "v0.3.26",
   "default_verification": [
     "bash scripts/validate-go.sh"
-  ]
+  ],
+  "release_profiles": {
+    "template-source-maintenance": {
+      "provider": "git-tag",
+      "remote": "origin",
+      "branch": "main"
+    }
+  },
+  "dependency_projects": {
+    "go-workflow-stack": "../go-workflow-stack"
+  }
 }
