@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "evidence": {
+    "path": ".go/runs/abc-template-02/completion/verification-727f97b8ff194ed396d07ebd053ee906.json",
+    "sha256": "d3df9546f90cf7d94d1baa459c5cd2b141ddec6ff24c50e707a51304689272b6"
+  },
+  "binding": {
+    "task_id": "abc-template-02",
+    "project": "go-project-template",
+    "contract_digest": "fedd2ce34d73397319a3ac5aac25faeec81acd70f82918e46df306a7f4725d5a",
+    "revision": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c",
+    "content_digest": "ea34ecf95f7568f56cf33cf723dbf8a3428b99ea2b63e0b98769027d048ba7a0"
+  }
+}

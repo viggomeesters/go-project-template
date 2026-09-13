@@ -1,0 +1,15 @@
+{
+  "tag": "v0.3.16",
+  "commit": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c",
+  "hosted_readback": {
+    "isDraft": false,
+    "isPrerelease": false,
+    "publishedAt": "2026-09-13T19:49:22Z",
+    "tagName": "v0.3.16",
+    "url": "https://github.com/viggomeesters/go-project-template/releases/tag/v0.3.16"
+  },
+  "completion_readback": {
+    "path": ".go/runs/abc-template-02/completion/release-8c8d7c2acc03484da3c632d3718e459b.json",
+    "sha256": "1f1f72dff952002af0412be7a9bc1fca38cf4c1cb43719fc3421f473c37c7221"
+  }
+}

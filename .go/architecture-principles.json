@@ -13,54 +13,54 @@
       "id": "abc-release-evidence",
       "statement": "de runner beheert de volledige release en sluit de taak pas na het vereiste bewijs.",
       "rationale": "Model-success en lokaal afgerond werk bewijzen geen gepubliceerde versie.",
-      "enforcement": "Released stack v0.3.26 provides the opt-in contract; source template onboarding and clone proof are abc-template-01/02. No default model, publication or deployment authority is inferred.",
+      "enforcement": "Released stack v0.3.26 and template v0.3.16 prove the opt-in model/lifecycle contract, owned task workspace and final evidence gates. New projects must explicitly choose profiles and destinations; no implicit model, publication or deployment authority.",
       "status": "accepted",
-      "implementation_status": "released_stack_available_template_adoption_in_progress",
+      "implementation_status": "released_and_verified",
       "plan_ref": ".go/plans/abc-lifecycle.json"
     },
     {
       "id": "abc-explicit-model-contract",
       "statement": "model, effort en effectieve runtime-instellingen zijn expliciet en blijven behouden bij hervatten.",
       "rationale": "Voorkomt metadata zonder effect en stille modelwissels.",
-      "enforcement": "Released stack v0.3.26 provides the opt-in contract; source template onboarding and clone proof are abc-template-01/02. No default model, publication or deployment authority is inferred.",
+      "enforcement": "Released stack v0.3.26 and template v0.3.16 prove the opt-in model/lifecycle contract, owned task workspace and final evidence gates. New projects must explicitly choose profiles and destinations; no implicit model, publication or deployment authority.",
       "status": "accepted",
-      "implementation_status": "released_stack_available_template_adoption_in_progress",
+      "implementation_status": "released_and_verified",
       "plan_ref": ".go/plans/abc-lifecycle.json"
     },
     {
       "id": "abc-durable-worker-context",
       "statement": "voortgang en verifieerbare contextsnapshots leven in .go; workers kunnen op veilige grenzen worden vervangen.",
       "rationale": "Overdracht en herstel mogen niet afhankelijk zijn van één levende chat.",
-      "enforcement": "Released stack v0.3.26 provides the opt-in contract; source template onboarding and clone proof are abc-template-01/02. No default model, publication or deployment authority is inferred.",
+      "enforcement": "Released stack v0.3.26 and template v0.3.16 prove the opt-in model/lifecycle contract, owned task workspace and final evidence gates. New projects must explicitly choose profiles and destinations; no implicit model, publication or deployment authority.",
       "status": "accepted",
-      "implementation_status": "released_stack_available_template_adoption_in_progress",
+      "implementation_status": "released_and_verified",
       "plan_ref": ".go/plans/abc-lifecycle.json"
     },
     {
       "id": "abc-task-workspace",
       "statement": "één branch/worktree per taak met gevalideerde identiteit, scope en exclusief schrijverschap; modelwissels behouden de werkplek.",
       "rationale": "Voorkomt gebruikerswerkverlies, dubbele workers en losse worktreequeues.",
-      "enforcement": "Released stack v0.3.26 provides the opt-in contract; source template onboarding and clone proof are abc-template-01/02. No default model, publication or deployment authority is inferred.",
+      "enforcement": "Released stack v0.3.26 and template v0.3.16 prove the opt-in model/lifecycle contract, owned task workspace and final evidence gates. New projects must explicitly choose profiles and destinations; no implicit model, publication or deployment authority.",
       "status": "accepted",
-      "implementation_status": "released_stack_available_template_adoption_in_progress",
+      "implementation_status": "released_and_verified",
       "plan_ref": ".go/plans/abc-lifecycle.json"
     },
     {
       "id": "abc-final-candidate-proof",
       "statement": "fasebewijs is getypeerd en aan geteste inhoud gebonden; integratie of versievoorbereiding invalideert getroffen checks.",
       "rationale": "Veld-aanwezigheid en groen vóór rebase bewijzen geen correcte release.",
-      "enforcement": "Released stack v0.3.26 provides the opt-in contract; source template onboarding and clone proof are abc-template-01/02. No default model, publication or deployment authority is inferred.",
+      "enforcement": "Released stack v0.3.26 and template v0.3.16 prove the opt-in model/lifecycle contract, owned task workspace and final evidence gates. New projects must explicitly choose profiles and destinations; no implicit model, publication or deployment authority.",
       "status": "accepted",
-      "implementation_status": "released_stack_available_template_adoption_in_progress",
+      "implementation_status": "released_and_verified",
       "plan_ref": ".go/plans/abc-lifecycle.json"
     },
     {
       "id": "abc-selective-legacy-reuse",
       "statement": "vertaal relevante fasecontracten en regressies; laad skills naar taak/risico en behoud de verplichte lifecycle.",
       "rationale": "Behoud oude garanties zonder de monolithische runtime of ongewenste automatisering terug te brengen.",
-      "enforcement": "Released stack v0.3.26 provides the opt-in contract; source template onboarding and clone proof are abc-template-01/02. No default model, publication or deployment authority is inferred.",
+      "enforcement": "Released stack v0.3.26 and template v0.3.16 prove the opt-in model/lifecycle contract, owned task workspace and final evidence gates. New projects must explicitly choose profiles and destinations; no implicit model, publication or deployment authority.",
       "status": "accepted",
-      "implementation_status": "released_stack_available_template_adoption_in_progress",
+      "implementation_status": "released_and_verified",
       "plan_ref": ".go/plans/abc-lifecycle.json"
     }
   ]

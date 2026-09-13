@@ -1,0 +1,347 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "shareable_delivery": "auto",
+  "id": "abc-template-01",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Release- en modelprofielen in het template opnemen",
+  "description": "Laat nieuwe projectclones de vrijgegeven A/B/C-runtime en duidelijke onboarding voor release, model en context erven; houd echte templateonderhoudstaken gescheiden van de herbruikbare smoke-fixture.\nAfhankelijk van: go-workflow-stack:abc-08. Controleer releasebewijs vóór claim; de huidige runtime dwingt dit nog niet af. Oude inzichten en bronverwijzingen: .go/plans/legacy-insights.json. Gepland gedrag; uitsluitend een latere uitvoeringsopdracht autoriseert uitvoering/publicatie.",
+  "scope": {
+    "read": [
+      "AGENTS.md",
+      ".go/**",
+      "scripts/**",
+      "docs/**",
+      "go",
+      "README.md"
+    ],
+    "modify": [
+      ".go/project.json",
+      ".go/tasks/open/task-schema-smoke.json",
+      "go",
+      "scripts/bootstrap-stack.sh",
+      "scripts/validate-go.sh",
+      "AGENTS.md",
+      "README.md",
+      "docs/architecture.md",
+      "docs/practical-architecture.md",
+      "docs/abc-onboarding.md",
+      "examples/abc/**",
+      "CHANGELOG.md",
+      "docs/releases/**",
+      "scripts/check.sh",
+      "Makefile"
+    ]
+  },
+  "acceptance": [
+    "Pin een daadwerkelijk vrijgegeven compatibele stackversie en controleer exact commit/tag; leg geen nog niet beschikbare A/B/C-defaults vast.",
+    "Onboarding verzamelt productversiebron, toegestane releasebestemming, verificatiecommando’s en model/effort; geen account-, provider- of productietarget aannemen.",
+    "Een voorbeeldtaak is zelfstandig releasbaar met expliciete context- en bewijsvoorwaarden; modelkeuze wordt uitgelegd als runtime-instelling.",
+    "Het template blijft project_mode template. Een verse clone bevat geen uitvoerbare onderhoudsbacklog van de bronrepository; de smoke-fixture blijft herbruikbaar en wordt niet als echte apprelease voorgesteld.",
+    "De launcher werkt met exact gepinde checkouts én geldige linked Git-worktrees, zonder development override; herken .git-bestanden via Git en bewijs beide startsituaties.",
+    "Lever deze begrensde wijziging als zelfstandig verifieerbare, achterwaarts compatibele release op: relevante checks en critic groen, documentatie/changelog en passende versie bijgewerkt, scoped commit/integratie/push, annotated tag/publicatie en remote readback bewezen. Ontbrekende publicatierechten of bewijs blijven expliciete blockers. Deze intake autoriseert nu uitsluitend planning.",
+    "Onboarding legt expliciete basisbranch, werkplekbeleid, canonieke control-state en fase-/bewijsprofielen vast; beschrijf behoud van gebruikerswerk en dezelfde werkplek bij modelwissels. Voor opt-in taakworktrees is een werkelijk werkende linked-worktree-launcher vereist, ook met .git als bestand."
+  ],
+  "verification": [
+    "python3 examples/abc/check-onboarding.py",
+    "bash scripts/check.sh",
+    "bash scripts/validate-go.sh",
+    "git diff --check"
+  ],
+  "claim": {
+    "agent": "codex-astra-high",
+    "claimed_at": "2026-09-13T21:13:34+02:00",
+    "base_commit": "686270b1a0b8d64cf242ab148ed4439ae94386af"
+  },
+  "work_status": "completed",
+  "review_status": "approved",
+  "review_history": [
+    {
+      "created_at": "2026-09-13T21:31:00+02:00",
+      "agent": "codex-astra-high",
+      "status": "approved",
+      "evidence": "Same-agent review, executed bound checks and immutable fresh-clone checks passed; fresh remote release readback confirmed. No independent identity attestation.",
+      "transaction_id": "4f8e7cfa496e4b05be884553ea4592a7",
+      "delivery": {
+        "delivery_id": "workflow-contract-v1",
+        "html": ".go/deliveries/workflow-contract-v1/index.html",
+        "manifest": ".go/deliveries/workflow-contract-v1/manifest.json",
+        "source_sha256": "45d86011242060e65c3e722698b8540c4fda5a3d528f9b067006abc2fa3e4986",
+        "html_sha256": "651791ea4a4f72493e871a59091df5dcf3ae12b30787082eb369eeca60731e8a"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "schema": "go-workflow.finish-evidence.v1",
+      "created_at": "2026-09-13T21:31:00+02:00",
+      "task_id": "abc-template-01",
+      "agent": "codex-astra-high",
+      "summary": "changed_files=AGENTS.md,CHANGELOG.md,Makefile,README.md,docs/abc-onboarding.md,docs/architecture.md,docs/practical-architecture.md,docs/releases/v0.3.15.md,examples/abc/check-onboarding.py,examples/abc/github-profile.example.json,examples/abc/lifecycle-settings.example.json,examples/abc/model-override.example.json,examples/abc/task.example.json,go,scripts/bootstrap-stack.sh,scripts/check.sh,scripts/validate-go.sh; verification_command=declared completion checks and exact candidate fresh-clone gates; verification_result=passed; critic=passed same-agent review; runtime=Codex desktop; model=user-selected gpt-6-astra high (effective identity unconfirmed); billing_mode=unknown; release=v0.3.15 https://github.com/viggomeesters/go-project-template/releases/tag/v0.3.15; Self-reflect: no durable agent/process improvement needed; no skill/memory/config change. In-scope fixture issues repaired and verified.",
+      "changed_files": [
+        "AGENTS.md",
+        "CHANGELOG.md",
+        "Makefile",
+        "README.md",
+        "docs/abc-onboarding.md",
+        "docs/architecture.md",
+        "docs/practical-architecture.md",
+        "docs/releases/v0.3.15.md",
+        "examples/abc/check-onboarding.py",
+        "examples/abc/github-profile.example.json",
+        "examples/abc/lifecycle-settings.example.json",
+        "examples/abc/model-override.example.json",
+        "examples/abc/task.example.json",
+        "go",
+        "scripts/bootstrap-stack.sh",
+        "scripts/check.sh",
+        "scripts/validate-go.sh"
+      ],
+      "no_diff": false,
+      "git": {
+        "claim_base_commit": "686270b1a0b8d64cf242ab148ed4439ae94386af",
+        "observed_head_commit": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f"
+      },
+      "verification": {
+        "command": "declared completion checks and exact candidate fresh-clone gates",
+        "result": "passed"
+      },
+      "runtime": {
+        "agent": "codex-astra-high",
+        "runtime": "Codex desktop",
+        "model": "user-selected gpt-6-astra high (effective identity unconfirmed)",
+        "billing_mode": "unknown"
+      },
+      "usage": {
+        "schema": "go-workflow.usage-attribution.v1",
+        "runtime_kind": "Codex desktop",
+        "billing_mode": "unknown",
+        "owner": "codex-astra-high",
+        "model": "user-selected gpt-6-astra high (effective identity unconfirmed)",
+        "token_estimate": null,
+        "api_equivalent_cost_usd": null,
+        "provider_invoice_cost_usd": null,
+        "cost_label": "api_equivalent_not_invoice_cost"
+      },
+      "review": {
+        "outcome": "passed same-agent review",
+        "skip_reason": null
+      }
+    }
+  ],
+  "order": 110,
+  "dependencies": [
+    {
+      "project": "go-workflow-stack",
+      "task_id": "abc-08",
+      "requires": "done_with_required_release_evidence"
+    }
+  ],
+  "planning": {
+    "status": "prepared",
+    "implementation_status": "completed",
+    "source_ref": "codex-task:01a09a21-cca9-7a90-84af-80c781e537ec; user Go task, planning only, 2026-09-13",
+    "plan_ref": ".go/plans/abc-lifecycle.json",
+    "dependency_enforcement": "agent_preclaim_until_abc-01",
+    "coordinator_project": "go-workflow-stack",
+    "created_on": "2026-09-13",
+    "updated_on": "2026-09-13",
+    "latest_source_ref": "2026-09-13 user: Verwerk die oude inzichten; Go task; planning only",
+    "legacy_insights_ref": ".go/plans/legacy-insights.json",
+    "execution_authority": {
+      "source": "User GO and continue",
+      "ship_policy": "push",
+      "allow_push": true,
+      "production_deployment": "not authorized; fixtures only"
+    },
+    "scope_note": "Keep source project_mode template. Source maintenance queue stays local; completed records/raw proof are published as non-executable history archives; operational source records remain until dependent source tasks are complete; product trees expose only reusable smoke work. Source read-only Git-tag verifier has no publication command/model default and is discarded by project customization. Preserve restored historical planning and add released v0.3.26 onboarding/linked-checkout proof. Update existing architecture check to validate the named starter boundary without assuming there can only be one accepted brief; disposable mutation fixtures execute from their own repository. Move narrow Makefile/check.sh fixture cwd compatibility repair forward from template-02 because template-01 requires the existing pairing gate."
+  },
+  "builds_on": [
+    {
+      "project": "go-project-template",
+      "task_id": "prove-v038-task-lifecycle-defaults"
+    },
+    {
+      "project": "go-project-template",
+      "task_id": "isolate-template-bootstrap-runtime"
+    },
+    {
+      "project": "go-project-template",
+      "task_id": "advice-model-07-template"
+    }
+  ],
+  "execution_selection": {
+    "status": "user_selected",
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "high",
+    "effective_confirmation": "User-selected current session; independent identity unconfirmed"
+  },
+  "release_intent": {
+    "status": "published",
+    "version": "0.3.15",
+    "policy": "independent_task_release",
+    "receipt_required": true
+  },
+  "outcome_tracking_version": 1,
+  "intent_source": {
+    "text": "Laat nieuwe projectclones de vrijgegeven A/B/C-runtime en duidelijke onboarding voor release, model en context erven; houd echte templateonderhoudstaken gescheiden van de herbruikbare smoke-fixture.",
+    "sha256": "023b723c91db9705dd594fa175944075b4f2f08017f01173271a5360ce68fed4",
+    "source_ref": "codex-task:01a09a21-cca9-7a90-84af-80c781e537ec; user Go task, planning only, 2026-09-13"
+  },
+  "requested_outcomes": [
+    {
+      "id": "R1",
+      "text": "Pin een daadwerkelijk vrijgegeven compatibele stackversie en controleer exact commit/tag; leg geen nog niet beschikbare A/B/C-defaults vast.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:29:52+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-01/completion/verification-b928523d0b964b00a9a82ee40d5b542d.json"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "text": "Onboarding verzamelt productversiebron, toegestane releasebestemming, verificatiecommando’s en model/effort; geen account-, provider- of productietarget aannemen.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:29:52+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-01/completion/verification-b928523d0b964b00a9a82ee40d5b542d.json"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "text": "Een voorbeeldtaak is zelfstandig releasbaar met expliciete context- en bewijsvoorwaarden; modelkeuze wordt uitgelegd als runtime-instelling.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:29:52+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-01/completion/verification-b928523d0b964b00a9a82ee40d5b542d.json"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "text": "Het template blijft project_mode template. Een verse clone bevat geen uitvoerbare onderhoudsbacklog van de bronrepository; de smoke-fixture blijft herbruikbaar en wordt niet als echte apprelease voorgesteld.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:29:52+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-01/completion/verification-b928523d0b964b00a9a82ee40d5b542d.json"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "text": "De launcher werkt met exact gepinde checkouts én geldige linked Git-worktrees, zonder development override; herken .git-bestanden via Git en bewijs beide startsituaties.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:29:52+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-01/completion/verification-b928523d0b964b00a9a82ee40d5b542d.json"
+        }
+      ]
+    },
+    {
+      "id": "R6",
+      "text": "Lever deze begrensde wijziging als zelfstandig verifieerbare, achterwaarts compatibele release op: relevante checks en critic groen, documentatie/changelog en passende versie bijgewerkt, scoped commit/integratie/push, annotated tag/publicatie en remote readback bewezen. Ontbrekende publicatierechten of bewijs blijven expliciete blockers. Deze intake autoriseert nu uitsluitend planning.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:30:59+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-01/completion/release-5ecd1d2047aa42d594506da6a5deeda4.json"
+        }
+      ]
+    },
+    {
+      "id": "R7",
+      "text": "Onboarding legt expliciete basisbranch, werkplekbeleid, canonieke control-state en fase-/bewijsprofielen vast; beschrijf behoud van gebruikerswerk en dezelfde werkplek bij modelwissels. Voor opt-in taakworktrees is een werkelijk werkende linked-worktree-launcher vereist, ook met .git als bestand.",
+      "source": "legacy_insights_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:29:52+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-01/completion/verification-b928523d0b964b00a9a82ee40d5b542d.json"
+        }
+      ]
+    }
+  ],
+  "verification_notes": [
+    "The task-specific test file/script is an expected deliverable, not asserted to exist or pass today.",
+    "At execution, use Python 3.11+ and the freshly verified pinned runtime; preserve unrelated working-tree changes.",
+    "Run relevant regressions and the repository release checks before future publication; no GitHub Actions.",
+    "Select a supported current model at execution; illustrative Terra/Astra examples do not assign a model to this task."
+  ],
+  "execution_contract": {
+    "schema": "go-workflow.execution-contract.v1",
+    "task_kind": "product",
+    "model": {
+      "id": "gpt-6-astra",
+      "effort": "high"
+    },
+    "release": {
+      "mode": "required",
+      "profile": "template-source-maintenance"
+    },
+    "workspace": {
+      "mode": "task_worktree",
+      "control_state": "repo_local_single_writer",
+      "base_branch": "main"
+    }
+  },
+  "architecture": {
+    "impact": "material",
+    "scope_refs": [
+      "abc-onboarding"
+    ],
+    "concerns": [],
+    "decision_ids": [
+      "abc-template-d01-opt-in-starter"
+    ],
+    "conformance_required": true,
+    "human_gate": "none"
+  },
+  "completion_evidence": {
+    "schema": "go-workflow.completion-evidence.v1",
+    "verification": {
+      "path": ".go/runs/abc-template-01/completion/verification-b928523d0b964b00a9a82ee40d5b542d.json",
+      "sha256": "ebb7ea27b4d8412f3f875309d4ee9d5b0ef8266e295050ca5ecb0a5806d1a751"
+    },
+    "critic": {
+      "path": ".go/runs/abc-template-01/completion/critic-48fbeaaa2bc043e580d277a77427aec5.json",
+      "sha256": "cc8e0d0421ee6b592ed1d8c66b0f2a43f6846b52e0903abddf66bd7237c7a186"
+    },
+    "release": {
+      "path": ".go/runs/abc-template-01/completion/release-5ecd1d2047aa42d594506da6a5deeda4.json",
+      "sha256": "af481014f77646ca9b8e8b4508be6f1fe8573a78269ce9bd7681a1a00d3e98c5"
+    }
+  },
+  "release_receipt": {
+    "schema": "go-workflow.release-receipt.v1",
+    "status": "verified",
+    "task_id": "abc-template-01",
+    "project": "go-project-template",
+    "commit": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+    "tag": "v0.3.15",
+    "evidence": [
+      ".go/runs/abc-template-01/completion/release-5ecd1d2047aa42d594506da6a5deeda4.json"
+    ]
+  }
+}

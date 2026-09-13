@@ -2,8 +2,8 @@
   "kind": "planning_artifact",
   "format_version": 1,
   "id": "abc-lifecycle",
-  "status": "completed",
-  "implementation_status": "completed",
+  "status": "in_progress",
+  "implementation_status": "stack_complete_template_in_progress",
   "source_ref": "codex-task:01a09a21-cca9-7a90-84af-80c781e537ec; user Go task, planning only, 2026-09-13",
   "created_on": "2026-09-13",
   "coordinator_project": "go-workflow-stack",
@@ -28,7 +28,7 @@
     "Verse templateclones erven de gevalideerde contracten zonder onderhoudsbacklog of fictieve historische releasebewijzen.",
     "Een taak behoudt één gecontroleerde branch/worktree bij modelwissels en herstel; alleen de definitieve geïntegreerde revisie met geldig fase- en releasebewijs kan done worden."
   ],
-  "planning_contract": "All thirteen ABC tasks are completed and released. Stack v0.3.26 implements opt-in lifecycle/model/workspace control; template v0.3.16 proves onboarding and ordered releases. Completed template source tasks are archived outside the reusable starter queue.",
+  "planning_contract": "Stack ABC implementation shipped through v0.3.26; explicit template onboarding shipped v0.3.15. Final full clone lifecycle proof is abc-template-02.",
   "execution_boundary": {
     "authorized_now": [
       "claim",
@@ -45,7 +45,7 @@
     ],
     "source": "User GO and continue supersede the historical planning-only intake."
   },
-  "sequence_note": "No ABC implementation tasks remain. New projects explicitly choose models, checks, workspace and release/deployment policies before Go.",
+  "sequence_note": "Eleven stack tasks and abc-template-01 completed; execute abc-template-02 serially.",
   "assumptions": [
     "A applies to every newly configured product task; historical tasks and template fixtures need an explicit compatibility policy in abc-01.",
     "A fixed Python runner with fresh phase workers is the planned baseline; no automatic model escalation or parallel subagents are assumed.",
@@ -116,9 +116,7 @@
           "task_id": "abc-08",
           "requires": "done_with_required_release_evidence"
         }
-      ],
-      "status": "completed",
-      "archive_ref": ".go/evidence/abc-template-01-history/manifest.json"
+      ]
     },
     {
       "project": "go-project-template",
@@ -135,9 +133,7 @@
           "task_id": "abc-10",
           "requires": "done_with_required_release_evidence"
         }
-      ],
-      "status": "completed",
-      "archive_ref": ".go/evidence/abc-template-02-history/manifest.json"
+      ]
     }
   ],
   "next_ready_after_future_execution_authorization": [],
@@ -152,23 +148,15 @@
     }
   ],
   "validation": {
-    "status": "passed",
-    "evidence_refs": [
-      ".go/evidence/abc-template-01-history/manifest.json",
-      ".go/evidence/abc-template-02-history/manifest.json",
-      ".go/evidence/abc-source-history-final/manifest.json"
-    ],
-    "limits": [
-      "Primary project checkout remains controller; owned task worktrees and ordinary/linked exact runtimes supported",
-      "Fresh native phase workers supported; persistent-session/subagent adapters deferred",
-      "Deterministic template campaign separated from the actual v0.3.26 live proof; no hosted deployment asserted"
-    ]
+    "status": "task01_passed",
+    "evidence_ref": ".go/evidence/abc-template-01-history/manifest.json",
+    "task02": "pending"
   },
   "updated_on": "2026-09-13",
   "latest_source_ref": "2026-09-13 user: Verwerk die oude inzichten; Go task; planning only",
   "legacy_insights_ref": ".go/plans/legacy-insights.json",
   "stack_release": "v0.3.26",
-  "active_task": null,
+  "active_task": "abc-template-02",
   "intake_history": {
     "planning_contract": "This manifest and supplemental task metadata describe planned work; the current runtime does not enforce the dependency graph or implement model/release dispatch.",
     "execution_boundary": {
@@ -259,10 +247,9 @@
     ]
   },
   "completed_tasks": [
-    "abc-template-01",
-    "abc-template-02"
+    "abc-template-01"
   ],
-  "template_release": "v0.3.16",
+  "template_release": "v0.3.15",
   "execution_quality_rules": [
     "Use an explicit repository cwd or git -C for each command; scratch helper paths stay absolute when crossing repositories. Read exact CLI help before first use of a subcommand rather than guessing flags.",
     "Never edit a shell script or its dependencies while it is executing. Finish or stop the probe, commit the repaired candidate, then verify that immutable candidate in dedicated clones and capture its exact revision."

@@ -1,0 +1,22 @@
+{
+  "schema": "go-workflow.critic-review.v1",
+  "task_id": "abc-template-02",
+  "project": "go-project-template",
+  "contract_digest": "fedd2ce34d73397319a3ac5aac25faeec81acd70f82918e46df306a7f4725d5a",
+  "revision": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c",
+  "content_digest": "ea34ecf95f7568f56cf33cf723dbf8a3428b99ea2b63e0b98769027d048ba7a0",
+  "status": "passed",
+  "reviewer": "codex-astra-high",
+  "review_mode": "same_agent",
+  "summary": "Reviewed full template campaign and fixtures, docs and outer Makefile checks. Both exact ordinary/linked runtimes customize fresh project clones and run two real local Git releases through native CLI doubles. First build/repair uses Terra High, critic uses Astra Medium; second task uses Astra Medium. Budgeted build resume retains run and workspace, critic C1 reaches repair, both annotated tags have remote readback/ancestry, repeated completion does not dispatch or republish. A real unmerged index is preserved when integration is refused; missing destination is rejected. Primary project controller requirement is explicit and an unregistered linked controller is refused; owned linked task worktrees read canonical state. Eighteen released-stack regressions cover lost push/GitHub acknowledgement, migration rollback/resume, frozen/unavailable models, unknown/conflicting remotes and cleanup preservation/retry. Live v0.3.26 sample is separately attributed and all 53 runtime hashes match; no hosted deployment/model identity is inferred. A runtime path with spaces exposed the Makefile quoting defect; red/green probe and committed final macOS/Linux gates prove its repair. No changed product content was edited during final verification.",
+  "blocking_findings": [],
+  "reviewed_paths": [
+    "CHANGELOG.md",
+    "Makefile",
+    "docs/abc-onboarding.md",
+    "docs/releases/v0.3.16.md",
+    "docs/repo-complete.md",
+    "scripts/test-abc-template.sh",
+    "scripts/test-template.sh"
+  ]
+}

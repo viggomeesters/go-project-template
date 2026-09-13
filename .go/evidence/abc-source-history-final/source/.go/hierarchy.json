@@ -18,10 +18,11 @@
         {
           "id": "abc-template",
           "title": "Draagbare A/B/C-projectlifecycle",
-          "description": "Completed source maintenance, archived outside the runnable starter queue.",
-          "tasks": [],
-          "status": "completed",
-          "source_history_ref": ".go/evidence/abc-source-history-final/manifest.json"
+          "description": "Gepland A/B/C-werk, aangevuld met geselecteerde legacy fase-/bewijs- en werkplekcontracten; nog niet geïmplementeerd. Zie .go/plans/abc-lifecycle.json",
+          "tasks": [
+            "abc-template-01",
+            "abc-template-02"
+          ]
         }
       ],
       "tasks": [
@@ -43,7 +44,7 @@
         "pin-stack-v0311-automatic-delivery",
         "GPT-STACKPRE001"
       ],
-      "planned_direction": "A/B/C starter onboarding and full lifecycle proof shipped in template v0.3.15/v0.3.16 with stack v0.3.26; completed source tasks are archived."
+      "planned_direction": "Zelfstandige taakreleases met expliciete modellen, fasebewijs en veilige taakworktrees; planning in .go/plans/abc-lifecycle.json"
     },
     {
       "id": "complete-advice-to-outcome-model",

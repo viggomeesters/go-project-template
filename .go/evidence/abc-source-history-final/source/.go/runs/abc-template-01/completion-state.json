@@ -1,0 +1,214 @@
+{
+  "schema": "go-workflow.managed-run.v1",
+  "task_id": "abc-template-01",
+  "project": "go-project-template",
+  "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+  "owner": "codex-astra-high",
+  "run_id": "abc-template-01-development",
+  "workspace": {
+    "task_id": "abc-template-01",
+    "owner": "codex-astra-high",
+    "run_id": "abc-template-01-development",
+    "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+    "path": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+    "branch": "codex/abc-template-01",
+    "base_branch": "main",
+    "base_commit": "686270b1a0b8d64cf242ab148ed4439ae94386af",
+    "schema": "go-workflow.workspace-state.v1",
+    "common_dir": "/Users/viggomeesters/Dev/go-project-template/.git",
+    "repository_id": "b29c93800b56459ba2d24e26aa04e4e7",
+    "generation": "8cec95f25ab84cb49d3e563f74b0bcce",
+    "state": "ready"
+  },
+  "phase": "complete",
+  "attempt": 1,
+  "check_index": 0,
+  "checks": [
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "abc-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "status": "passed",
+        "command": "python3 examples/abc/check-onboarding.py",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+        "revision": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+        "worktree_digest": "4043f7cf2db329cf3a53154ef24327d0257bb7c7304407edfd7162e770a720fc",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/abc-template-01/completion/command-256757717af94f8691de7162b8dea3b4.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/abc-template-01/completion/command-256757717af94f8691de7162b8dea3b4.json",
+        "sha256": "d7fa45fff203cd9864b6687b3bc2cf94b5374a2df54bd769edc46d87ff833ddd"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "abc-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "status": "passed",
+        "command": "bash scripts/check.sh",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+        "revision": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+        "worktree_digest": "4043f7cf2db329cf3a53154ef24327d0257bb7c7304407edfd7162e770a720fc",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/abc-template-01/completion/command-0a1032eafd114a6f832420279a1dcfbd.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/abc-template-01/completion/command-0a1032eafd114a6f832420279a1dcfbd.json",
+        "sha256": "2878142b08c8a99aa3dc05923ac8c6cbfa1504f139959a087a8722d1fd605efc"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "abc-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "status": "passed",
+        "command": "bash scripts/validate-go.sh",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+        "revision": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+        "worktree_digest": "4043f7cf2db329cf3a53154ef24327d0257bb7c7304407edfd7162e770a720fc",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/abc-template-01/completion/command-c361614d7c49407893f65d7723fdfd28.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/abc-template-01/completion/command-c361614d7c49407893f65d7723fdfd28.json",
+        "sha256": "3438b058e19d0431ee2974e2ae7bdc97014ba2f0b04376cfa1e3e9aaa53cb07f"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "abc-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "status": "passed",
+        "command": "git diff --check",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+        "revision": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+        "worktree_digest": "4043f7cf2db329cf3a53154ef24327d0257bb7c7304407edfd7162e770a720fc",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/abc-template-01/completion/command-5917d7d0faa14fce876769d1e0df371e.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/abc-template-01/completion/command-5917d7d0faa14fce876769d1e0df371e.json",
+        "sha256": "83e27ab4615b9390c37a8b70d34a51d3ceab909c0bbb48739a7b85608f55b4db"
+      }
+    }
+  ],
+  "phase_evidence": [],
+  "effects": {},
+  "budgets": [],
+  "history": [
+    {
+      "event": "new_verification_capture",
+      "previous_inflight": null
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Pin een daadwerkelijk vrijgegeven compatibele stackversie en controleer exact commit/tag; leg geen nog niet beschikbare A/B/C-defaults vast.",
+      "source": "abc_planning",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R2",
+      "text": "Onboarding verzamelt productversiebron, toegestane releasebestemming, verificatiecommando’s en model/effort; geen account-, provider- of productietarget aannemen.",
+      "source": "abc_planning",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R3",
+      "text": "Een voorbeeldtaak is zelfstandig releasbaar met expliciete context- en bewijsvoorwaarden; modelkeuze wordt uitgelegd als runtime-instelling.",
+      "source": "abc_planning",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R4",
+      "text": "Het template blijft project_mode template. Een verse clone bevat geen uitvoerbare onderhoudsbacklog van de bronrepository; de smoke-fixture blijft herbruikbaar en wordt niet als echte apprelease voorgesteld.",
+      "source": "abc_planning",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R5",
+      "text": "De launcher werkt met exact gepinde checkouts én geldige linked Git-worktrees, zonder development override; herken .git-bestanden via Git en bewijs beide startsituaties.",
+      "source": "abc_planning",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R6",
+      "text": "Lever deze begrensde wijziging als zelfstandig verifieerbare, achterwaarts compatibele release op: relevante checks en critic groen, documentatie/changelog en passende versie bijgewerkt, scoped commit/integratie/push, annotated tag/publicatie en remote readback bewezen. Ontbrekende publicatierechten of bewijs blijven expliciete blockers. Deze intake autoriseert nu uitsluitend planning.",
+      "source": "abc_planning",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R7",
+      "text": "Onboarding legt expliciete basisbranch, werkplekbeleid, canonieke control-state en fase-/bewijsprofielen vast; beschrijf behoud van gebruikerswerk en dezelfde werkplek bij modelwissels. Voor opt-in taakworktrees is een werkelijk werkende linked-worktree-launcher vereist, ook met .git als bestand.",
+      "source": "legacy_insights_planning",
+      "status": "pending",
+      "evidence": []
+    }
+  ],
+  "models": {},
+  "task_hash": "97cd97288f6d43831754a97758f29115552d495eaa7fea53a3cc257f63a8e829",
+  "code": {},
+  "execution_cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+  "controller": {
+    "host": "macbook-pro-van-viggo-1.home",
+    "pid": 43400
+  },
+  "worker_group": null,
+  "inflight": null
+}

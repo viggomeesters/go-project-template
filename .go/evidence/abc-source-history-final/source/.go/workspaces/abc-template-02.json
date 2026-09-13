@@ -1,0 +1,20 @@
+{
+  "task_id": "abc-template-02",
+  "owner": "codex-astra-high",
+  "run_id": "abc-template-02-development",
+  "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+  "path": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-02",
+  "branch": "codex/abc-template-02",
+  "base_branch": "main",
+  "base_commit": "e6c802b847220a97d75289bf98629bfa3d2fa201",
+  "schema": "go-workflow.workspace-state.v1",
+  "common_dir": "/Users/viggomeesters/Dev/go-project-template/.git",
+  "repository_id": "b29c93800b56459ba2d24e26aa04e4e7",
+  "generation": "c54effdf3b8341c8aab970adbc9697cb",
+  "state": "cleaned",
+  "integration": {
+    "workspace_head": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c",
+    "integrated_commit": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c"
+  },
+  "recovery_action": "No action; delivered branch is retained"
+}

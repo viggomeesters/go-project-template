@@ -1,0 +1,14 @@
+{
+  "task_id": "abc-template-01",
+  "project": "go-project-template",
+  "contract_digest": "97cd97288f6d43831754a97758f29115552d495eaa7fea53a3cc257f63a8e829",
+  "revision": "305a3a27b052552424d206dc6d7c260120d9520f",
+  "content_digest": "891108728ac231870b27c92783c2aaabb612316f09d71169eaa102d066adabaa",
+  "command": "bash scripts/check.sh",
+  "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+  "elapsed_seconds": 5.243517292023171,
+  "returncode": 2,
+  "stdout": "/Users/viggomeesters/.local/share/uv/python/cpython-3.12-macos-aarch64-none/bin/python3.12 \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-runtime/cli/go.py\" validate .\nok: /Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01/.go\n/Users/viggomeesters/.local/share/uv/python/cpython-3.12-macos-aarch64-none/bin/python3.12 \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-runtime/cli/go.py\" readback .\nProject: Go Project Template (go-project-template)\nNorth star: A clone-local agent contract proves repo-local continuation.\nWedge: Self-contained project OS, not a central workflow database.\nPrinciples: json-first; abc-release-evidence; abc-explicit-model-contract; abc-durable-worker-context; abc-task-workspace; abc-final-candidate-proof; abc-selective-legacy-reuse\nEpics: workflow-contract; complete-advice-to-outcome-model; architecture-lane\nArchitecture: briefs=2; open_deviations=0; active_waivers=0\nNext task: abc-template-02 — Verse clones door de volledige lifecycle bewijzen\n/Users/viggomeesters/.local/share/uv/python/cpython-3.12-macos-aarch64-none/bin/python3.12 \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-runtime/cli/go.py\" status . --json >/tmp/go-project-template-status.json\ncd / && /Users/viggomeesters/.local/share/uv/python/cpython-3.12-macos-aarch64-none/bin/python3.12 \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-runtime/cli/go.py\" template-check \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01\" --json >/tmp/go-project-template-pairing.json\n",
+  "stderr": "make: *** [check] Error 1\n",
+  "timed_out": false
+}

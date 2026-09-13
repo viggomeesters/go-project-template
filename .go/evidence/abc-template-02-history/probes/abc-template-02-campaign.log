@@ -1,0 +1,391 @@
+{
+  "schema": "go-workflow.template-abc-proof.v1",
+  "status": "passed",
+  "cases": [
+    {
+      "mode": "ordinary",
+      "controller": "primary checkout",
+      "execution_workspace": "owned linked worktree",
+      "unregistered_linked_controller_rejected": false,
+      "runtime_commit": "b2d235610691eead011cc738f278887a99e4bbe0",
+      "model_execution": "deterministic native CLI double, no model calls",
+      "resumed_after": "build",
+      "task_releases": [
+        {
+          "task": "campaign-1",
+          "tag": "v1.2.0",
+          "commit": "38388e9f127e51d737f5e30f4258a2ae1a6355aa",
+          "model": {
+            "id": "gpt-5.6-terra",
+            "effort": "high"
+          },
+          "critic_model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "receipt": {
+            "schema": "go-workflow.release-receipt.v1",
+            "status": "verified",
+            "task_id": "campaign-1",
+            "project": "template-campaign-ordinary",
+            "commit": "38388e9f127e51d737f5e30f4258a2ae1a6355aa",
+            "tag": "v1.2.0",
+            "evidence": [
+              ".go/runs/campaign-1/completion/release-948720a069f548078667f5e876e77ed9.json"
+            ]
+          },
+          "verification": {
+            "schema": "go-workflow.executed-verification.v1",
+            "task_id": "campaign-1",
+            "project": "template-campaign-ordinary",
+            "contract_digest": "e33252ae44659c01421dd717ac0eb69a6a260c2f066e29be4c900d46cf131970",
+            "revision": "c4717d92a6ee2835345ae4268a12e8a83a28e369",
+            "content_digest": "26870e8cb3453f2a8d4ea7b754f48b39ced7a1fcdb3a134fe3d5671464cbb73a",
+            "checks": [
+              {
+                "verification": {
+                  "schema": "go-workflow.verification-evidence.v1",
+                  "task_id": "campaign-1",
+                  "phase_id": "verify",
+                  "requirement_ids": [
+                    "R1"
+                  ],
+                  "status": "passed",
+                  "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'one\\n'; assert Path('VERSION').read_text().strip() == '1.2.0'\"",
+                  "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/campaign-1-worker",
+                  "revision": "c4717d92a6ee2835345ae4268a12e8a83a28e369",
+                  "worktree_digest": "26870e8cb3453f2a8d4ea7b754f48b39ced7a1fcdb3a134fe3d5671464cbb73a",
+                  "exit_code": 0,
+                  "evidence": [
+                    ".go/runs/campaign-1/completion/command-517e6d3197464fbfb5cbe42a07b8ebf2.json"
+                  ]
+                },
+                "raw": {
+                  "path": ".go/runs/campaign-1/completion/command-517e6d3197464fbfb5cbe42a07b8ebf2.json",
+                  "sha256": "01d453ee30499c04667759c49747fca8cc75c8a5b1678abef1506a1a3b759aca"
+                }
+              }
+            ],
+            "content_unchanged": true,
+            "status": "passed"
+          },
+          "phases": [
+            {
+              "phase": "build",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/campaign-1-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/project/.go/runs/campaign-1/campaign-1-run/build-01-55139104345b48ec86be097677c79c2f/context.json",
+                "sha256": "fdcb471d666ed6c02191c673702b7ec5e8a7181940a637858a836615b5a0466d",
+                "snapshot_id": "55139104345b48ec86be097677c79c2f"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/campaign-1-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/project/.go/runs/campaign-1/campaign-1-run/critic-01-7ffc8ec8f0b2491c976bc9eb6cca3cd6/context.json",
+                "sha256": "d4ca8cb5caa0c3585668a666c98e84337bf251edb9e0627d02028bce9a9b7af7",
+                "snapshot_id": "7ffc8ec8f0b2491c976bc9eb6cca3cd6"
+              }
+            },
+            {
+              "phase": "repair",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/campaign-1-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/project/.go/runs/campaign-1/campaign-1-run/repair-02-95c19c71a64048ebb12e4c43ec5df5b2/context.json",
+                "sha256": "87f78a1493204f6f200d85b21d2d5305b4c099ae442a76ec1c47e4bd3a31f8b4",
+                "snapshot_id": "95c19c71a64048ebb12e4c43ec5df5b2"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/campaign-1-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/project/.go/runs/campaign-1/campaign-1-run/critic-02-d4292776926942d2920c5e8312886ddd/context.json",
+                "sha256": "fd491ab8bde722baf4b58706bce84aefbd109ae7ffae13923bab1003a257f6e6",
+                "snapshot_id": "d4292776926942d2920c5e8312886ddd"
+              }
+            }
+          ]
+        },
+        {
+          "task": "campaign-2",
+          "tag": "v1.3.0",
+          "commit": "a1de06dbcd336dc0ce9d65839abcd3b3e95d5be2",
+          "model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "critic_model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "receipt": {
+            "schema": "go-workflow.release-receipt.v1",
+            "status": "verified",
+            "task_id": "campaign-2",
+            "project": "template-campaign-ordinary",
+            "commit": "a1de06dbcd336dc0ce9d65839abcd3b3e95d5be2",
+            "tag": "v1.3.0",
+            "evidence": [
+              ".go/runs/campaign-2/completion/release-745212e446854b7599e22a6a78a8e96a.json"
+            ]
+          },
+          "verification": {
+            "schema": "go-workflow.executed-verification.v1",
+            "task_id": "campaign-2",
+            "project": "template-campaign-ordinary",
+            "contract_digest": "39a9d3f2fba363abcd5a719ad43afe90364ebdb95c0c81299c090d0d14fde21d",
+            "revision": "38388e9f127e51d737f5e30f4258a2ae1a6355aa",
+            "content_digest": "217c07b34db9e92db9678af35fb9e62ed4f14453e140227d9ff0640c9a263d75",
+            "checks": [
+              {
+                "verification": {
+                  "schema": "go-workflow.verification-evidence.v1",
+                  "task_id": "campaign-2",
+                  "phase_id": "verify",
+                  "requirement_ids": [
+                    "R1"
+                  ],
+                  "status": "passed",
+                  "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'two\\n'; assert Path('VERSION').read_text().strip() == '1.3.0'\"",
+                  "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/campaign-2-worker",
+                  "revision": "38388e9f127e51d737f5e30f4258a2ae1a6355aa",
+                  "worktree_digest": "217c07b34db9e92db9678af35fb9e62ed4f14453e140227d9ff0640c9a263d75",
+                  "exit_code": 0,
+                  "evidence": [
+                    ".go/runs/campaign-2/completion/command-5bd0e79d5a084af9a937e8b4ef9fe4af.json"
+                  ]
+                },
+                "raw": {
+                  "path": ".go/runs/campaign-2/completion/command-5bd0e79d5a084af9a937e8b4ef9fe4af.json",
+                  "sha256": "ca9af6234f490ee305394a201dcaec499d435196fb99b2cbfd3a15d1a85fe131"
+                }
+              }
+            ],
+            "content_unchanged": true,
+            "status": "passed"
+          },
+          "phases": [
+            {
+              "phase": "build",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/campaign-2-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/project/.go/runs/campaign-2/campaign-2-run/build-01-64dadba66e7f41c0b08e702da2da7564/context.json",
+                "sha256": "c7ee1a5bf417b62c78e5da8b5add80f039cba96e7f39cd36b2967c6eb2a43810",
+                "snapshot_id": "64dadba66e7f41c0b08e702da2da7564"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/campaign-2-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/ordinary/project/.go/runs/campaign-2/campaign-2-run/critic-01-6c7f994766064e1aa18ed562d86e08b4/context.json",
+                "sha256": "afb98cbd71ff2e3a3382ef2f798383776c3c50aa46b45efb1735d52a8c71223e",
+                "snapshot_id": "6c7f994766064e1aa18ed562d86e08b4"
+              }
+            }
+          ]
+        }
+      ],
+      "idempotent_completion": true,
+      "unmerged_integration_rejected_without_changes": true
+    },
+    {
+      "mode": "linked",
+      "controller": "primary checkout",
+      "execution_workspace": "owned linked worktree",
+      "unregistered_linked_controller_rejected": true,
+      "runtime_commit": "b2d235610691eead011cc738f278887a99e4bbe0",
+      "model_execution": "deterministic native CLI double, no model calls",
+      "resumed_after": "build",
+      "task_releases": [
+        {
+          "task": "campaign-1",
+          "tag": "v1.2.0",
+          "commit": "247546f888d6f1f02e5d6ec5eb0a57e686af53aa",
+          "model": {
+            "id": "gpt-5.6-terra",
+            "effort": "high"
+          },
+          "critic_model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "receipt": {
+            "schema": "go-workflow.release-receipt.v1",
+            "status": "verified",
+            "task_id": "campaign-1",
+            "project": "template-campaign-linked",
+            "commit": "247546f888d6f1f02e5d6ec5eb0a57e686af53aa",
+            "tag": "v1.2.0",
+            "evidence": [
+              ".go/runs/campaign-1/completion/release-b4085fd773e048a89f00beb56425dce8.json"
+            ]
+          },
+          "verification": {
+            "schema": "go-workflow.executed-verification.v1",
+            "task_id": "campaign-1",
+            "project": "template-campaign-linked",
+            "contract_digest": "9c376e500340f44738915b4e3b5ed6bd86ca48785e6eb1258077c9f4f9938dfc",
+            "revision": "549ae3395407ef0deea18773da35856b1054941b",
+            "content_digest": "934e9394b8b2a78719f5a3c0012d249675b4e0ab77e7463e5db9ff3ed4258740",
+            "checks": [
+              {
+                "verification": {
+                  "schema": "go-workflow.verification-evidence.v1",
+                  "task_id": "campaign-1",
+                  "phase_id": "verify",
+                  "requirement_ids": [
+                    "R1"
+                  ],
+                  "status": "passed",
+                  "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'one\\n'; assert Path('VERSION').read_text().strip() == '1.2.0'\"",
+                  "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/campaign-1-worker",
+                  "revision": "549ae3395407ef0deea18773da35856b1054941b",
+                  "worktree_digest": "934e9394b8b2a78719f5a3c0012d249675b4e0ab77e7463e5db9ff3ed4258740",
+                  "exit_code": 0,
+                  "evidence": [
+                    ".go/runs/campaign-1/completion/command-1db8910813eb4811adfab9bbe4159cc1.json"
+                  ]
+                },
+                "raw": {
+                  "path": ".go/runs/campaign-1/completion/command-1db8910813eb4811adfab9bbe4159cc1.json",
+                  "sha256": "98c1a84320198b168716eaff093e9a1bf82beac757540714a6ce5cd377cfcff4"
+                }
+              }
+            ],
+            "content_unchanged": true,
+            "status": "passed"
+          },
+          "phases": [
+            {
+              "phase": "build",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/campaign-1-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/project/.go/runs/campaign-1/campaign-1-run/build-01-37cf676437a6435b97a557b856406718/context.json",
+                "sha256": "722eb0b76ff9a6b5a30780d9b2161305387075c1c2da5ef375eb959dcb406f7c",
+                "snapshot_id": "37cf676437a6435b97a557b856406718"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/campaign-1-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/project/.go/runs/campaign-1/campaign-1-run/critic-01-92163dc90ba54ea7b74ceeac0505e51f/context.json",
+                "sha256": "99b91f97d78d41c6c493ffdefc9b100bf3dd22bf236052109c59219ada7c51a8",
+                "snapshot_id": "92163dc90ba54ea7b74ceeac0505e51f"
+              }
+            },
+            {
+              "phase": "repair",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/campaign-1-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/project/.go/runs/campaign-1/campaign-1-run/repair-02-f3d1e077148e4b26904775fb78792df3/context.json",
+                "sha256": "c2b99e5a292eede3f3695f5fb92b1d8fb2b0d87aa465138c06b598efe67ae064",
+                "snapshot_id": "f3d1e077148e4b26904775fb78792df3"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/campaign-1-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/project/.go/runs/campaign-1/campaign-1-run/critic-02-448674850b654e2bb69d59393bf4a81b/context.json",
+                "sha256": "52eff7f4174535e2bf61c8350f1a93c8cf0706dd1fea9cd1dc4fdcba56e5dcdf",
+                "snapshot_id": "448674850b654e2bb69d59393bf4a81b"
+              }
+            }
+          ]
+        },
+        {
+          "task": "campaign-2",
+          "tag": "v1.3.0",
+          "commit": "dcc28fda371aff31807fbde7c4b314bad520617f",
+          "model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "critic_model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "receipt": {
+            "schema": "go-workflow.release-receipt.v1",
+            "status": "verified",
+            "task_id": "campaign-2",
+            "project": "template-campaign-linked",
+            "commit": "dcc28fda371aff31807fbde7c4b314bad520617f",
+            "tag": "v1.3.0",
+            "evidence": [
+              ".go/runs/campaign-2/completion/release-b02db59739994186afb2741449ad3ca8.json"
+            ]
+          },
+          "verification": {
+            "schema": "go-workflow.executed-verification.v1",
+            "task_id": "campaign-2",
+            "project": "template-campaign-linked",
+            "contract_digest": "94204498484d2e8d131f215a75190314ada13bbdaf857a02c2053d793c659065",
+            "revision": "247546f888d6f1f02e5d6ec5eb0a57e686af53aa",
+            "content_digest": "d5c49b123ca7df0c93d13ef24267fa5423c90d5a399384015797fa5e553e74d3",
+            "checks": [
+              {
+                "verification": {
+                  "schema": "go-workflow.verification-evidence.v1",
+                  "task_id": "campaign-2",
+                  "phase_id": "verify",
+                  "requirement_ids": [
+                    "R1"
+                  ],
+                  "status": "passed",
+                  "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'two\\n'; assert Path('VERSION').read_text().strip() == '1.3.0'\"",
+                  "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/campaign-2-worker",
+                  "revision": "247546f888d6f1f02e5d6ec5eb0a57e686af53aa",
+                  "worktree_digest": "d5c49b123ca7df0c93d13ef24267fa5423c90d5a399384015797fa5e553e74d3",
+                  "exit_code": 0,
+                  "evidence": [
+                    ".go/runs/campaign-2/completion/command-71475ccbdb5d4a979c502727414ab486.json"
+                  ]
+                },
+                "raw": {
+                  "path": ".go/runs/campaign-2/completion/command-71475ccbdb5d4a979c502727414ab486.json",
+                  "sha256": "34eb529e82e5271f4394746523caa4131133399b5e49238856c9e9e0e34a89ba"
+                }
+              }
+            ],
+            "content_unchanged": true,
+            "status": "passed"
+          },
+          "phases": [
+            {
+              "phase": "build",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/campaign-2-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/project/.go/runs/campaign-2/campaign-2-run/build-01-8c8cd32ffce7489b816e4698d1bf8323/context.json",
+                "sha256": "0fe934ee02af55de45001577bf7d2f9599a2245c4bec2290f84777c946fdb3ca",
+                "snapshot_id": "8c8cd32ffce7489b816e4698d1bf8323"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/campaign-2-worker",
+              "context_ref": {
+                "path": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-template-abc-yziv28vh/linked/project/.go/runs/campaign-2/campaign-2-run/critic-01-10db3512653b4ba8bd9301ec8e79f12d/context.json",
+                "sha256": "dad356a72462397466f1b9014cdecbe6a7e213919a72c73cfc337aeaa833f771",
+                "snapshot_id": "10db3512653b4ba8bd9301ec8e79f12d"
+              }
+            }
+          ]
+        }
+      ],
+      "idempotent_completion": true,
+      "unmerged_integration_rejected_without_changes": true
+    }
+  ],
+  "live_evidence": "https://github.com/viggomeesters/go-workflow-stack/blob/v0.3.26/.go/evidence/abc-10-live/manifest.json",
+  "live_runtime_hashes_matched": 53,
+  "source_state_unchanged": true
+}
+WARN `--no-project` was provided, but no project was found
+...............                                                          [100%]
+15 passed in 75.09s (0:01:15)
+work/abc-template-02/scripts/test-abc-template.sh: line 149: /Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-runtime/tests/test_abc_migration.py::test_apply_rollback_idempotent_preserves_exact_historical_bytes: No such file or directory

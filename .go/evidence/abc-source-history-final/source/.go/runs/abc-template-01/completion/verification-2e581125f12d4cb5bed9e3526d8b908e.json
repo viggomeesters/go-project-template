@@ -1,0 +1,128 @@
+{
+  "schema": "go-workflow.executed-verification.v1",
+  "task_id": "abc-template-01",
+  "project": "go-project-template",
+  "contract_digest": "97cd97288f6d43831754a97758f29115552d495eaa7fea53a3cc257f63a8e829",
+  "revision": "305a3a27b052552424d206dc6d7c260120d9520f",
+  "content_digest": "891108728ac231870b27c92783c2aaabb612316f09d71169eaa102d066adabaa",
+  "checks": [
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "abc-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "status": "passed",
+        "command": "python3 examples/abc/check-onboarding.py",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+        "revision": "305a3a27b052552424d206dc6d7c260120d9520f",
+        "worktree_digest": "891108728ac231870b27c92783c2aaabb612316f09d71169eaa102d066adabaa",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/abc-template-01/completion/command-a7d6d94f7bb546cbaf452be039c30095.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/abc-template-01/completion/command-a7d6d94f7bb546cbaf452be039c30095.json",
+        "sha256": "9355d49aeaf0a31a998c30edecb0ad193ae5749a87ee925cf2bc8f004b97d8f4"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "abc-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "status": "failed",
+        "command": "bash scripts/check.sh",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+        "revision": "305a3a27b052552424d206dc6d7c260120d9520f",
+        "worktree_digest": "891108728ac231870b27c92783c2aaabb612316f09d71169eaa102d066adabaa",
+        "exit_code": 2,
+        "evidence": [
+          ".go/runs/abc-template-01/completion/command-bab87f6d06a84019a87c544e0db8c8e2.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/abc-template-01/completion/command-bab87f6d06a84019a87c544e0db8c8e2.json",
+        "sha256": "080a520fcbeaee5954eaaf6d3b8e52ae02e310a973ee749d83daf2ee23dcb624"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "abc-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "status": "passed",
+        "command": "bash scripts/validate-go.sh",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+        "revision": "305a3a27b052552424d206dc6d7c260120d9520f",
+        "worktree_digest": "891108728ac231870b27c92783c2aaabb612316f09d71169eaa102d066adabaa",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/abc-template-01/completion/command-613be5f8d6cd48ea8247c58a1b29a6b5.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/abc-template-01/completion/command-613be5f8d6cd48ea8247c58a1b29a6b5.json",
+        "sha256": "9f492e5ba8666f98db4d4ad048bd5ecb393d4d7ca6ae39fbacdb5dc4c4dba47a"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "abc-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5",
+          "R6",
+          "R7"
+        ],
+        "status": "passed",
+        "command": "git diff --check",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+        "revision": "305a3a27b052552424d206dc6d7c260120d9520f",
+        "worktree_digest": "891108728ac231870b27c92783c2aaabb612316f09d71169eaa102d066adabaa",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/abc-template-01/completion/command-dc527a24b4a0410fa82ac6b26cedcbe1.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/abc-template-01/completion/command-dc527a24b4a0410fa82ac6b26cedcbe1.json",
+        "sha256": "0694738463113728754ded11129ffb07392722d6cae9cd2fa7a1e8c13f9d388f"
+      }
+    }
+  ],
+  "content_unchanged": true,
+  "status": "failed"
+}

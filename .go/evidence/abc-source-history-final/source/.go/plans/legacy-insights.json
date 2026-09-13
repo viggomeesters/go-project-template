@@ -3,7 +3,7 @@
   "format_version": 1,
   "id": "legacy-insights",
   "status": "prepared",
-  "implementation_status": "completed",
+  "implementation_status": "not_started",
   "source_ref": "2026-09-13 user: Verwerk die oude inzichten; Go task; planning only",
   "coordinator_project": "go-workflow-stack",
   "sources": [
@@ -102,12 +102,6 @@
     "mandatory parallel agents",
     "GitHub Actions"
   ],
-  "planning_only": false,
-  "participant_project": "go-project-template",
-  "implementation_evidence": {
-    "stack": "v0.3.26",
-    "template": "v0.3.16",
-    "source_history_ref": ".go/evidence/abc-source-history-final/manifest.json",
-    "summary": "Selected phase/context/outcome validators, final candidate proof, one owned task worktree, serial release and separate cleanup are implemented and verified; the legacy monolith/vault/global skills and mandatory parallel agents remain excluded."
-  }
+  "planning_only": true,
+  "participant_project": "go-project-template"
 }

@@ -1,0 +1,11 @@
+{
+  "task_id": "abc-template-02",
+  "status": "process_correction_applied",
+  "finding": "A running uncommitted Bash probe was edited while its later commands were still being consumed; the preliminary run passed 15 regressions but then failed due to shifted file offsets. Some helper reads also used an incorrect cwd or guessed flags. No release claim relies on that probe.",
+  "correction": "Final checks run against committed candidate 49533cb8afe4fc0fa78d73bc0543b9681e12e75c in unchanged owned/ordinary clones; no in-flight script edits. Explicit cwd and checked CLI syntax are required by the repo-local plan.",
+  "governing_ref": ".go/plans/abc-lifecycle.json#execution_quality_rules",
+  "skill": "selfimprove",
+  "scope": "repo-local planning/reflection; no global skill, memory or config change",
+  "validation": "Applied repo-local immutable-candidate/cwd rules; committed final candidate passed all declared checks, 18 failure regressions, macOS/Linux clone gates and runtime path-with-spaces regression.",
+  "final_candidate": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c"
+}

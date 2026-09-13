@@ -1,0 +1,328 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "shareable_delivery": "auto",
+  "id": "abc-template-02",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Verse clones door de volledige lifecycle bewijzen",
+  "description": "Verifieer en publiceer de stack/template-combinatie via een geïsoleerde verse projectclone die twee modelgestuurde taken en volledige release/hervatting doorloopt.\nAfhankelijk van: go-project-template:abc-template-01, go-workflow-stack:abc-10. Controleer releasebewijs vóór claim; de huidige runtime dwingt dit nog niet af. Oude inzichten en bronverwijzingen: .go/plans/legacy-insights.json. Gepland gedrag; uitsluitend een latere uitvoeringsopdracht autoriseert uitvoering/publicatie.",
+  "scope": {
+    "read": [
+      "AGENTS.md",
+      ".go/**",
+      "scripts/**",
+      "docs/**",
+      "go",
+      "README.md"
+    ],
+    "modify": [
+      "scripts/test-template.sh",
+      "scripts/check.sh",
+      "scripts/test-abc-template.sh",
+      "Makefile",
+      "docs/repo-complete.md",
+      "docs/abc-onboarding.md",
+      ".go/project.json",
+      "CHANGELOG.md",
+      "docs/releases/**"
+    ]
+  },
+  "acceptance": [
+    "De pairingtest controleert de gepubliceerde stackpin, contractmigratie, profielkeuze en beide releasebewijzen in een verse clone zonder bronrepo-backlog.",
+    "Tests bewijzen herstel na build/push/publish, behoud van het gekozen model en eerlijke blokkade bij ontbrekende capabilities of releasebestemming.",
+    "Bron-smoketaak blijft open/herbruikbaar en beide bronrepositories behouden eigen .go-staat; clonefixtures wijzigen de bronplanning niet.",
+    "Simulaties gebruiken lokale remotes/fake publishers; een echte reeds beschikbare live-proof wordt expliciet gerefereerd en nooit nagebootst als echte modeluitvoering.",
+    "Templateversie, commit, tag/publicatie en fresh-clone-readback zijn vastgelegd; alleen lokale checks en expliciet toegestane publicatiemechanismen worden gebruikt.",
+    "Lever deze begrensde wijziging als zelfstandig verifieerbare, achterwaarts compatibele release op: relevante checks en critic groen, documentatie/changelog en passende versie bijgewerkt, scoped commit/integratie/push, annotated tag/publicatie en remote readback bewezen. Ontbrekende publicatierechten of bewijs blijven expliciete blockers. Deze intake autoriseert nu uitsluitend planning.",
+    "Doorloop de lifecycle zowel vanuit een verse clone als vanuit een linked worktree: exacte runtime, één taakwerkplek bij modelwisseling, actuele context/checks, seriële integratie en release-readback. Test dirty/unmerged behoud en cleanupretry zonder dubbele publicatie; fixtures blijven gescheiden van bronplanning."
+  ],
+  "verification": [
+    "bash scripts/test-abc-template.sh",
+    "bash scripts/check.sh",
+    "bash scripts/validate-go.sh",
+    "git diff --check"
+  ],
+  "claim": {
+    "agent": "codex-astra-high",
+    "claimed_at": "2026-09-13T21:32:43+02:00",
+    "base_commit": "e6c802b847220a97d75289bf98629bfa3d2fa201"
+  },
+  "work_status": "completed",
+  "review_status": "approved",
+  "review_history": [
+    {
+      "created_at": "2026-09-13T21:49:59+02:00",
+      "agent": "codex-astra-high",
+      "status": "approved",
+      "evidence": "Same-agent review, executed bound checks and immutable fresh-clone checks passed; fresh remote release readback confirmed. No independent identity attestation.",
+      "transaction_id": "c7141be70ed048dd8a60da849da9001f",
+      "delivery": {
+        "delivery_id": "workflow-contract-v2",
+        "html": ".go/deliveries/workflow-contract-v2/index.html",
+        "manifest": ".go/deliveries/workflow-contract-v2/manifest.json",
+        "source_sha256": "e7de81911bda2cd1a4f0ed3fdb4175a27f02ab06881ed5c77371dbe979122105",
+        "html_sha256": "1924870f16df9327992101ad658d6d6df0d2c3618c42dbc6f04214ecdefc1a8d"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "schema": "go-workflow.finish-evidence.v1",
+      "created_at": "2026-09-13T21:49:59+02:00",
+      "task_id": "abc-template-02",
+      "agent": "codex-astra-high",
+      "summary": "changed_files=CHANGELOG.md,Makefile,docs/abc-onboarding.md,docs/releases/v0.3.16.md,docs/repo-complete.md,scripts/test-abc-template.sh,scripts/test-template.sh; verification_command=declared completion checks and exact candidate fresh-clone gates; verification_result=passed; critic=passed same-agent review; runtime=Codex desktop; model=user-selected gpt-6-astra high (effective identity unconfirmed); billing_mode=unknown; release=v0.3.16 https://github.com/viggomeesters/go-project-template/releases/tag/v0.3.16; Self-reflect: process correction applied to repo-local .go/plans/abc-lifecycle.json execution_quality_rules; final checks run on immutable candidate after a running-script edit invalidated a preliminary probe. .go/reflections/abc-template-02.json records the verified correction; no global skill/memory/config changes.",
+      "changed_files": [
+        "CHANGELOG.md",
+        "Makefile",
+        "docs/abc-onboarding.md",
+        "docs/releases/v0.3.16.md",
+        "docs/repo-complete.md",
+        "scripts/test-abc-template.sh",
+        "scripts/test-template.sh"
+      ],
+      "no_diff": false,
+      "git": {
+        "claim_base_commit": "e6c802b847220a97d75289bf98629bfa3d2fa201",
+        "observed_head_commit": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c"
+      },
+      "verification": {
+        "command": "declared completion checks and exact candidate fresh-clone gates",
+        "result": "passed"
+      },
+      "runtime": {
+        "agent": "codex-astra-high",
+        "runtime": "Codex desktop",
+        "model": "user-selected gpt-6-astra high (effective identity unconfirmed)",
+        "billing_mode": "unknown"
+      },
+      "usage": {
+        "schema": "go-workflow.usage-attribution.v1",
+        "runtime_kind": "Codex desktop",
+        "billing_mode": "unknown",
+        "owner": "codex-astra-high",
+        "model": "user-selected gpt-6-astra high (effective identity unconfirmed)",
+        "token_estimate": null,
+        "api_equivalent_cost_usd": null,
+        "provider_invoice_cost_usd": null,
+        "cost_label": "api_equivalent_not_invoice_cost"
+      },
+      "review": {
+        "outcome": "passed same-agent review",
+        "skip_reason": null
+      }
+    }
+  ],
+  "order": 120,
+  "dependencies": [
+    {
+      "project": "go-project-template",
+      "task_id": "abc-template-01",
+      "requires": "done_with_required_release_evidence"
+    },
+    {
+      "project": "go-workflow-stack",
+      "task_id": "abc-10",
+      "requires": "done_with_required_release_evidence"
+    }
+  ],
+  "planning": {
+    "status": "prepared",
+    "implementation_status": "completed",
+    "source_ref": "codex-task:01a09a21-cca9-7a90-84af-80c781e537ec; user Go task, planning only, 2026-09-13",
+    "plan_ref": ".go/plans/abc-lifecycle.json",
+    "dependency_enforcement": "agent_preclaim_until_abc-01",
+    "coordinator_project": "go-workflow-stack",
+    "created_on": "2026-09-13",
+    "updated_on": "2026-09-13",
+    "latest_source_ref": "2026-09-13 user: Verwerk die oude inzichten; Go task; planning only",
+    "legacy_insights_ref": ".go/plans/legacy-insights.json",
+    "execution_authority": {
+      "source": "User GO and continue",
+      "ship_policy": "push",
+      "allow_push": true,
+      "production_deployment": "not authorized; fixtures only"
+    },
+    "scope_note": "Released stack v0.3.26 and template v0.3.15 are prerequisites with verified receipts. Fresh project customization/intake and two dependent task releases run from ordinary/linked project and runtime checkouts. Native CLI doubles only; existing v0.3.26 live proof stays separately attributed. Reuse released runtime failure regressions for lost acknowledgements/capabilities/preservation and test template-specific budgeted resume/model phase continuity. Source operational records are archived after dependent work completes. The accepted stack task-workspace contract requires the primary project checkout as controller. Linked project coverage therefore proves read-only startup and explicit second-controller refusal, then full execution in owned linked task worktrees with ordinary/linked runtimes; no arbitrary linked-controller support is invented."
+  },
+  "builds_on": [
+    {
+      "project": "go-project-template",
+      "task_id": "prove-v038-task-lifecycle-defaults"
+    }
+  ],
+  "execution_selection": {
+    "status": "user_selected",
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "high",
+    "effective_confirmation": "User-selected current session; independent identity unconfirmed"
+  },
+  "release_intent": {
+    "status": "published",
+    "version": "0.3.16",
+    "policy": "independent_task_release",
+    "receipt_required": true
+  },
+  "outcome_tracking_version": 1,
+  "intent_source": {
+    "text": "Verifieer en publiceer de stack/template-combinatie via een geïsoleerde verse projectclone die twee modelgestuurde taken en volledige release/hervatting doorloopt.",
+    "sha256": "03899181f72ef35008e2d0f4921736d9e2498c545b731e440954527c20e617d6",
+    "source_ref": "codex-task:01a09a21-cca9-7a90-84af-80c781e537ec; user Go task, planning only, 2026-09-13"
+  },
+  "requested_outcomes": [
+    {
+      "id": "R1",
+      "text": "De pairingtest controleert de gepubliceerde stackpin, contractmigratie, profielkeuze en beide releasebewijzen in een verse clone zonder bronrepo-backlog.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:49:00+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-02/completion/verification-727f97b8ff194ed396d07ebd053ee906.json"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "text": "Tests bewijzen herstel na build/push/publish, behoud van het gekozen model en eerlijke blokkade bij ontbrekende capabilities of releasebestemming.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:49:00+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-02/completion/verification-727f97b8ff194ed396d07ebd053ee906.json"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "text": "Bron-smoketaak blijft open/herbruikbaar en beide bronrepositories behouden eigen .go-staat; clonefixtures wijzigen de bronplanning niet.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:49:00+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-02/completion/verification-727f97b8ff194ed396d07ebd053ee906.json"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "text": "Simulaties gebruiken lokale remotes/fake publishers; een echte reeds beschikbare live-proof wordt expliciet gerefereerd en nooit nagebootst als echte modeluitvoering.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:49:00+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-02/completion/verification-727f97b8ff194ed396d07ebd053ee906.json"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "text": "Templateversie, commit, tag/publicatie en fresh-clone-readback zijn vastgelegd; alleen lokale checks en expliciet toegestane publicatiemechanismen worden gebruikt.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:49:58+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-02/completion/release-8c8d7c2acc03484da3c632d3718e459b.json"
+        }
+      ]
+    },
+    {
+      "id": "R6",
+      "text": "Lever deze begrensde wijziging als zelfstandig verifieerbare, achterwaarts compatibele release op: relevante checks en critic groen, documentatie/changelog en passende versie bijgewerkt, scoped commit/integratie/push, annotated tag/publicatie en remote readback bewezen. Ontbrekende publicatierechten of bewijs blijven expliciete blockers. Deze intake autoriseert nu uitsluitend planning.",
+      "source": "abc_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:49:58+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-02/completion/release-8c8d7c2acc03484da3c632d3718e459b.json"
+        }
+      ]
+    },
+    {
+      "id": "R7",
+      "text": "Doorloop de lifecycle zowel vanuit een verse clone als vanuit een linked worktree: exacte runtime, één taakwerkplek bij modelwisseling, actuele context/checks, seriële integratie en release-readback. Test dirty/unmerged behoud en cleanupretry zonder dubbele publicatie; fixtures blijven gescheiden van bronplanning.",
+      "source": "legacy_insights_planning",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-13T21:49:00+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/abc-template-02/completion/verification-727f97b8ff194ed396d07ebd053ee906.json"
+        }
+      ]
+    }
+  ],
+  "verification_notes": [
+    "The task-specific test file/script is an expected deliverable, not asserted to exist or pass today.",
+    "At execution, use Python 3.11+ and the freshly verified pinned runtime; preserve unrelated working-tree changes.",
+    "Run relevant regressions and the repository release checks before future publication; no GitHub Actions.",
+    "Select a supported current model at execution; illustrative Terra/Astra examples do not assign a model to this task."
+  ],
+  "execution_contract": {
+    "schema": "go-workflow.execution-contract.v1",
+    "task_kind": "product",
+    "model": {
+      "id": "gpt-6-astra",
+      "effort": "high"
+    },
+    "release": {
+      "mode": "required",
+      "profile": "template-source-maintenance"
+    },
+    "workspace": {
+      "mode": "task_worktree",
+      "control_state": "repo_local_single_writer",
+      "base_branch": "main"
+    }
+  },
+  "architecture": {
+    "impact": "material",
+    "scope_refs": [
+      "abc-onboarding"
+    ],
+    "concerns": [],
+    "decision_ids": [
+      "abc-template-d01-opt-in-starter"
+    ],
+    "conformance_required": true,
+    "human_gate": "none"
+  },
+  "completion_evidence": {
+    "schema": "go-workflow.completion-evidence.v1",
+    "verification": {
+      "path": ".go/runs/abc-template-02/completion/verification-727f97b8ff194ed396d07ebd053ee906.json",
+      "sha256": "d3df9546f90cf7d94d1baa459c5cd2b141ddec6ff24c50e707a51304689272b6"
+    },
+    "critic": {
+      "path": ".go/runs/abc-template-02/completion/critic-4cd3cc5ccc2e4f21906f7e57d5a52d49.json",
+      "sha256": "371aec24f40fac674876b0bf43986e39e7126c641dd7639f3db1d2d8020ce84b"
+    },
+    "release": {
+      "path": ".go/runs/abc-template-02/completion/release-8c8d7c2acc03484da3c632d3718e459b.json",
+      "sha256": "1f1f72dff952002af0412be7a9bc1fca38cf4c1cb43719fc3421f473c37c7221"
+    }
+  },
+  "release_receipt": {
+    "schema": "go-workflow.release-receipt.v1",
+    "status": "verified",
+    "task_id": "abc-template-02",
+    "project": "go-project-template",
+    "commit": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c",
+    "tag": "v0.3.16",
+    "evidence": [
+      ".go/runs/abc-template-02/completion/release-8c8d7c2acc03484da3c632d3718e459b.json"
+    ]
+  }
+}

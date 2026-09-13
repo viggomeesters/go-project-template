@@ -1,0 +1,140 @@
+{
+  "schema": "go-workflow.delivery.v1",
+  "delivery_id": "workflow-contract-v1",
+  "project": {
+    "id": "go-project-template",
+    "name": "Go Project Template"
+  },
+  "assignment": {
+    "kind": "epic",
+    "id": "workflow-contract",
+    "title": "Workflow Contract"
+  },
+  "release": {
+    "version": 1,
+    "status": "released",
+    "created_at": "2026-09-13T21:31:01+02:00",
+    "supersedes": null
+  },
+  "disclosure": {
+    "class": "restricted",
+    "scan_status": "blocked"
+  },
+  "sections": {
+    "summary": "Delivery voor Workflow Contract.",
+    "delivered_scope": [
+      "Make template checks self-bootstrap stack",
+      "Honor GO_STACK when bootstrapping missing stack",
+      "Make the public template local-only, pinned, WSL-ready, and setup-aware",
+      "Adopt the v0.3 modular runtime contract in the public template",
+      "Enforce project-local stack ref source of truth",
+      "Normalize template data file modes",
+      "Pin template to v0.3.2 hotfix",
+      "Pin template to go-workflow-stack v0.3.3",
+      "Pin template to go-workflow-stack v0.3.4",
+      "Prevent template bootstrap from detaching sibling development clones",
+      "Pin template to go-workflow-stack v0.3.5",
+      "Pin go-project-template to go-workflow-stack v0.3.6, verify the immutable release commit and template pairing, and publish the updated template so future clones use semantic task-first GO decomposition.",
+      "Pin go-project-template to released go-workflow-stack v0.3.7 using the installed runtime and GO_STACK source resolution, verify fresh-clone template pairing, and publish the final latest template.",
+      "Adopt go-workflow-stack v0.3.8 defaults in the project template",
+      "Pin public project template to go-workflow-stack v0.3.10",
+      "Pin project template to go-workflow-stack v0.3.11",
+      "Require stack freshness before repo work",
+      "Prove fresh projects inherit v0.3.8 lifecycle evidence defaults",
+      "Release- en modelprofielen in het template opnemen"
+    ],
+    "excluded_scope": [
+      "Geen aanvullende uitgesloten scope vastgelegd."
+    ],
+    "evidence": [
+      {
+        "label": "Make template checks self-bootstrap stack",
+        "summary": "bash scripts/check.sh passed; python3 ../go-workflow-stack/cli/go.py template-check . --json ok=true"
+      },
+      {
+        "label": "Honor GO_STACK when bootstrapping missing stack",
+        "summary": "local working-copy smoke with GO_STACK pointing at missing path cloned stack and ran scripts/check.sh"
+      },
+      {
+        "label": "Make the public template local-only, pinned, WSL-ready, and setup-aware",
+        "summary": "RED: template contract failed while hosted workflow existed; commit-SHA bootstrap failed because git clone --branch cannot resolve a SHA. GREEN: local template test now proves setup_required, no workflow directory, matching pinned runtime, and immutable commit checkout. Full pairing verification follows after task state is moved from active to done."
+      },
+      {
+        "label": "Adopt the v0.3 modular runtime contract in the public template",
+        "summary": "Template contract test passed with setup_required, no hosted workflow, and full-SHA bootstrap; v0.3.0 version endpoint reports contract version 2. Full pairing verification follows after active task moves to done."
+      },
+      {
+        "label": "Enforce project-local stack ref source of truth",
+        "summary": "TDD RED: GO_STACK_REF=v9.9.9 overrode the project contract and bootstrap returned 0. GREEN: bootstrap rejects the override with exit 5; bash syntax check and temporary commit-SHA bootstrap self-test pass."
+      },
+      {
+        "label": "Normalize template data file modes",
+        "summary": "RED regression listed executable .go JSON/JSONL contracts. GREEN removes executable bits while preserving launchers/scripts; bash syntax and template commit-SHA bootstrap self-test pass."
+      },
+      {
+        "label": "Pin template to v0.3.2 hotfix",
+        "summary": "Dry-run resolved annotated v0.3.2 to 194fca97041ed98b97d155606cc4a296af83e3e9; transactional apply recorded .go/updates rollback state and set 0.3.2/v0.3.2. Bash syntax, template self-test, contract validation, and diff check passed."
+      },
+      {
+        "label": "Pin template to go-workflow-stack v0.3.3",
+        "summary": "R-1: official dry-run/apply updated the template to required_stack_version 0.3.3 and stack_ref v0.3.3, resolving the public annotated tag exactly to 697f89baa8d43105a715b662c6f3b46d37ba8a4b. R-2: generated rollback record .go/updates/20260716T085634105634Z-v0.3.3-697f89baa8d4.json validates target=.go/project.json, v0.3.2 to v0.3.3 before/after values, exact resolved commit, and no absolute paths. R-3 pre-close proof: projected final-state clone passed scripts/check.sh, GO_REQUIRE_LIVE_HERMES=1 scripts/check-linux.sh, fresh clone contract tests, native Hermes doctor ready with prompt -z, and template-check ok=true, all using an exact public v0.3.3 clone with GO_STACK_ALLOW_DEV unset. Post-close gates passed on the real done-state: fresh public v0.3.3 bootstrap, clone-local check, Linux/WSL check, live Hermes doctor, and template-check all succeeded without GO_STACK_ALLOW_DEV. Initial devil review B findings were repaired; final re-review verdict A."
+      },
+      {
+        "label": "Pin template to go-workflow-stack v0.3.4",
+        "summary": "R-1 complete: official stack update pins required_stack_version 0.3.4 and stack_ref v0.3.4; annotated release tag resolves to payload e3fc0adb352eeda9a69e04890486db1eb49482b7. R-2 complete: rollback record .go/updates/20260716T110629719219Z-v0.3.4-e3fc0adb352e.json preserves v0.3.3 to v0.3.4 before/after state, exact resolved commit, and no absolute paths. R-3 complete: projected final-state scripts/check.sh and GO_REQUIRE_LIVE_HERMES=1 scripts/check-linux.sh passed from fresh public v0.3.4 clones with GO_STACK_ALLOW_DEV unset; fresh uv package doctor ready=true, exact_ref=true, identity_source=pep610-vcs, development_override=false, Hermes path /home/viggo/.local/bin/hermes. Doctor sha256 e78032475872c8ab674ddd3580c6e2cdac69e4dffa7389dc08e055bfd0996995; direct_url sha256 31f139ce1c1b502f66a63410b0e36ae34ccc8c034391780a6e3efaae215307b5. R-4 complete: CHANGELOG documents the v0.3.4 pin and exact official-GitHub PEP 610 provenance; GitHub Actions unused. Fresh-eyes re-review verdict A."
+      },
+      {
+        "label": "Prevent template bootstrap from detaching sibling development clones",
+        "summary": "R-1 complete: default bootstrap no longer targets ../go-workflow-stack; it uses an isolated tag-keyed XDG or HOME cache and the actual development checkout remained on main 5aab526 with upstream 0/0 throughout final gates. R-2 complete: explicit GO_STACK still requires exact runtime unless the explicit development override is set; managed cache now rejects origin mismatch against GO_STACK_REMOTE. R-3 complete: regression creates annotated v9.9.9, proves cache path and exact peeled commit, preserves sibling main and HEAD, and rejects a different remote reusing the cache. R-4 complete: projected final-state scripts/check.sh and GO_REQUIRE_LIVE_HERMES=1 scripts/check-linux.sh passed from isolated caches; bash syntax and git diff --check passed; GitHub Actions unused. Fresh-eyes re-review verdict A."
+      },
+      {
+        "label": "Pin template to go-workflow-stack v0.3.5",
+        "summary": "Pinned template contract to v0.3.5; go-workflow validate passed. Final template check follows after task closeout."
+      },
+      {
+        "label": "Pin go-project-template to go-workflow-stack v0.3.6, verify the immutable release commit and template pairing, and publish the updated template so future clones use semantic task-first GO decomposition.",
+        "summary": "Pinned template to immutable v0.3.6 commit ce95bd7a6f4244014990796744f8fcad5d57e769; validate and installed-runtime doctor ready=true; final fresh-template pairing check follows after task closeout"
+      },
+      {
+        "label": "Pin go-project-template to released go-workflow-stack v0.3.7 using the installed runtime and GO_STACK source resolution, verify fresh-clone template pairing, and publish the final latest template.",
+        "summary": "Installed v0.3.7 runtime honored GO_STACK without --stack-repo, resolved immutable commit 307672f443d1b9297315fd17cce9704fc06b7fd2, applied template pin, validate passed, doctor ready=true; fresh-clone pairing check follows after task closeout"
+      },
+      {
+        "label": "Adopt go-workflow-stack v0.3.8 defaults in the project template",
+        "summary": "changed_files=.go/project.json,.go/hierarchy.json,.go/runs/events.jsonl,.go/updates/20260728T180154093798Z-v0.3.8-c30e11d58016.json,README.md,CHANGELOG.md; verification_command=bash scripts/test-template.sh and go-workflow validate and doctor; verification_result=passed template contract tests validate and exact PEP610 v0.3.8 doctor ready; critic=VERDICT B required lifecycle completion before ship and this finish supplies the missing task artifact and finish evidence; runtime=hermes; model=gpt-5.6-sol; billing_mode=subscription; owner=viggo"
+      },
+      {
+        "label": "Pin public project template to go-workflow-stack v0.3.10",
+        "summary": "summary=Transactionally pinned go-project-template from stack v0.3.9 to public annotated v0.3.10 at fa451abc9f4f44174d4cfb14f42767fcd1391cee, recorded exact before/after update state, and documented shareable delivery output; changed_files=.go/project.json,.go/updates/20260811T143823926504Z-v0.3.10-fa451abc9f4f.json,README.md,CHANGELOG.md,.go/hierarchy.json,.go/runs/events.jsonl,.go/evidence/events.jsonl,.go/tasks/done/pin-stack-v0310-shareable-delivery.json; verification_command=GO_STACK=/home/viggo/.cache/go-workflow-stack/v0.3.10 bash scripts/test-template.sh && bash scripts/validate-go.sh; verification_result=template contract tests ok, clone-local validation ok, stack tag bootstrapped at exact commit; critic=VERDICT A no blockers, immutable pair exact, rollback/docs/public-data/scope consistent; runtime=hermes; model=gpt-5.6-sol; billing_mode=subscription; owner=viggo"
+      },
+      {
+        "label": "Pin project template to go-workflow-stack v0.3.11",
+        "summary": "summary=Transactionally pinned go-project-template from v0.3.10 to public annotated v0.3.11 at 8155f449f78ea57af38b407c30c8ad3ad56e0e48 with exact rollback metadata and updated docs; changed_files=.go/project.json,.go/updates/20260811T210336134587Z-v0.3.11-8155f449f78e.json,README.md,CHANGELOG.md; verification_command=bash scripts/validate-go.sh; verification_result=passed; critic=VERDICT A exact tag/commit, rollback, docs, history and scope verified; post-closeout fresh-copy/full gates required before push"
+      },
+      {
+        "label": "Require stack freshness before repo work",
+        "summary": "changed_files=.go/project.json,.go/updates/20260817T050123432223Z-v0.3.12-367d8bee0217.json,AGENTS.md,README.md,scripts/validate-go.sh; verification_command=bash scripts/validate-go.sh && ./go doctor . --platform wsl --agent hermes --json && ./go validate . && git diff --check; verification_result=passed: v0.3.12 exact_ref=true compatible=true ready=true and policy assertions; critic_outcome=passed: migration rollback record and fail-closed startup wording reviewed; runtime=hermes; billing_mode=subscription"
+      },
+      {
+        "label": "Prove fresh projects inherit v0.3.8 lifecycle evidence defaults",
+        "summary": "changed_files=.go/hierarchy.json,.go/runs/events.jsonl,.go/tasks/open/task-schema-smoke.json,scripts/test-template.sh,README.md,CHANGELOG.md; verification_command=bash -n scripts/test-template.sh && bash scripts/test-template.sh && go-workflow validate .; verification_result=passed lifecycle evidence fresh-copy smoke and repo contract validation; critic=VERDICT A no blockers staged snapshot e306c242af592b2814812fc0e1ddb9d10218966c45cbfed73e36cd1f5f0c27d8; runtime=hermes; model=gpt-5.6-sol; billing_mode=subscription; owner=viggo"
+      },
+      {
+        "label": "Release- en modelprofielen in het template opnemen",
+        "summary": "changed_files=AGENTS.md,CHANGELOG.md,Makefile,README.md,docs/abc-onboarding.md,docs/architecture.md,docs/practical-architecture.md,docs/releases/v0.3.15.md,examples/abc/check-onboarding.py,examples/abc/github-profile.example.json,examples/abc/lifecycle-settings.example.json,examples/abc/model-override.example.json,examples/abc/task.example.json,go,scripts/bootstrap-stack.sh,scripts/check.sh,scripts/validate-go.sh; verification_command=declared completion checks and exact candidate fresh-clone gates; verification_result=passed; critic=passed same-agent review; runtime=Codex desktop; model=user-selected gpt-6-astra high (effective identity unconfirmed); billing_mode=unknown; release=v0.3.15 https://github.com/viggomeesters/go-project-template/releases/tag/v0.3.15; Self-reflect: no durable agent/process improvement needed; no skill/memory/config change. In-scope fixture issues repaired and verified."
+      }
+    ],
+    "limitations": [
+      "Alleen bewijs dat in .go is vastgelegd wordt in deze levering vertegenwoordigd."
+    ],
+    "next_steps": [
+      "Prove the cloned template can execute its repo-local contract",
+      "Verse clones door de volledige lifecycle bewijzen"
+    ]
+  },
+  "provenance": {
+    "source": ".go",
+    "source_sha256": "45d86011242060e65c3e722698b8540c4fda5a3d528f9b067006abc2fa3e4986",
+    "html_sha256": "651791ea4a4f72493e871a59091df5dcf3ae12b30787082eb369eeca60731e8a"
+  }
+}
