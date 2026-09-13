@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.16 — complete template lifecycle proof
+
+- Verify two ordered profiled task releases through customized ordinary and linked starter clones.
+- Prove phase model continuity, budgeted resume, current critic feedback, unmerged preservation and idempotent completion.
+- Reuse pinned runtime failure regressions for lost acknowledgements, unavailable models, remote uncertainty and cleanup.
+- Keep source smoke and planning unchanged; distinguish deterministic doubles from the archived live proof.
+
 ## 0.3.15 — explicit lifecycle onboarding and linked runtimes
 
 - Pin the released v0.3.26 stack with real ordered model/task release proof.

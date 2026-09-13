@@ -99,7 +99,10 @@ read-only and judges the prepared candidate before publication. Release/deployme
 receipts remain pending until the controller observes them, and missing proof
 prevents `done`.
 
-The initial managed execution binds owner, run, task, workspace path/branch and
+Start the controller in the **primary project checkout**. A linked runtime is
+supported; an arbitrary linked project checkout is not a second controller. Read
+from an owned task worktree as needed, but keep controller mutations in the primary
+checkout. The initial managed execution binds owner, run, task, workspace path/branch and
 existing base commit explicitly. Later continuation uses its stored resume command;
 it does not silently choose another workspace or model. Preserve dirty/unmerged
 work and surviving workers. Cleanup is a separate stage after integration and
@@ -130,5 +133,39 @@ sample and its two preserved failures are in the stack's
 [v0.3.26 evidence](https://github.com/viggomeesters/go-workflow-stack/blob/v0.3.26/.go/evidence/abc-10-live/manifest.json).
 It used a disposable development candidate whose 53 runtime file hashes match the
 release. It proves those native local Git releases, not hosted deployment access or
-general model quality. Full template clone/worktree lifecycle fixtures are the next
-source task, `abc-template-02`.
+general model quality. Template v0.3.16 adds the complete fresh clone/linked-worktree campaign below.
+
+
+## Reproduce the template campaign
+
+Run `bash scripts/test-abc-template.sh` (or `make check-abc`) with Python 3.11+
+and `uv` available. It selects the exact pinned stack, then creates disposable
+ordinary project clones, linked project views/owned task worktrees, and ordinary
+or linked runtime checkouts. The unregistered linked view is rejected as a second
+controller before worker launch; execution uses the primary controller. Each project is customized through
+the real launcher and intake; generated scope/checks are explicitly refined before
+claim. No source maintenance queue or model default becomes project authority.
+
+The first task uses Terra High for build/repair and Astra Medium for its read-only
+critic; the second uses Astra Medium. A deterministic native CLI double supplies
+the capability catalog and phase responses: **these checks make no model calls**.
+The controller, context snapshots, validators, worktrees, versioning, local Git
+remotes and release readback are real. Both projects deliver v1.2.0 then v1.3.0.
+
+The campaign pauses after build, resumes the same run/workspace, rejects early
+dependency execution, carries critic feedback into repair, and checks unmerged-index
+preservation, serial tag ancestry and completion retry without repeated workers or
+publication. It prints release and verification receipts. Separate released-stack
+regressions exercise lost push/publish acknowledgements, unknown remotes, changed
+model selection, unavailable critic capabilities, dirty cleanup and cleanup retry.
+Migration regressions also apply, resume and roll back real contract journals while
+preserving existing overrides and historical bytes. Missing release destinations
+are rejected before worker launch. Those regression fixtures may explicitly select their own development runtime;
+the template clone campaign itself never uses a development override.
+
+`bash scripts/check.sh` remains the bounded starter pairing check; `check-abc` is a
+separate outer gate so per-task verification cannot recursively start the campaign.
+The source smoke stays open. Temporary repositories are removed after assertions;
+repository completion evidence captures the printed results. The earlier live
+sample remains separately attributed at the link above; neither proof asserts
+hosted deployment access, provider identity attestation or automatic conflict repair.

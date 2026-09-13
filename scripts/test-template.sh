@@ -109,6 +109,7 @@ git -C "$FRESH" init -q -b main
 git -C "$FRESH" add .
 git -C "$FRESH" -c user.name=Template -c user.email=template@example.com commit -q -m fresh
 test -f "$ROOT/.go/tasks/open/task-schema-smoke.json"
+cd "$FRESH"
 GO_STACK="${GO_STACK:-}" "$FRESH/go" auto "$FRESH" \
   --max-tasks 1 --execute --agent template-contract --json >"$TMP/auto-result.json"
 python3 - "$TMP/auto-result.json" "$FRESH/.go/tasks/done/task-schema-smoke.json" <<'PY'

@@ -7,3 +7,7 @@ check:
 	$(PYTHON) $(GO_STACK)/cli/go.py readback .
 	$(PYTHON) $(GO_STACK)/cli/go.py status . --json >/tmp/go-project-template-status.json
 	cd / && $(PYTHON) "$(abspath $(GO_STACK))/cli/go.py" template-check "$(CURDIR)" --json >/tmp/go-project-template-pairing.json
+
+.PHONY: check-abc
+check-abc:
+	bash scripts/test-abc-template.sh
