@@ -35,6 +35,5 @@
   "claim": {
     "agent": null,
     "claimed_at": null
-  },
-  "description": "Reusable mechanical starter smoke only. It does not call a model or represent a versioned app release. Customize the copied template and choose explicit lifecycle settings before creating product work."
+  }
 }
