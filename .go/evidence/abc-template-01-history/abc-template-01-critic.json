@@ -1,0 +1,32 @@
+{
+  "schema": "go-workflow.critic-review.v1",
+  "task_id": "abc-template-01",
+  "project": "go-project-template",
+  "contract_digest": "97cd97288f6d43831754a97758f29115552d495eaa7fea53a3cc257f63a8e829",
+  "revision": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+  "content_digest": "4043f7cf2db329cf3a53154ef24327d0257bb7c7304407edfd7162e770a720fc",
+  "status": "passed",
+  "reviewer": "codex-astra-high",
+  "review_mode": "same_agent",
+  "summary": "Reviewed onboarding examples, docs, bootstrap, launcher and checks. Released annotated v0.3.26 pin accepts ordinary and linked runtime checkouts and rejects dirty, lightweight or mismatched explicit runtimes while preserving bytes. New-project customization removes source profiles/history; explicit task overrides and pending evidence survive intake, migration preview is read-only. Source smoke remains unchanged and mechanical, no active source queue is tracked. Existing pairing fixture commands run from neutral/disposable cwd and accepted architecture count permits the real onboarding brief. Worker scope guard rejected a smoke-description edit; it was reverted to the original controller-owned fixture. Static pairing command compatibility restored and fresh macOS/Linux clone gates and bound declared verification all passed. No model calls, deployment or independent reviewer identity claimed. Full two-release template campaign remains task02.",
+  "blocking_findings": [],
+  "reviewed_paths": [
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "Makefile",
+    "README.md",
+    "docs/abc-onboarding.md",
+    "docs/architecture.md",
+    "docs/practical-architecture.md",
+    "docs/releases/v0.3.15.md",
+    "examples/abc/check-onboarding.py",
+    "examples/abc/github-profile.example.json",
+    "examples/abc/lifecycle-settings.example.json",
+    "examples/abc/model-override.example.json",
+    "examples/abc/task.example.json",
+    "go",
+    "scripts/bootstrap-stack.sh",
+    "scripts/check.sh",
+    "scripts/validate-go.sh"
+  ]
+}

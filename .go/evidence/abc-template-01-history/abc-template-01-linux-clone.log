@@ -1,0 +1,89 @@
+RUN: git fetch /tmp/go-abc-01-xjyg7dz7/template01.bundle codex/abc-template-01
+From /tmp/go-abc-01-xjyg7dz7/template01.bundle
+ * branch            codex/abc-template-01 -> FETCH_HEAD
+RUN: git merge --ff-only FETCH_HEAD
+Updating 305a3a2..2e98cff
+Fast-forward
+ .go/tasks/open/task-schema-smoke.json | 3 +--
+ Makefile                              | 6 +++---
+ 2 files changed, 4 insertions(+), 5 deletions(-)
+RUN: git rev-parse HEAD
+2e98cff373e6993ce6d0fb12771d83be9bf7de4f
+RUN: uv run --no-project --python 3.12 python examples/abc/check-onboarding.py
+ABC onboarding: examples, exact ordinary/linked runtimes, preservation, customization and pending intake passed; no model calls
+RUN: uv run --no-project --python 3.12 bash scripts/check-linux.sh
+make: Entering directory '/tmp/go-abc-01-xjyg7dz7/template01-check'
+python3 /tmp/go-abc-01-xjyg7dz7/template26-runtime/cli/go.py validate .
+ok: /tmp/go-abc-01-xjyg7dz7/template01-check/.go
+python3 /tmp/go-abc-01-xjyg7dz7/template26-runtime/cli/go.py readback .
+Project: Go Project Template (go-project-template)
+North star: A clone-local agent contract proves repo-local continuation.
+Wedge: Self-contained project OS, not a central workflow database.
+Principles: json-first; abc-release-evidence; abc-explicit-model-contract; abc-durable-worker-context; abc-task-workspace; abc-final-candidate-proof; abc-selective-legacy-reuse
+Epics: workflow-contract; complete-advice-to-outcome-model; architecture-lane
+Architecture: briefs=2; open_deviations=0; active_waivers=0
+Next task: task-schema-smoke — Prove the cloned template can execute its repo-local contract
+python3 /tmp/go-abc-01-xjyg7dz7/template26-runtime/cli/go.py status . --json >/tmp/go-project-template-status.json
+cd / && python3 "/tmp/go-abc-01-xjyg7dz7/template26-runtime/cli/go.py" template-check "/tmp/go-abc-01-xjyg7dz7/template01-check" --json >/tmp/go-project-template-pairing.json
+make: Leaving directory '/tmp/go-abc-01-xjyg7dz7/template01-check'
+Cloning into '/tmp/tmp.rf9DIbxLzk/checkout'...
+warning: --depth is ignored in local clones; use file:// instead.
+done.
+Note: switching to '8a26eb8103dfd4bac0a3d54e5816d8437b06ef49'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Cloning into '/tmp/tmp.rf9DIbxLzk/cache/go-workflow-stack/v9.9.9'...
+warning: --depth is ignored in local clones; use file:// instead.
+done.
+Note: switching to '8a26eb8103dfd4bac0a3d54e5816d8437b06ef49'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+template contract tests: ok
+local template Linux/WSL verification: ok
+RUN: uv run --no-project --python 3.12 bash scripts/check.sh
+make: Entering directory '/tmp/go-abc-01-xjyg7dz7/template01-check'
+python3 /tmp/go-abc-01-xjyg7dz7/template26-runtime/cli/go.py validate .
+ok: /tmp/go-abc-01-xjyg7dz7/template01-check/.go
+python3 /tmp/go-abc-01-xjyg7dz7/template26-runtime/cli/go.py readback .
+Project: Go Project Template (go-project-template)
+North star: A clone-local agent contract proves repo-local continuation.
+Wedge: Self-contained project OS, not a central workflow database.
+Principles: json-first; abc-release-evidence; abc-explicit-model-contract; abc-durable-worker-context; abc-task-workspace; abc-final-candidate-proof; abc-selective-legacy-reuse
+Epics: workflow-contract; complete-advice-to-outcome-model; architecture-lane
+Architecture: briefs=2; open_deviations=0; active_waivers=0
+Next task: task-schema-smoke — Prove the cloned template can execute its repo-local contract
+python3 /tmp/go-abc-01-xjyg7dz7/template26-runtime/cli/go.py status . --json >/tmp/go-project-template-status.json
+cd / && python3 "/tmp/go-abc-01-xjyg7dz7/template26-runtime/cli/go.py" template-check "/tmp/go-abc-01-xjyg7dz7/template01-check" --json >/tmp/go-project-template-pairing.json
+make: Leaving directory '/tmp/go-abc-01-xjyg7dz7/template01-check'
+architecture lane template contract: ok
+advice-to-outcome template contract: ok
+RUN: git diff --exit-code
+TEMPLATE01_LINUX_CLONE_PASSED

@@ -1,0 +1,56 @@
+python3 /Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-runtime/cli/go.py validate .
+ok: /Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01-check/.go
+python3 /Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-runtime/cli/go.py readback .
+Project: Go Project Template (go-project-template)
+North star: A clone-local agent contract proves repo-local continuation.
+Wedge: Self-contained project OS, not a central workflow database.
+Principles: json-first; abc-release-evidence; abc-explicit-model-contract; abc-durable-worker-context; abc-task-workspace; abc-final-candidate-proof; abc-selective-legacy-reuse
+Epics: workflow-contract; complete-advice-to-outcome-model; architecture-lane
+Architecture: briefs=2; open_deviations=0; active_waivers=0
+Next task: task-schema-smoke — Prove the cloned template can execute its repo-local contract
+python3 /Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-runtime/cli/go.py status . --json >/tmp/go-project-template-status.json
+cd / && python3 "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-runtime/cli/go.py" template-check "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01-check" --json >/tmp/go-project-template-pairing.json
+Cloning into '/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/tmp.LLipo7fOS8/checkout'...
+warning: --depth is ignored in local clones; use file:// instead.
+done.
+warning: refs/tags/v9.9.9 bbebbec748ec608afdabe89bad4c7704013d6c35 is not a commit!
+Note: switching to '9c2f5e8e27a62373d9ea0996ca6d6dec62004e6f'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Cloning into '/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/tmp.LLipo7fOS8/cache/go-workflow-stack/v9.9.9'...
+warning: --depth is ignored in local clones; use file:// instead.
+done.
+warning: refs/tags/v9.9.9 bbebbec748ec608afdabe89bad4c7704013d6c35 is not a commit!
+Note: switching to '9c2f5e8e27a62373d9ea0996ca6d6dec62004e6f'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+template contract tests: ok
+local template Linux/WSL verification: ok

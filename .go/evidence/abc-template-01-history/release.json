@@ -1,0 +1,15 @@
+{
+  "tag": "v0.3.15",
+  "commit": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+  "hosted_readback": {
+    "isDraft": false,
+    "isPrerelease": false,
+    "publishedAt": "2026-09-13T19:30:09Z",
+    "tagName": "v0.3.15",
+    "url": "https://github.com/viggomeesters/go-project-template/releases/tag/v0.3.15"
+  },
+  "completion_readback": {
+    "path": ".go/runs/abc-template-01/completion/release-5ecd1d2047aa42d594506da6a5deeda4.json",
+    "sha256": "af481014f77646ca9b8e8b4508be6f1fe8573a78269ce9bd7681a1a00d3e98c5"
+  }
+}

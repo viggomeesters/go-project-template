@@ -1,0 +1,33 @@
+{
+  "schema": "go-workflow.source-maintenance-archive.v1",
+  "task_id": "abc-template-01",
+  "status": "completed",
+  "executable": false,
+  "release": "v0.3.15",
+  "canonical_task_record": "source/.go/tasks/done/abc-template-01.json",
+  "files_sha256": {
+    "abc-template-01-ready.json": "a679257764835eac691650bc3773cd073ca4bea48886fd0d6c5caddd13cb80dc",
+    "abc-template-01-linux-clone.log": "a23fef062cddfe6624e5e1e0808c77abfca19bbe8b196b00989329a61c050144",
+    "abc-template-01-completion.json": "b20b877148953f2bbc73e8fae109a8066417bff13a4387fcb6165e46479f9b53",
+    "abc-template-01-integration.json": "4e07c90635621ee80f2c6b8634fc07ac05fc4cf43a02864d0bd29ee9308496cf",
+    "release.json": "ae271b87f74d779575138655c09fed4004cff2389aff5c5cedfe8cb5c23aa5d1",
+    "abc-template-01-critic.json": "cc8e0d0421ee6b592ed1d8c66b0f2a43f6846b52e0903abddf66bd7237c7a186",
+    "abc-template-01-mac-clone.log": "e2a7dd7187114f8e9fb24043e1c3af72479232954dfcee3b33e3fc24e64148a8",
+    "source/.go/workspaces/abc-template-01.json": "d86b21383559b8b7eca3a344dddd3409c019db0a98fbf9476ba854c84401a49a",
+    "source/.go/tasks/done/abc-template-01.json": "a1f74720b481a3a9755b49fae6bf6a138685fc90b66b9fa0c11d76a700e547db",
+    "source/.go/runs/abc-template-01/completion-state.json": "9e95c05f498f2dd564bf7b07fe64e36a8dcb9cc00d86885e79c841f61d36bac0",
+    "source/.go/runs/abc-template-01/completion/command-c361614d7c49407893f65d7723fdfd28.json": "3438b058e19d0431ee2974e2ae7bdc97014ba2f0b04376cfa1e3e9aaa53cb07f",
+    "source/.go/runs/abc-template-01/completion/command-a7d6d94f7bb546cbaf452be039c30095.json": "9355d49aeaf0a31a998c30edecb0ad193ae5749a87ee925cf2bc8f004b97d8f4",
+    "source/.go/runs/abc-template-01/completion/critic-48fbeaaa2bc043e580d277a77427aec5.json": "cc8e0d0421ee6b592ed1d8c66b0f2a43f6846b52e0903abddf66bd7237c7a186",
+    "source/.go/runs/abc-template-01/completion/verification-b928523d0b964b00a9a82ee40d5b542d.json": "ebb7ea27b4d8412f3f875309d4ee9d5b0ef8266e295050ca5ecb0a5806d1a751",
+    "source/.go/runs/abc-template-01/completion/command-613be5f8d6cd48ea8247c58a1b29a6b5.json": "9f492e5ba8666f98db4d4ad048bd5ecb393d4d7ca6ae39fbacdb5dc4c4dba47a",
+    "source/.go/runs/abc-template-01/completion/command-256757717af94f8691de7162b8dea3b4.json": "d7fa45fff203cd9864b6687b3bc2cf94b5374a2df54bd769edc46d87ff833ddd",
+    "source/.go/runs/abc-template-01/completion/release-5ecd1d2047aa42d594506da6a5deeda4.json": "af481014f77646ca9b8e8b4508be6f1fe8573a78269ce9bd7681a1a00d3e98c5",
+    "source/.go/runs/abc-template-01/completion/verification-2e581125f12d4cb5bed9e3526d8b908e.json": "a6e7a3af51d6fd8a144f16fbf9b905853ca33fd4552c4e56eef36e082330bc34",
+    "source/.go/runs/abc-template-01/completion/command-bab87f6d06a84019a87c544e0db8c8e2.json": "080a520fcbeaee5954eaaf6d3b8e52ae02e310a973ee749d83daf2ee23dcb624",
+    "source/.go/runs/abc-template-01/completion/command-0a1032eafd114a6f832420279a1dcfbd.json": "2878142b08c8a99aa3dc05923ac8c6cbfa1504f139959a087a8722d1fd605efc",
+    "source/.go/runs/abc-template-01/completion/command-dc527a24b4a0410fa82ac6b26cedcbe1.json": "0694738463113728754ded11129ffb07392722d6cae9cd2fa7a1e8c13f9d388f",
+    "source/.go/runs/abc-template-01/completion/command-5917d7d0faa14fce876769d1e0df371e.json": "83e27ab4615b9390c37a8b70d34a51d3ceab909c0bbb48739a7b85608f55b4db"
+  },
+  "description": "Non-executable source history. Restore the source/.go task and proof files only in a disposable clone to inspect historical lifecycle evidence; never import source task authority into a new project. Canonical source retains operational records until dependent maintenance completes."
+}

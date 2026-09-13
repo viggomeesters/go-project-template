@@ -1,0 +1,34 @@
+{
+  "task_id": "abc-template-01",
+  "version": "0.3.15",
+  "tag": "v0.3.15",
+  "revision": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+  "verification": {
+    "path": ".go/runs/abc-template-01/completion/verification-b928523d0b964b00a9a82ee40d5b542d.json",
+    "sha256": "ebb7ea27b4d8412f3f875309d4ee9d5b0ef8266e295050ca5ecb0a5806d1a751"
+  },
+  "critic": {
+    "path": ".go/runs/abc-template-01/completion/critic-48fbeaaa2bc043e580d277a77427aec5.json",
+    "sha256": "cc8e0d0421ee6b592ed1d8c66b0f2a43f6846b52e0903abddf66bd7237c7a186"
+  },
+  "integration": {
+    "task_id": "abc-template-01",
+    "owner": "codex-astra-high",
+    "run_id": "abc-template-01-development",
+    "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+    "path": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+    "branch": "codex/abc-template-01",
+    "base_branch": "main",
+    "base_commit": "686270b1a0b8d64cf242ab148ed4439ae94386af",
+    "schema": "go-workflow.workspace-state.v1",
+    "common_dir": "/Users/viggomeesters/Dev/go-project-template/.git",
+    "repository_id": "b29c93800b56459ba2d24e26aa04e4e7",
+    "generation": "8cec95f25ab84cb49d3e563f74b0bcce",
+    "state": "integrated",
+    "integration": {
+      "workspace_head": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+      "integrated_commit": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f"
+    }
+  },
+  "status": "candidate_verified_publication_pending"
+}

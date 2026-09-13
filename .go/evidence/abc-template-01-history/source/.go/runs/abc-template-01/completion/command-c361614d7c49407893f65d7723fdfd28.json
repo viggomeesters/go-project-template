@@ -1,0 +1,14 @@
+{
+  "task_id": "abc-template-01",
+  "project": "go-project-template",
+  "contract_digest": "97cd97288f6d43831754a97758f29115552d495eaa7fea53a3cc257f63a8e829",
+  "revision": "2e98cff373e6993ce6d0fb12771d83be9bf7de4f",
+  "content_digest": "4043f7cf2db329cf3a53154ef24327d0257bb7c7304407edfd7162e770a720fc",
+  "command": "bash scripts/validate-go.sh",
+  "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01",
+  "elapsed_seconds": 1.3020921249990351,
+  "returncode": 0,
+  "stdout": "ok: /Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/abc-template-01/.go\n",
+  "stderr": "",
+  "timed_out": false
+}
