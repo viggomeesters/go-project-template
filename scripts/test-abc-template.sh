@@ -37,6 +37,7 @@ with tempfile.TemporaryDirectory(prefix='go-template-abc-') as temp:
  temp=Path(temp);runtime=temp/'runtime';linked_runtime=temp/'linked runtime'
  call(['git','clone','--quiet','--no-checkout',stack,runtime],temp);git(runtime,'checkout','--detach','--quiet',pin)
  git(runtime,'worktree','add','--quiet','--detach',linked_runtime,pin)
+ call(['make','-C',root,'check'],temp,{**env,'GO_STACK':str(linked_runtime)})
  binary_dir=temp/'bin';binary_dir.mkdir();binary=binary_dir/'codex';binary.write_text('#!'+sys.executable+'\n'+(stack/'fixtures/abc-campaign/worker.py').read_text());binary.chmod(0o755)
  for mode,chosen_runtime in [('ordinary',runtime),('linked',linked_runtime)]:
   case=temp/mode;case.mkdir();backing=case/'backing';repo=case/'project';remote=case/'remote.git';capture=case/'workers.jsonl'
