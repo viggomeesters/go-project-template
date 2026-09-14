@@ -1,0 +1,137 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "shareable_delivery": "none",
+  "id": "reliability-template-01",
+  "project": "go-project-template",
+  "status": "open",
+  "summary": "Ship guided starter onboarding with the current verified stack pairing",
+  "description": "Adopt the completed stack improvements, update current pins and docs, and prove a fresh customized project releases through generated settings. Keep source maintenance records out of the shipped runnable queue.",
+  "scope": {
+    "read": [
+      "**"
+    ],
+    "modify": [
+      ".go/project.json",
+      "README.md",
+      "AGENTS.md",
+      "CHANGELOG.md",
+      "docs/abc-onboarding.md",
+      "docs/releases/**",
+      "examples/abc/**",
+      "scripts/test-guided-onboarding.sh",
+      "scripts/test-abc-template.sh",
+      "scripts/validate-go.sh",
+      "Makefile"
+    ]
+  },
+  "acceptance": [
+    "Pin the latest completed stack release and keep current onboarding documentation/version hashes consistent.",
+    "Fresh template copies use guided settings and correct task scopes to deliver a verified first local release without inherited maintenance tasks or execution authority.",
+    "Publish an immutable template release with current checks, critic and readback; archive maintenance records as non-executable source history."
+  ],
+  "verification": [
+    "bash scripts/check.sh",
+    "bash scripts/test-guided-onboarding.sh",
+    "git diff --check"
+  ],
+  "claim": {
+    "agent": null,
+    "claimed_at": null
+  },
+  "work_status": "pending",
+  "review_status": "none",
+  "review_history": [],
+  "evidence": [],
+  "execution_contract": {
+    "schema": "go-workflow.execution-contract.v1",
+    "task_kind": "product",
+    "model": {
+      "id": "gpt-6-astra",
+      "effort": "high"
+    },
+    "release": {
+      "mode": "required",
+      "profile": "template-source-maintenance"
+    },
+    "workspace": {
+      "mode": "task_worktree",
+      "control_state": "repo_local_single_writer",
+      "base_branch": "main"
+    }
+  },
+  "dependencies": [
+    {
+      "project": "go-workflow-stack",
+      "task_id": "reliability-01",
+      "requires": "done_with_required_release_evidence"
+    },
+    {
+      "project": "go-workflow-stack",
+      "task_id": "reliability-02",
+      "requires": "done_with_required_release_evidence"
+    },
+    {
+      "project": "go-workflow-stack",
+      "task_id": "reliability-03",
+      "requires": "done_with_required_release_evidence"
+    },
+    {
+      "project": "go-workflow-stack",
+      "task_id": "reliability-04",
+      "requires": "done_with_required_release_evidence"
+    },
+    {
+      "project": "go-workflow-stack",
+      "task_id": "reliability-05",
+      "requires": "done_with_required_release_evidence"
+    }
+  ],
+  "outcome_tracking_version": 1,
+  "intent_source": {
+    "text": "Adopt the completed stack improvements, update current pins and docs, and prove a fresh customized project releases through generated settings. Keep source maintenance records out of the shipped runnable queue.",
+    "sha256": "87a73ede793e5d6931d53bb3813418629a354ce70853d9cd07524d8c57cc2408",
+    "source_ref": "repo-local-intake:reliability-template-01"
+  },
+  "requested_outcomes": [
+    {
+      "id": "R1",
+      "text": "Pin the latest completed stack release and keep current onboarding documentation/version hashes consistent.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R2",
+      "text": "Fresh template copies use guided settings and correct task scopes to deliver a verified first local release without inherited maintenance tasks or execution authority.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R3",
+      "text": "Publish an immutable template release with current checks, critic and readback; archive maintenance records as non-executable source history.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    }
+  ],
+  "order": 0,
+  "architecture": {
+    "impact": "material",
+    "scope_refs": [
+      "abc-onboarding"
+    ],
+    "decision_ids": [
+      "abc-template-d01-opt-in-starter"
+    ],
+    "conformance_required": true,
+    "human_gate": "none"
+  },
+  "execution_authority": {
+    "ship_policy": "push",
+    "allow_push": true,
+    "source": "User Implement"
+  }
+}
