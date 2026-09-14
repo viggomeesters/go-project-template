@@ -1,0 +1,11 @@
+{
+  "schema": "go-workflow.source-maintenance-intake.v1",
+  "task_id": "reliability-template-01",
+  "executable": false,
+  "status": "implementation_pending",
+  "files_sha256": {
+    "task.json": "95e668a1a9c0c9453e1f9d20062d1319c1e8a403644def44cab07d0ece267efc",
+    "hierarchy.json": "95c68415f3b9c4b83389d3edb55bcc8b69a07626f88e58ea2aa868c8ce5ce9d1"
+  },
+  "purpose": "Planning provenance only. Canonical on-disk task/hierarchy continue to own the run; product Git trees expose only reusable starter work."
+}

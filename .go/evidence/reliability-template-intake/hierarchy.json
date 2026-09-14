@@ -19,7 +19,9 @@
           "id": "abc-template",
           "title": "Draagbare A/B/C-projectlifecycle",
           "description": "Completed source maintenance, archived outside the runnable starter queue.",
-          "tasks": [],
+          "tasks": [
+            "reliability-template-01"
+          ],
           "status": "completed",
           "source_history_ref": ".go/evidence/abc-source-history-final/manifest.json"
         }
