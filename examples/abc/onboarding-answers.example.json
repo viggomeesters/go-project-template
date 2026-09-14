@@ -1,0 +1,17 @@
+{
+  "model": {"id": "CHOOSE_SUPPORTED_MODEL", "effort": "CHOOSE_SUPPORTED_EFFORT"},
+  "base_branch": "CHOOSE_EXISTING_BRANCH",
+  "verification": ["CHOOSE_REAL_PROJECT_CHECK"],
+  "publisher": {"provider": "CHOOSE_PROVIDER", "remote": "CHOOSE_REMOTE"},
+  "version": {"path": "CHOOSE_EXISTING_VERSION_FILE", "format": "CHOOSE_FORMAT"},
+  "bump": "CHOOSE_MAJOR_MINOR_OR_PATCH",
+  "tag_prefix": "CHOOSE_TAG_PREFIX",
+  "changelog": "CHOOSE_CHANGELOG_PATH",
+  "deployment": {"mode": "CHOOSE_DEPLOYMENT_MODE"},
+  "task": {
+    "id": "CHOOSE_TASK_ID",
+    "summary": "CHOOSE_OBSERVABLE_OUTCOME",
+    "scope": {"read": ["CHOOSE_INPUT_PATH"], "modify": ["CHOOSE_PRODUCT_PATH"]},
+    "acceptance": ["CHOOSE_OBSERVABLE_ACCEPTANCE"]
+  }
+}

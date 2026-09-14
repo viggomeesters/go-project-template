@@ -1,12 +1,14 @@
 # Explicit A/B/C onboarding
 
-This starter release uses stack **v0.3.26**, commit
-`b2d235610691eead011cc738f278887a99e4bbe0`. It remains `project_mode: template`
-and has no `execution_defaults`. `task-schema-smoke` is a reusable mechanical
-contract check; it does not select a model or represent an app release.
+The exact current stack version and immutable commit are generated in the
+[README pairing block](../README.md); both project pin fields and that block are
+checked by `make check`. This starter remains `project_mode: template` and has
+no `execution_defaults`. `task-schema-smoke` is a reusable mechanical contract
+check; it does not select a model or represent an app release.
 
-A new project must choose its own values before product execution. The JSON files
-under `examples/abc/` are schema-valid planning inputs. `CHOOSE_*` and
+A new project must choose its own values before product execution. The existing lifecycle/profile/task JSON files under `examples/abc/` are
+schema-valid planning inputs. `onboarding-answers.example.json` is an intentionally
+unresolved questionnaire: replace its choices before validation. `CHOOSE_*` and
 `CUSTOMIZED_PROJECT_ID` are placeholders, not working defaults. An unknown model
 or missing command/remote is supposed to block execution.
 
@@ -16,7 +18,7 @@ or missing command/remote is supposed to block execution.
 | Supported model ID and reasoning effort | `execution_defaults.model`, or a task execution-contract override |
 | Optional separate critic model/effort | `critic_model`; existing run selections remain frozen |
 | Existing base branch and workspace policy | `workspace.base_branch`, `task_worktree`, `repo_local_single_writer` |
-| Actual text/JSON product version source and bump | Named release profile `publication.version` and `bump` |
+| Actual text/JSON/TOML product version source and bump | Named release profile `publication.version` and `bump` |
 | Permitted remote, branch and publisher | Named release profile; a GitHub profile also needs the user's exact owner/repository |
 | Changelog and all touched product files | The task's `scope.modify`, including version/changelog paths |
 | Phase inputs, outputs, proof, stops and handoff | A selected `phase_profile`, with project-specific scope/checks |
@@ -29,65 +31,89 @@ deployment authority. A required deployment needs its own target, command adapte
 idempotency support, observation contract and explicit initial `--allow-deploy`.
 Do not use the example `mode: none` for a product that requires a live deployment.
 
-The controller currently prepares **text or JSON** version sources. A different
-version format requires an explicitly supported project arrangement; do not pretend
-a TOML/package source was updated by the example text-file profile.
+The controller supports static text, JSON and TOML version sources. For TOML,
+choose a dotted key such as `project.version` or `tool.poetry.version`; for JSON,
+provide its configured key. Dynamic versions and unsupported/ambiguous formatting
+are rejected before release writes. Select an existing static `X.Y.Z` source or
+explicitly create the project's chosen initial version first.
 
-## Customize a copy, then prepare its tasks
+## Guided customization of a new copy
 
 Use Python 3.11 or newer, Git and the project's selected agent runtime. For example,
 `uv run --no-project --python 3.12 ./go ...` supplies a compatible Python. `PYTHON`
 may name one Python executable; it is not a shell command string.
 
-In a new copied starter, let Go collect the inputs above and review the filled
-settings document. The internal customization command is:
+The user describes the project through **Go**. The agent gathers missing choices,
+reuses choices already explicit in the conversation, and operates these internal
+steps. Start with a read-only facts/questions preview:
 
 ```bash
-./go spike . --project-id my-project --name "My Project" \
-  --brief "The agreed product outcome" --lifecycle-settings /path/to/settings.json
+./go onboarding plan . --json
+./go onboarding plan . --answers /path/to/answers.json --json
 ```
 
-**Customization replaces the inherited `.go`** with the new project contract. Use
-it on the new copy, not on the maintained template source or an existing app with
-its own workflow history. Source maintenance profiles, dependency mapping, claims,
-architecture decisions and old tasks are not the new project's authority.
+The planner detects candidate version sources, current branch, remote names and
+possible checks. Detection does not execute checks or select policy. Fill the
+answer example with the real model/effort, checks, task, base branch, version,
+bump, tag prefix, changelog and publisher. A GitHub publisher also needs an exact
+`repository` (`owner/name`). For no deployment use `mode: none` with a reason;
+otherwise provide the explicit supported deployment configuration. Optional
+`critic_model` chooses a separate critic profile.
 
-Run **Go plan** to refine the generated tasks before executing them. Scaffolding
-preserves its scope presets: it cannot infer your version files or product checks.
-Every product task must include the actual version/changelog paths in modify scope,
-real verification and observable acceptance. Reuse/refine matching generated tasks;
-do not create duplicate work or describe a scaffold check as a product release.
-`task.example.json` shows a complete parameterized product task and scope.
+A `needs_configuration` result lists remaining questions. A `ready` result contains
+reviewable `settings` and `execution_brief` objects. Save those objects as separate
+JSON files outside the project while customizing. Readiness validates configuration;
+it does not attest model availability, working credentials, executable checks or
+permission to publish. Version and changelog paths are included in the generated
+task scope, alongside the supplied product paths.
 
-For a new task, the agent can use the ordinary intake with configured defaults:
+Only for a **new copy of this template**, after checking its identity and preserving
+any wanted source information, apply the reviewed settings and brief:
 
 ```bash
-./go task create . --id deliver-release --summary "Deliver the agreed app change" \
-  --epic delivery --execution-mode agent \
-  --read '.go/**' --read app.py --read 'tests/**' \
-  --modify app.py --modify 'tests/**' --modify VERSION --modify CHANGELOG.md \
-  --acceptance "The agreed observable behavior is present" \
-  --verification "python3 -m pytest -q"
+./go adopt . --force --project-id my-project --name "My Project" \
+  --lifecycle-settings /path/to/settings.json
+./go recommendation create . --brief /path/to/brief.json \
+  --authority execute --authority-source imperative
+./go go . --write --json
 ```
 
-Those paths/checks are illustrative; use the real project values. An optional
-`--execution-contract /path/to/model-override.json` selects another task model or
-critic profile. Availability and effort support are checked before native launch.
-The runtime enforces requested arguments; effective provider identity remains
-unconfirmed unless separately attested. No in-flight profile edit or mid-turn
-hot switch is supported.
+`adopt --force` replaces inherited `.go`; never use this recipe on the maintained
+template source or an existing app with workflow history. It removes inherited
+source tasks, claims, dependency mappings and maintenance profiles. The last two
+commands create the exact planned first task, initially open and unclaimed; they
+do not execute it. Use execute authority only when the user actually authorized
+execution. A planning-only request must remain planning-only.
 
-For an existing project's legacy tasks, use an explicit preview first:
+Before execution, review the new project's vision/architecture and the concrete
+task, run validation, and follow its Go preflight. Required real architecture
+choices cannot be inherited from the starter. The controller then runs the task
+with explicit workspace/run identity and authorized shipping policy. Settings and
+intake authority alone do not grant remote-write or deployment rights.
+
+`spike --lifecycle-settings` remains available for broader project scaffolding.
+It creates preset task scopes: refine matching generated tasks before claim,
+including real version/changelog paths and product checks. Do not create duplicate
+work. The guided brief path above preserves the supplied first-task scope directly.
+`task.example.json` and the lifecycle/profile examples remain available for later
+tasks and explicit per-task model overrides.
+
+For an existing project's legacy tasks, preview lifecycle adoption instead:
 
 ```bash
 ./go migrate . --lifecycle --config /path/to/settings.json --json
 ./go migrate . --lifecycle --config /path/to/settings.json --apply --json
 ```
 
-Adoption requires quiescent state, preserves existing task overrides and history,
-and does not grant execution authority. Preserve the journal for supported resume
-or rollback; changed history blocks unsafe rollback. A stack pin update alone does
-not adopt model/release defaults.
+Adoption requires quiescent state, preserves existing overrides/history and grants
+no execution authority. Keep its journal for supported resume or rollback. A stack
+pin update alone does not adopt model/release defaults. Exact-target stack upgrade
+previews validate disposable copies of the durable contract with the target runtime
+before an apply; they are trusted-code checks, not an OS sandbox.
+
+Model availability and effort support are checked before native launch. The runtime
+enforces requested arguments; effective provider identity remains unconfirmed unless
+separately attested. No in-flight profile edit or mid-turn hot switch is supported.
 
 ## One task workspace and a complete release
 
@@ -133,7 +159,7 @@ sample and its two preserved failures are in the stack's
 [v0.3.26 evidence](https://github.com/viggomeesters/go-workflow-stack/blob/v0.3.26/.go/evidence/abc-10-live/manifest.json).
 It used a disposable development candidate whose 53 runtime file hashes match the
 release. It proves those native local Git releases, not hosted deployment access or
-general model quality. Template v0.3.16 adds the complete fresh clone/linked-worktree campaign below.
+general model quality. Template v0.3.16 added the complete fresh clone/linked-worktree campaign below.
 
 
 ## Reproduce the template campaign
@@ -169,3 +195,26 @@ The source smoke stays open. Temporary repositories are removed after assertions
 repository completion evidence captures the printed results. The earlier live
 sample remains separately attributed at the link above; neither proof asserts
 hosted deployment access, provider identity attestation or automatic conflict repair.
+
+
+## Reproduce guided first-release onboarding
+
+Run `bash scripts/test-guided-onboarding.sh` or `make check-guided` against the
+committed product tree with the exact pinned runtime. The test clones that tree,
+rejects stale pin/docs metadata, proves that unanswered and answered previews are
+read-only, applies the generated settings, and imports the exact execution brief
+through the real CLI. It checks that source tasks, claims and release profiles do
+not become new-project authority.
+
+The first task starts open with pending outcomes and correct product/version/
+changelog scope. A deterministic native CLI double supplies build and critic
+responses; **no model calls are made**. The actual controller delivers v1.2.0 to a
+disposable local Git remote, checks raw verification and release readback, and
+cleans the one owned task worktree. The source contract remains unchanged.
+`check-guided` and `check-abc` are separate outer gates to avoid recursion in
+per-task checks.
+
+The stack's release-pairing manifest records each release's already immutable
+baseline template. This template's README block records its current stack pin and
+resolved runtime commit. Those are separate relationships: publishing a newer
+template does not rewrite an older stack release's historical baseline.

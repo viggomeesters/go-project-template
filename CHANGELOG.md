@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.17 — guided first release and verified current pairing
+
+- Pin immutable stack v0.3.32 with automatic README version/commit verification.
+- Turn explicit onboarding answers into settings and an exact first-task brief.
+- Prove a fresh starter delivers its first local release through the real controller.
+- Document TOML sources, target-runtime upgrade previews and explicit authority.
+- Preserve source maintenance proof outside the runnable starter queue.
+
 ## 0.3.16 — complete template lifecycle proof
 
 - Verify two ordered profiled task releases through customized ordinary and linked starter clones.

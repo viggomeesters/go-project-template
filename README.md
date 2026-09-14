@@ -6,9 +6,12 @@ A minimal starter repository for projects that carry their own repo-local `.go/`
 
 Use this repo as the copyable template when starting a new project that should be understandable by agents from the repository alone. It pairs with [`go-workflow-stack`](https://github.com/viggomeesters/go-workflow-stack), which provides the CLI, schemas, validators, and reusable workflow rules.
 
-This template pins `go-workflow-stack` `v0.3.26`, the immutable runtime
-contract that requires stale repository pins to be updated before route,
-task creation, claim, or product edits.
+<!-- go-stack-pairing:start -->
+Pinned Go stack: [`v0.3.32`](https://github.com/viggomeesters/go-workflow-stack/releases/tag/v0.3.32).
+Runtime commit: `35f20653ea490c718264f3e63a0edb295c164790`.
+<!-- go-stack-pairing:end -->
+
+Stale repository pins must be updated before route, task creation, claim, or product edits.
 
 For `material` and `foundational` work, claim also fails closed until the task
 or one of its applicable accepted architecture briefs references at least one
@@ -16,7 +19,7 @@ exact accepted governing decision. The synthetic template brief deliberately
 contains no decision: real projects must record their own choices instead of
 inheriting fake architecture authority from the starter repository.
 
-For independent task releases, start with [explicit A/B/C onboarding](docs/abc-onboarding.md).
+For independent task releases, start with [guided A/B/C onboarding](docs/abc-onboarding.md).
 The starter has no default model or executable product lifecycle. Model/effort,
 version source, permitted release destination, checks and workspace policy are
 project choices. The released stack supports fresh workers in one task worktree;

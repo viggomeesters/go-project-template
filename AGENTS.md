@@ -12,7 +12,7 @@ When the user says `Go`, uses a Go modifier, says `Next`, or asks to continue au
 1. Locate the pinned stack through the project-local `./go` launcher after the freshness preflight; set `GO_STACK` only to an exact matching immutable checkout.
 2. Read `.go/vision.json`, `.go/architecture-principles.json`, `.go/hierarchy.json`, and the selected task JSON.
 3. Run `bash scripts/validate-go.sh`, `./go status . --json`, and `./go router . --command go --intent "$PROMPT_TEXT" --json`. Use `selected_route` and the authority fields from the pinned runtime. Announce one `Route: <advice|wayfinder|vision|plan|task|now|goal|loop>` line and continue without asking for another Go command.
-4. If this is still a copied template contract, customize it first with `./go spike . --brief "$PROJECT_INTENT"`.
+4. If this is still a copied template contract, use the read-only `./go onboarding plan . --json` to collect missing project choices. Reuse explicit session choices, review generated settings and the first execution brief, then customize only the new copy and import that brief through the steps in `docs/abc-onboarding.md`. Never infer model, release destination or push/deployment authority.
 5. Create or repair a concrete task before implementation, then execute only its allowed modify scope.
 6. `Go plan` stops before implementation. Otherwise verify, critic/recheck, repair, record evidence, and continue until done, a repository gate, or budget exhaustion.
 
@@ -40,7 +40,7 @@ starter being customized into a new project; it does not authorize turning this
 source repository into an app. Follow `docs/abc-onboarding.md` for explicit settings.
 No execution_defaults, user model/account, publication command or production target
 is selected by the starter. The named source maintenance Git verifier and dependency
-mapping are source metadata; `spike` replaces inherited `.go` during customization.
+mapping are source metadata; guided adoption or `spike` replaces inherited `.go` during customization.
 
 Keep active/pending source maintenance tasks out of published starter trees. Publish
 completed maintenance records and raw proof as non-executable history in `.go/evidence/`.
