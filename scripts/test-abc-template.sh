@@ -31,7 +31,13 @@ from go_workflow.cli import validate_repo
 from go_workflow.worktrees import integration_slot,WorkspaceError
 spec=importlib.util.spec_from_file_location('campaign',stack/'fixtures/abc-campaign/campaign.py');campaign=importlib.util.module_from_spec(spec);spec.loader.exec_module(campaign)
 live=read(stack/'.go/evidence/abc-10-live/manifest.json');assert live['status']=='passed'
-for name,digest in live['successful_source']['files_sha256'].items():assert hashlib.sha256((stack/name).read_bytes()).hexdigest()==digest
+live_ref='v0.3.26'
+live_commit=git(stack,'rev-parse',live_ref+'^{commit}')
+assert git(stack,'cat-file','-t','refs/tags/'+live_ref)=='tag'
+assert live_commit=='b2d235610691eead011cc738f278887a99e4bbe0'
+for name,digest in live['successful_source']['files_sha256'].items():
+ archived=subprocess.check_output(['git','-C',str(stack),'show',live_commit+':'+name])
+ assert hashlib.sha256(archived).hexdigest()==digest,name
 results=[]
 with tempfile.TemporaryDirectory(prefix='go-template-abc-') as temp:
  temp=Path(temp);runtime=temp/'runtime';linked_runtime=temp/'linked runtime'
@@ -135,7 +141,7 @@ with tempfile.TemporaryDirectory(prefix='go-template-abc-') as temp:
   results.append({'mode':mode,'controller':'primary checkout','execution_workspace':'owned linked worktree','unregistered_linked_controller_rejected':mode=='linked','runtime_commit':pin,'model_execution':'deterministic native CLI double, no model calls','resumed_after':'build','task_releases':details,'idempotent_completion':True,'unmerged_integration_rejected_without_changes':True,'missing_release_destination_rejected':True})
  assert hashes(root/'.go')==source and (root/'.go/tasks/open/task-schema-smoke.json').read_bytes()==smoke
  git(runtime,'worktree','remove',linked_runtime)
-print(json.dumps({'schema':'go-workflow.template-abc-proof.v1','status':'passed','cases':results,'live_evidence':'https://github.com/viggomeesters/go-workflow-stack/blob/v0.3.26/.go/evidence/abc-10-live/manifest.json','live_runtime_hashes_matched':len(live['successful_source']['files_sha256']),'source_state_unchanged':True},indent=2))
+print(json.dumps({'schema':'go-workflow.template-abc-proof.v1','status':'passed','cases':results,'live_evidence':'https://github.com/viggomeesters/go-workflow-stack/blob/v0.3.26/.go/evidence/abc-10-live/manifest.json','live_runtime_ref':live_ref,'live_runtime_commit':live_commit,'live_runtime_hashes_matched':len(live['successful_source']['files_sha256']),'source_state_unchanged':True},indent=2))
 PY
 # Reuse the released runtime's actual failure tests instead of copying its validators.
 # They use local Git / fake publishers. Their internal development flags are isolated fixtures.

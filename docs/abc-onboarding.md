@@ -157,8 +157,9 @@ smoke stays open. Do not fabricate historical completion or rerun archived work.
 Onboarding checks make no model calls. The actual Terra High/Astra Medium two-release
 sample and its two preserved failures are in the stack's
 [v0.3.26 evidence](https://github.com/viggomeesters/go-workflow-stack/blob/v0.3.26/.go/evidence/abc-10-live/manifest.json).
-It used a disposable development candidate whose 53 runtime file hashes match the
-release. It proves those native local Git releases, not hosted deployment access or
+It used a disposable development candidate whose 53 runtime file hashes match
+the historical v0.3.26 release. The campaign verifies those hashes from that
+annotated tag, separately from testing the current pinned runtime. It proves those native local Git releases, not hosted deployment access or
 general model quality. Template v0.3.16 added the complete fresh clone/linked-worktree campaign below.
 
 
