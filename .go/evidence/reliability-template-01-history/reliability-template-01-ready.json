@@ -1,0 +1,39 @@
+{
+  "task_id": "reliability-template-01",
+  "status": "candidate_verified_publication_pending",
+  "binding": {
+    "task_id": "reliability-template-01",
+    "project": "go-project-template",
+    "contract_digest": "43f5e7a4e492c4bc18746442de8f419e012ed3778e62f37eadd69777fe109bce",
+    "revision": "9d185d2e741957d18264fb02690c932caeb45c41",
+    "content_digest": "f49e79119857be81b97b8d2f8c771d588763c0d0817b0dfaa5c00a2257846565"
+  },
+  "critic": {
+    "path": ".go/runs/reliability-template-01/completion/critic-ecefd9a0b89b4d04aec13b6b417de4da.json",
+    "sha256": "9085dcac002cadf5f7be0deb1b6ebf5c468a3ae0d989855dab3cffca80f4112b"
+  },
+  "integration": {
+    "task_id": "reliability-template-01",
+    "owner": "codex-astra-high",
+    "run_id": "reliability-template-01-development",
+    "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+    "path": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+    "branch": "codex/reliability-template-01",
+    "base_branch": "main",
+    "base_commit": "de42086fcb003767da0b247bee8816b53c0b77c4",
+    "schema": "go-workflow.workspace-state.v1",
+    "common_dir": "/Users/viggomeesters/Dev/go-project-template/.git",
+    "repository_id": "b29c93800b56459ba2d24e26aa04e4e7",
+    "generation": "0a275b33dafe420880834fece207338c",
+    "state": "integrated",
+    "integration": {
+      "workspace_head": "9d185d2e741957d18264fb02690c932caeb45c41",
+      "integrated_commit": "9d185d2e741957d18264fb02690c932caeb45c41"
+    }
+  },
+  "verification": {
+    "path": ".go/runs/reliability-template-01/completion/verification-703ebfb65e8c4f1b9fb6d8332a664a34.json",
+    "sha256": "4cf2b17a097afbbd002e8bb71de20ff6f15e87fc4fd2eceb5802d743a011aa43"
+  },
+  "self_reflect": "Historical live proof must bind its historical runtime; a reproduced stale-hash failure and updated campaign capture the correction in this task. No global skill/memory/config change."
+}

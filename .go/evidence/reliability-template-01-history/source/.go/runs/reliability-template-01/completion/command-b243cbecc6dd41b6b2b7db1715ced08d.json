@@ -1,0 +1,14 @@
+{
+  "task_id": "reliability-template-01",
+  "project": "go-project-template",
+  "contract_digest": "43f5e7a4e492c4bc18746442de8f419e012ed3778e62f37eadd69777fe109bce",
+  "revision": "9d185d2e741957d18264fb02690c932caeb45c41",
+  "content_digest": "f49e79119857be81b97b8d2f8c771d588763c0d0817b0dfaa5c00a2257846565",
+  "command": "git diff --check",
+  "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+  "elapsed_seconds": 0.4606326670036651,
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "timed_out": false
+}

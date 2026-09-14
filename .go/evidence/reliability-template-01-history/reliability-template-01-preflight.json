@@ -1,0 +1,171 @@
+{
+  "plan": {
+    "schema": "go-workflow.stack-update-plan.v1",
+    "mode": "dry_run",
+    "repo": "/Users/viggomeesters/Dev/go-project-template",
+    "stack_repo": "/Users/viggomeesters/Dev/go-workflow-stack",
+    "from_version": "0.3.27",
+    "from_ref": "v0.3.27",
+    "to_version": "0.3.32",
+    "to_ref": "v0.3.32",
+    "resolved_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+    "runtime_contract_version": 2,
+    "project_contract_version": 2,
+    "lifecycle_policy_migrated": false,
+    "up_to_date": false,
+    "changes": [
+      ".go/project.json:required_stack_version",
+      ".go/project.json:stack_ref"
+    ],
+    "before_project": {
+      "schema": "go-workflow.repo-local.project.v1",
+      "kind": "project",
+      "id": "go-project-template",
+      "name": "Go Project Template",
+      "source_of_truth": "repo-local",
+      "contract_version": 2,
+      "project_mode": "template",
+      "required_stack_version": "0.3.27",
+      "stack_ref": "v0.3.27",
+      "default_verification": [
+        "bash scripts/validate-go.sh"
+      ],
+      "release_profiles": {
+        "template-source-maintenance": {
+          "provider": "git-tag",
+          "remote": "origin",
+          "branch": "main"
+        }
+      },
+      "dependency_projects": {
+        "go-workflow-stack": "../go-workflow-stack"
+      }
+    },
+    "after_project": {
+      "schema": "go-workflow.repo-local.project.v1",
+      "kind": "project",
+      "id": "go-project-template",
+      "name": "Go Project Template",
+      "source_of_truth": "repo-local",
+      "contract_version": 2,
+      "project_mode": "template",
+      "required_stack_version": "0.3.32",
+      "stack_ref": "v0.3.32",
+      "default_verification": [
+        "bash scripts/validate-go.sh"
+      ],
+      "release_profiles": {
+        "template-source-maintenance": {
+          "provider": "git-tag",
+          "remote": "origin",
+          "branch": "main"
+        }
+      },
+      "dependency_projects": {
+        "go-workflow-stack": "../go-workflow-stack"
+      }
+    },
+    "compatibility": {
+      "status": "passed",
+      "resolved_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+      "source_digest": "1da2156911ea2951982a317cb4cbd3ea9cc197b12a30d6c6121d993c12cd49ab",
+      "exit_code": 0,
+      "errors": [],
+      "stdout": "ok: /Users/viggomeesters/Dev/go-project-template/.go\n",
+      "stderr": "",
+      "validation": "exact-target-workflow-snapshot"
+    }
+  },
+  "applied": {
+    "schema": "go-workflow.stack-update-plan.v1",
+    "mode": "applied",
+    "repo": "/Users/viggomeesters/Dev/go-project-template",
+    "stack_repo": "/Users/viggomeesters/Dev/go-workflow-stack",
+    "from_version": "0.3.27",
+    "from_ref": "v0.3.27",
+    "to_version": "0.3.32",
+    "to_ref": "v0.3.32",
+    "resolved_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+    "runtime_contract_version": 2,
+    "project_contract_version": 2,
+    "lifecycle_policy_migrated": false,
+    "up_to_date": false,
+    "changes": [
+      ".go/project.json:required_stack_version",
+      ".go/project.json:stack_ref"
+    ],
+    "compatibility": {
+      "status": "passed",
+      "resolved_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+      "source_digest": "1da2156911ea2951982a317cb4cbd3ea9cc197b12a30d6c6121d993c12cd49ab",
+      "exit_code": 0,
+      "errors": [],
+      "stdout": "ok: /Users/viggomeesters/Dev/go-project-template/.go\n",
+      "stderr": "",
+      "validation": "exact-target-workflow-snapshot"
+    },
+    "rollback_record": ".go/updates/20260914T172952071829Z-v0.3.32-35f20653ea49.json"
+  },
+  "doctor": {
+    "schema": "go-workflow.doctor.v1",
+    "repo": "/Users/viggomeesters/Dev/go-project-template",
+    "platform": {
+      "kind": "darwin",
+      "detected": true
+    },
+    "prerequisites": [
+      {
+        "name": "python",
+        "available": true,
+        "version": "3.12.13",
+        "path": "/Users/viggomeesters/.cache/uv/builds-v0/.tmpuIHQTV/bin/python"
+      },
+      {
+        "name": "git",
+        "available": true,
+        "path": "/usr/bin/git"
+      },
+      {
+        "name": "bash",
+        "available": true,
+        "path": "/bin/bash"
+      },
+      {
+        "name": "make",
+        "available": true,
+        "path": "/usr/bin/make"
+      },
+      {
+        "name": "uv",
+        "available": true,
+        "path": "/opt/homebrew/bin/uv"
+      }
+    ],
+    "agent": {
+      "name": "codex",
+      "available": true,
+      "compatible": true,
+      "path": "/Applications/ChatGPT.app/Contents/Resources/codex",
+      "prompt_flag": null
+    },
+    "stack": {
+      "version": "0.3.32",
+      "ref": "v0.3.32",
+      "git_head": "35f20653ea490c718264f3e63a0edb295c164790",
+      "pinned_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+      "identity_source": "git-checkout",
+      "provenance_requested_ref": "v0.3.32",
+      "required_version": "0.3.32",
+      "required_ref": "v0.3.32",
+      "exact_ref": true,
+      "development_override": false,
+      "compatible": true
+    },
+    "contract": {
+      "valid": true,
+      "errors": []
+    },
+    "ready": true,
+    "actions": []
+  }
+}

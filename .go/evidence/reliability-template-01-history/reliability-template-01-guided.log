@@ -1,0 +1,61 @@
+WARN `--no-project` was provided, but no project was found
+{
+  "schema": "go-workflow.guided-template-proof.v1",
+  "status": "passed",
+  "source_commit": "19fe27bd683e4b94b3f259be51b9d7c4b8f06571",
+  "runtime_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+  "model_execution": "deterministic native CLI double; no model calls",
+  "source_state_unchanged": true,
+  "stale_pairings_rejected": true,
+  "settings_and_intake": "real CLI",
+  "task": "first-release",
+  "tag": "v1.2.0",
+  "release_commit": "aaff566002b1a7f12ad1ec43681a47162bb7ed88",
+  "receipt": {
+    "schema": "go-workflow.release-receipt.v1",
+    "status": "verified",
+    "task_id": "first-release",
+    "project": "guided-template-fixture",
+    "commit": "aaff566002b1a7f12ad1ec43681a47162bb7ed88",
+    "tag": "v1.2.0",
+    "evidence": [
+      ".go/runs/first-release/completion/release-81aa04eed96946dda76038389a2865ef.json"
+    ]
+  },
+  "verification": {
+    "schema": "go-workflow.executed-verification.v1",
+    "task_id": "first-release",
+    "project": "guided-template-fixture",
+    "contract_digest": "052d477eb7ce52fc17829d1aca5b900c66c165642fec3bf853ff023594c78267",
+    "revision": "d2ebbc741624ba5ec3986bd45c4c4115214554ca",
+    "content_digest": "0fed4a1656a7e5c9b031a6a3a91260da5c12e5fe6b72785edc4f58af0133b4b8",
+    "checks": [
+      {
+        "verification": {
+          "schema": "go-workflow.verification-evidence.v1",
+          "task_id": "first-release",
+          "phase_id": "verify",
+          "requirement_ids": [
+            "R1"
+          ],
+          "status": "passed",
+          "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'two\\n'; assert Path('VERSION').read_text().strip() == '1.2.0'\"",
+          "cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-guided-template-86abt_4y/worker",
+          "revision": "d2ebbc741624ba5ec3986bd45c4c4115214554ca",
+          "worktree_digest": "0fed4a1656a7e5c9b031a6a3a91260da5c12e5fe6b72785edc4f58af0133b4b8",
+          "exit_code": 0,
+          "evidence": [
+            ".go/runs/first-release/completion/command-cd0b8f6ddce14bd0ba3e423ef374cc14.json"
+          ]
+        },
+        "raw": {
+          "path": ".go/runs/first-release/completion/command-cd0b8f6ddce14bd0ba3e423ef374cc14.json",
+          "sha256": "e194d4de8c8b97a055f0628e6cd012007d6f31919e0f3ca57b5e10057326df32"
+        }
+      }
+    ],
+    "content_unchanged": true,
+    "status": "passed"
+  }
+}
+TEMPLATE_GUIDED_ALL_PASSED

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "evidence": {
+    "path": ".go/runs/reliability-template-01/completion/verification-703ebfb65e8c4f1b9fb6d8332a664a34.json",
+    "sha256": "4cf2b17a097afbbd002e8bb71de20ff6f15e87fc4fd2eceb5802d743a011aa43"
+  },
+  "binding": {
+    "task_id": "reliability-template-01",
+    "project": "go-project-template",
+    "contract_digest": "43f5e7a4e492c4bc18746442de8f419e012ed3778e62f37eadd69777fe109bce",
+    "revision": "9d185d2e741957d18264fb02690c932caeb45c41",
+    "content_digest": "f49e79119857be81b97b8d2f8c771d588763c0d0817b0dfaa5c00a2257846565"
+  }
+}

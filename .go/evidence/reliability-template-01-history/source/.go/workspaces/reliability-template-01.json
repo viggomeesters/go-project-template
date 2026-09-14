@@ -1,0 +1,20 @@
+{
+  "task_id": "reliability-template-01",
+  "owner": "codex-astra-high",
+  "run_id": "reliability-template-01-development",
+  "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+  "path": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+  "branch": "codex/reliability-template-01",
+  "base_branch": "main",
+  "base_commit": "de42086fcb003767da0b247bee8816b53c0b77c4",
+  "schema": "go-workflow.workspace-state.v1",
+  "common_dir": "/Users/viggomeesters/Dev/go-project-template/.git",
+  "repository_id": "b29c93800b56459ba2d24e26aa04e4e7",
+  "generation": "0a275b33dafe420880834fece207338c",
+  "state": "cleaned",
+  "integration": {
+    "workspace_head": "9d185d2e741957d18264fb02690c932caeb45c41",
+    "integrated_commit": "9d185d2e741957d18264fb02690c932caeb45c41"
+  },
+  "recovery_action": "No action; delivered branch is retained"
+}

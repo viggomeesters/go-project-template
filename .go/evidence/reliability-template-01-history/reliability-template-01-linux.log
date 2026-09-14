@@ -1,0 +1,550 @@
+WARN `--no-project` was provided, but no project was found
+RUN: git clone --quiet -b codex/reliability-template-01 /tmp/go-abc-01-xjyg7dz7/reliability-template-01.bundle /tmp/go-abc-01-xjyg7dz7/reliability-template-01
+RUN: git rev-parse HEAD
+9d185d2e741957d18264fb02690c932caeb45c41
+RUN: uv run --no-project --python 3.12 --with pytest>=8,<9 --with jsonschema>=4.23 bash scripts/check.sh
+make: Entering directory '/tmp/go-abc-01-xjyg7dz7/reliability-template-01'
+python3 "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired"/cli/go.py validate .
+ok: /tmp/go-abc-01-xjyg7dz7/reliability-template-01/.go
+python3 "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired"/cli/go.py readback .
+Project: Go Project Template (go-project-template)
+North star: A clone-local agent contract proves repo-local continuation.
+Wedge: Self-contained project OS, not a central workflow database.
+Principles: json-first; abc-release-evidence; abc-explicit-model-contract; abc-durable-worker-context; abc-task-workspace; abc-final-candidate-proof; abc-selective-legacy-reuse
+Epics: workflow-contract; complete-advice-to-outcome-model; architecture-lane
+Architecture: briefs=2; open_deviations=0; active_waivers=0
+Next task: task-schema-smoke — Prove the cloned template can execute its repo-local contract
+python3 "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired"/cli/go.py pairing template --template "/tmp/go-abc-01-xjyg7dz7/reliability-template-01" --stack-repo "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired" --json
+{
+  "stack_ref": "v0.3.32",
+  "stack_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+  "baseline_template_commit": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c",
+  "baseline_template_ref": "v0.3.16"
+}
+python3 "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired"/cli/go.py status . --json >/tmp/go-project-template-status.json
+cd "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired" && stack_cli="$PWD/cli/go.py" && cd / && python3 "$stack_cli" template-check "/tmp/go-abc-01-xjyg7dz7/reliability-template-01" --json >/tmp/go-project-template-pairing.json
+make: Leaving directory '/tmp/go-abc-01-xjyg7dz7/reliability-template-01'
+architecture lane template contract: ok
+advice-to-outcome template contract: ok
+RUN: uv run --no-project --python 3.12 --with pytest>=8,<9 --with jsonschema>=4.23 bash scripts/test-guided-onboarding.sh
+{
+  "schema": "go-workflow.guided-template-proof.v1",
+  "status": "passed",
+  "source_commit": "9d185d2e741957d18264fb02690c932caeb45c41",
+  "runtime_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+  "model_execution": "deterministic native CLI double; no model calls",
+  "source_state_unchanged": true,
+  "stale_pairings_rejected": true,
+  "settings_and_intake": "real CLI",
+  "task": "first-release",
+  "tag": "v1.2.0",
+  "release_commit": "5fed8b085c9499117aea01b0c5850c0a727f77a6",
+  "receipt": {
+    "schema": "go-workflow.release-receipt.v1",
+    "status": "verified",
+    "task_id": "first-release",
+    "project": "guided-template-fixture",
+    "commit": "5fed8b085c9499117aea01b0c5850c0a727f77a6",
+    "tag": "v1.2.0",
+    "evidence": [
+      ".go/runs/first-release/completion/release-9d6c850ddaad47229625fe1dd8ca80be.json"
+    ]
+  },
+  "verification": {
+    "schema": "go-workflow.executed-verification.v1",
+    "task_id": "first-release",
+    "project": "guided-template-fixture",
+    "contract_digest": "052d477eb7ce52fc17829d1aca5b900c66c165642fec3bf853ff023594c78267",
+    "revision": "edc814cfdf0cac6ddfe65d9fbdc206554a13c6ba",
+    "content_digest": "eaa929fd5e7612b64a2c70329eb8645259ffb9835a54e199fc7f2d9675d5a593",
+    "checks": [
+      {
+        "verification": {
+          "schema": "go-workflow.verification-evidence.v1",
+          "task_id": "first-release",
+          "phase_id": "verify",
+          "requirement_ids": [
+            "R1"
+          ],
+          "status": "passed",
+          "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'two\\n'; assert Path('VERSION').read_text().strip() == '1.2.0'\"",
+          "cwd": "/tmp/go-guided-template-92pu80us/worker",
+          "revision": "edc814cfdf0cac6ddfe65d9fbdc206554a13c6ba",
+          "worktree_digest": "eaa929fd5e7612b64a2c70329eb8645259ffb9835a54e199fc7f2d9675d5a593",
+          "exit_code": 0,
+          "evidence": [
+            ".go/runs/first-release/completion/command-b85f495555e6490f83a42e328bafb168.json"
+          ]
+        },
+        "raw": {
+          "path": ".go/runs/first-release/completion/command-b85f495555e6490f83a42e328bafb168.json",
+          "sha256": "8dbec209befd36b21be0ffdc8949250c50e704d43d7ab54f3ea4ae91fb8ab2fc"
+        }
+      }
+    ],
+    "content_unchanged": true,
+    "status": "passed"
+  }
+}
+TEMPLATE_GUIDED_ALL_PASSED
+RUN: uv run --no-project --python 3.12 --with pytest>=8,<9 --with jsonschema>=4.23 bash scripts/test-abc-template.sh
+{
+  "schema": "go-workflow.template-abc-proof.v1",
+  "status": "passed",
+  "cases": [
+    {
+      "mode": "ordinary",
+      "controller": "primary checkout",
+      "execution_workspace": "owned linked worktree",
+      "unregistered_linked_controller_rejected": false,
+      "runtime_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+      "model_execution": "deterministic native CLI double, no model calls",
+      "resumed_after": "build",
+      "task_releases": [
+        {
+          "task": "campaign-1",
+          "tag": "v1.2.0",
+          "commit": "8ea4c81e6650203e21189bf3b2caa48abdeb3bb0",
+          "model": {
+            "id": "gpt-5.6-terra",
+            "effort": "high"
+          },
+          "critic_model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "receipt": {
+            "schema": "go-workflow.release-receipt.v1",
+            "status": "verified",
+            "task_id": "campaign-1",
+            "project": "template-campaign-ordinary",
+            "commit": "8ea4c81e6650203e21189bf3b2caa48abdeb3bb0",
+            "tag": "v1.2.0",
+            "evidence": [
+              ".go/runs/campaign-1/completion/release-753a8d0d55bc4538a7230abcba292e63.json"
+            ]
+          },
+          "verification": {
+            "schema": "go-workflow.executed-verification.v1",
+            "task_id": "campaign-1",
+            "project": "template-campaign-ordinary",
+            "contract_digest": "e33252ae44659c01421dd717ac0eb69a6a260c2f066e29be4c900d46cf131970",
+            "revision": "69731347522d762e3b63ff29aa78f759de4c0813",
+            "content_digest": "256181cea85b0b6d26537566559b0505a1fb87604cbf600d9a0de4fac427900a",
+            "checks": [
+              {
+                "verification": {
+                  "schema": "go-workflow.verification-evidence.v1",
+                  "task_id": "campaign-1",
+                  "phase_id": "verify",
+                  "requirement_ids": [
+                    "R1"
+                  ],
+                  "status": "passed",
+                  "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'one\\n'; assert Path('VERSION').read_text().strip() == '1.2.0'\"",
+                  "cwd": "/tmp/go-template-abc-pxxbptew/ordinary/campaign-1-worker",
+                  "revision": "69731347522d762e3b63ff29aa78f759de4c0813",
+                  "worktree_digest": "256181cea85b0b6d26537566559b0505a1fb87604cbf600d9a0de4fac427900a",
+                  "exit_code": 0,
+                  "evidence": [
+                    ".go/runs/campaign-1/completion/command-c3c8052359a04d21ad722785260ba0f2.json"
+                  ]
+                },
+                "raw": {
+                  "path": ".go/runs/campaign-1/completion/command-c3c8052359a04d21ad722785260ba0f2.json",
+                  "sha256": "4e13cb69355e5920a02bc6f368608715f573df712789b83cb404004e95d40008"
+                }
+              }
+            ],
+            "content_unchanged": true,
+            "status": "passed"
+          },
+          "phases": [
+            {
+              "phase": "build",
+              "cwd": "/tmp/go-template-abc-pxxbptew/ordinary/campaign-1-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/ordinary/project/.go/runs/campaign-1/campaign-1-run/build-01-058ad4395832422cb7f2b83af981b5ea/context.json",
+                "sha256": "1ef48103fabc09b46370fdedfaa232e1d966931e2830b10fb71b6a1732baa4a6",
+                "snapshot_id": "058ad4395832422cb7f2b83af981b5ea"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/tmp/go-template-abc-pxxbptew/ordinary/campaign-1-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/ordinary/project/.go/runs/campaign-1/campaign-1-run/critic-01-b7a4e7b4f3bd49b4b4ffe8801f6953a7/context.json",
+                "sha256": "ecc357bec7e40809e4d547dfd289851c5cd4daabd774deb1178def66e59e8d4b",
+                "snapshot_id": "b7a4e7b4f3bd49b4b4ffe8801f6953a7"
+              }
+            },
+            {
+              "phase": "repair",
+              "cwd": "/tmp/go-template-abc-pxxbptew/ordinary/campaign-1-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/ordinary/project/.go/runs/campaign-1/campaign-1-run/repair-02-bd5ac858d19a477a82ba76047dc26c90/context.json",
+                "sha256": "83a382b2868efcfcc31d899bc57c26a9507dc712dda68b7b9149727bbd86e421",
+                "snapshot_id": "bd5ac858d19a477a82ba76047dc26c90"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/tmp/go-template-abc-pxxbptew/ordinary/campaign-1-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/ordinary/project/.go/runs/campaign-1/campaign-1-run/critic-02-0942fa7d92b043ecbc8635856c07b3c6/context.json",
+                "sha256": "ce477fc74251c93477860a88a47df897b0d01976dca374b06b2593ae20742f4d",
+                "snapshot_id": "0942fa7d92b043ecbc8635856c07b3c6"
+              }
+            }
+          ]
+        },
+        {
+          "task": "campaign-2",
+          "tag": "v1.3.0",
+          "commit": "27cd67b7bf3c86af982649435fec0772fa9827b1",
+          "model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "critic_model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "receipt": {
+            "schema": "go-workflow.release-receipt.v1",
+            "status": "verified",
+            "task_id": "campaign-2",
+            "project": "template-campaign-ordinary",
+            "commit": "27cd67b7bf3c86af982649435fec0772fa9827b1",
+            "tag": "v1.3.0",
+            "evidence": [
+              ".go/runs/campaign-2/completion/release-9eb3ee68eeea48e098ea13985301c0bf.json"
+            ]
+          },
+          "verification": {
+            "schema": "go-workflow.executed-verification.v1",
+            "task_id": "campaign-2",
+            "project": "template-campaign-ordinary",
+            "contract_digest": "39a9d3f2fba363abcd5a719ad43afe90364ebdb95c0c81299c090d0d14fde21d",
+            "revision": "8ea4c81e6650203e21189bf3b2caa48abdeb3bb0",
+            "content_digest": "55ff95b11ee48060fe5c6bd9bc1075000a6869aead8055bfb92647224621ff23",
+            "checks": [
+              {
+                "verification": {
+                  "schema": "go-workflow.verification-evidence.v1",
+                  "task_id": "campaign-2",
+                  "phase_id": "verify",
+                  "requirement_ids": [
+                    "R1"
+                  ],
+                  "status": "passed",
+                  "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'two\\n'; assert Path('VERSION').read_text().strip() == '1.3.0'\"",
+                  "cwd": "/tmp/go-template-abc-pxxbptew/ordinary/campaign-2-worker",
+                  "revision": "8ea4c81e6650203e21189bf3b2caa48abdeb3bb0",
+                  "worktree_digest": "55ff95b11ee48060fe5c6bd9bc1075000a6869aead8055bfb92647224621ff23",
+                  "exit_code": 0,
+                  "evidence": [
+                    ".go/runs/campaign-2/completion/command-000e047c4d1e4aaf92c78e69b5afcac7.json"
+                  ]
+                },
+                "raw": {
+                  "path": ".go/runs/campaign-2/completion/command-000e047c4d1e4aaf92c78e69b5afcac7.json",
+                  "sha256": "4c6907bd7eed90db132296bc96701458dd1138a43a483b1957f6bfdd51ae2dd5"
+                }
+              }
+            ],
+            "content_unchanged": true,
+            "status": "passed"
+          },
+          "phases": [
+            {
+              "phase": "build",
+              "cwd": "/tmp/go-template-abc-pxxbptew/ordinary/campaign-2-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/ordinary/project/.go/runs/campaign-2/campaign-2-run/build-01-7244f93172644914917bb113a4dc89a9/context.json",
+                "sha256": "69616b143b9cb76daa5182dbb595f119437b3af7f89896e2da41edce613a7663",
+                "snapshot_id": "7244f93172644914917bb113a4dc89a9"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/tmp/go-template-abc-pxxbptew/ordinary/campaign-2-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/ordinary/project/.go/runs/campaign-2/campaign-2-run/critic-01-c23828828df04d5b8e225e79dbd497f2/context.json",
+                "sha256": "dc2da157abc83705da4c550d00ce7a500b2f4b3c29a47761f3675325d447e60a",
+                "snapshot_id": "c23828828df04d5b8e225e79dbd497f2"
+              }
+            }
+          ]
+        }
+      ],
+      "idempotent_completion": true,
+      "unmerged_integration_rejected_without_changes": true,
+      "missing_release_destination_rejected": true
+    },
+    {
+      "mode": "linked",
+      "controller": "primary checkout",
+      "execution_workspace": "owned linked worktree",
+      "unregistered_linked_controller_rejected": true,
+      "runtime_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+      "model_execution": "deterministic native CLI double, no model calls",
+      "resumed_after": "build",
+      "task_releases": [
+        {
+          "task": "campaign-1",
+          "tag": "v1.2.0",
+          "commit": "9aec4e05bcc9decaa80e7081563baa708d959afa",
+          "model": {
+            "id": "gpt-5.6-terra",
+            "effort": "high"
+          },
+          "critic_model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "receipt": {
+            "schema": "go-workflow.release-receipt.v1",
+            "status": "verified",
+            "task_id": "campaign-1",
+            "project": "template-campaign-linked",
+            "commit": "9aec4e05bcc9decaa80e7081563baa708d959afa",
+            "tag": "v1.2.0",
+            "evidence": [
+              ".go/runs/campaign-1/completion/release-54f7ab74aff44e66b4e8bc96cfca931e.json"
+            ]
+          },
+          "verification": {
+            "schema": "go-workflow.executed-verification.v1",
+            "task_id": "campaign-1",
+            "project": "template-campaign-linked",
+            "contract_digest": "9c376e500340f44738915b4e3b5ed6bd86ca48785e6eb1258077c9f4f9938dfc",
+            "revision": "5607fc27a4b614c2a66a6c6bcb8f408a910e69d9",
+            "content_digest": "6e85698638f0c7056c13e95827dcd448857f8f055cf0feb466b4815042ff7a14",
+            "checks": [
+              {
+                "verification": {
+                  "schema": "go-workflow.verification-evidence.v1",
+                  "task_id": "campaign-1",
+                  "phase_id": "verify",
+                  "requirement_ids": [
+                    "R1"
+                  ],
+                  "status": "passed",
+                  "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'one\\n'; assert Path('VERSION').read_text().strip() == '1.2.0'\"",
+                  "cwd": "/tmp/go-template-abc-pxxbptew/linked/campaign-1-worker",
+                  "revision": "5607fc27a4b614c2a66a6c6bcb8f408a910e69d9",
+                  "worktree_digest": "6e85698638f0c7056c13e95827dcd448857f8f055cf0feb466b4815042ff7a14",
+                  "exit_code": 0,
+                  "evidence": [
+                    ".go/runs/campaign-1/completion/command-d9177d580e4d4d39bd7e1190c9abc3a6.json"
+                  ]
+                },
+                "raw": {
+                  "path": ".go/runs/campaign-1/completion/command-d9177d580e4d4d39bd7e1190c9abc3a6.json",
+                  "sha256": "806ddd2fe658be1f5cc40fa22c9a8dc67236dc23284979b3dc72e1919d638a44"
+                }
+              }
+            ],
+            "content_unchanged": true,
+            "status": "passed"
+          },
+          "phases": [
+            {
+              "phase": "build",
+              "cwd": "/tmp/go-template-abc-pxxbptew/linked/campaign-1-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/linked/project/.go/runs/campaign-1/campaign-1-run/build-01-ccdd386313b44c16b4a4c77ab19260c8/context.json",
+                "sha256": "a82d186cd52bd8623af5a8a96d78f064460defd0a17fc2404f507323b58b7579",
+                "snapshot_id": "ccdd386313b44c16b4a4c77ab19260c8"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/tmp/go-template-abc-pxxbptew/linked/campaign-1-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/linked/project/.go/runs/campaign-1/campaign-1-run/critic-01-e8887d6a46e04257848dbc32e790ed0a/context.json",
+                "sha256": "bb753284aab1b69f5c504939f27ac4a24649a11f0d8ffeea875e324d60ed53c2",
+                "snapshot_id": "e8887d6a46e04257848dbc32e790ed0a"
+              }
+            },
+            {
+              "phase": "repair",
+              "cwd": "/tmp/go-template-abc-pxxbptew/linked/campaign-1-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/linked/project/.go/runs/campaign-1/campaign-1-run/repair-02-ee5188da646d466cb9b82fb11dbee94e/context.json",
+                "sha256": "28002da8a63a6977ca91e9985d89868dc45b80b2381bb3f786e977cc94f4efd3",
+                "snapshot_id": "ee5188da646d466cb9b82fb11dbee94e"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/tmp/go-template-abc-pxxbptew/linked/campaign-1-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/linked/project/.go/runs/campaign-1/campaign-1-run/critic-02-2259f29093004919bcc1f7bcdb0454cd/context.json",
+                "sha256": "f51fbb610ae7f64ed1a4b3896686d0f76b89d9648d1ecfbedf33313a25f0b2b9",
+                "snapshot_id": "2259f29093004919bcc1f7bcdb0454cd"
+              }
+            }
+          ]
+        },
+        {
+          "task": "campaign-2",
+          "tag": "v1.3.0",
+          "commit": "d5dc0c69671010781dab55833665e483f9b65410",
+          "model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "critic_model": {
+            "id": "gpt-6-astra",
+            "effort": "medium"
+          },
+          "receipt": {
+            "schema": "go-workflow.release-receipt.v1",
+            "status": "verified",
+            "task_id": "campaign-2",
+            "project": "template-campaign-linked",
+            "commit": "d5dc0c69671010781dab55833665e483f9b65410",
+            "tag": "v1.3.0",
+            "evidence": [
+              ".go/runs/campaign-2/completion/release-a4c69bd32a174b598e220a9a8e8e69fc.json"
+            ]
+          },
+          "verification": {
+            "schema": "go-workflow.executed-verification.v1",
+            "task_id": "campaign-2",
+            "project": "template-campaign-linked",
+            "contract_digest": "94204498484d2e8d131f215a75190314ada13bbdaf857a02c2053d793c659065",
+            "revision": "9aec4e05bcc9decaa80e7081563baa708d959afa",
+            "content_digest": "cf29c97f7b3e97c117af68ea83ba6885831fa5ddd162f23c25f01eb2292d24e4",
+            "checks": [
+              {
+                "verification": {
+                  "schema": "go-workflow.verification-evidence.v1",
+                  "task_id": "campaign-2",
+                  "phase_id": "verify",
+                  "requirement_ids": [
+                    "R1"
+                  ],
+                  "status": "passed",
+                  "command": "python3 -c \"from pathlib import Path; assert Path('app.txt').read_text() == 'two\\n'; assert Path('VERSION').read_text().strip() == '1.3.0'\"",
+                  "cwd": "/tmp/go-template-abc-pxxbptew/linked/campaign-2-worker",
+                  "revision": "9aec4e05bcc9decaa80e7081563baa708d959afa",
+                  "worktree_digest": "cf29c97f7b3e97c117af68ea83ba6885831fa5ddd162f23c25f01eb2292d24e4",
+                  "exit_code": 0,
+                  "evidence": [
+                    ".go/runs/campaign-2/completion/command-510bd14419514422b35610ce8a9e3c0f.json"
+                  ]
+                },
+                "raw": {
+                  "path": ".go/runs/campaign-2/completion/command-510bd14419514422b35610ce8a9e3c0f.json",
+                  "sha256": "bce64e22c582731876f4e5759a952bf74994ec20f10678d1a9a60ff75b4ff828"
+                }
+              }
+            ],
+            "content_unchanged": true,
+            "status": "passed"
+          },
+          "phases": [
+            {
+              "phase": "build",
+              "cwd": "/tmp/go-template-abc-pxxbptew/linked/campaign-2-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/linked/project/.go/runs/campaign-2/campaign-2-run/build-01-d4079096f50b4c028585b22ec9394761/context.json",
+                "sha256": "5985b35288fad4c71b0c58f122f99e4fe2be15ed24b4e583fcce7254bcaad931",
+                "snapshot_id": "d4079096f50b4c028585b22ec9394761"
+              }
+            },
+            {
+              "phase": "critic",
+              "cwd": "/tmp/go-template-abc-pxxbptew/linked/campaign-2-worker",
+              "context_ref": {
+                "path": "/tmp/go-template-abc-pxxbptew/linked/project/.go/runs/campaign-2/campaign-2-run/critic-01-d368af8832c648b4bb22f3d8783c5adc/context.json",
+                "sha256": "0ef48243fe4cdae9ebb46305743aaa77f93f98d094e11d6e34cf4618da20f0d6",
+                "snapshot_id": "d368af8832c648b4bb22f3d8783c5adc"
+              }
+            }
+          ]
+        }
+      ],
+      "idempotent_completion": true,
+      "unmerged_integration_rejected_without_changes": true,
+      "missing_release_destination_rejected": true
+    }
+  ],
+  "live_evidence": "https://github.com/viggomeesters/go-workflow-stack/blob/v0.3.26/.go/evidence/abc-10-live/manifest.json",
+  "live_runtime_ref": "v0.3.26",
+  "live_runtime_commit": "b2d235610691eead011cc738f278887a99e4bbe0",
+  "live_runtime_hashes_matched": 53,
+  "source_state_unchanged": true
+}
+..................                                                       [100%]
+18 passed in 61.47s (0:01:01)
+TEMPLATE_ABC_ALL_PASSED
+RUN: uv run --no-project --python 3.12 --with pytest>=8,<9 --with jsonschema>=4.23 bash scripts/check-linux.sh
+make: Entering directory '/tmp/go-abc-01-xjyg7dz7/reliability-template-01'
+python3 "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired"/cli/go.py validate .
+ok: /tmp/go-abc-01-xjyg7dz7/reliability-template-01/.go
+python3 "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired"/cli/go.py readback .
+Project: Go Project Template (go-project-template)
+North star: A clone-local agent contract proves repo-local continuation.
+Wedge: Self-contained project OS, not a central workflow database.
+Principles: json-first; abc-release-evidence; abc-explicit-model-contract; abc-durable-worker-context; abc-task-workspace; abc-final-candidate-proof; abc-selective-legacy-reuse
+Epics: workflow-contract; complete-advice-to-outcome-model; architecture-lane
+Architecture: briefs=2; open_deviations=0; active_waivers=0
+Next task: task-schema-smoke — Prove the cloned template can execute its repo-local contract
+python3 "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired"/cli/go.py pairing template --template "/tmp/go-abc-01-xjyg7dz7/reliability-template-01" --stack-repo "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired" --json
+{
+  "stack_ref": "v0.3.32",
+  "stack_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+  "baseline_template_commit": "06678be4fdc95dc671d6adbc1a50b3f073d66b5c",
+  "baseline_template_ref": "v0.3.16"
+}
+python3 "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired"/cli/go.py status . --json >/tmp/go-project-template-status.json
+cd "/tmp/go-abc-01-xjyg7dz7/reliability-05-repaired" && stack_cli="$PWD/cli/go.py" && cd / && python3 "$stack_cli" template-check "/tmp/go-abc-01-xjyg7dz7/reliability-template-01" --json >/tmp/go-project-template-pairing.json
+make: Leaving directory '/tmp/go-abc-01-xjyg7dz7/reliability-template-01'
+Cloning into '/tmp/tmp.RxgR2bXojI/checkout'...
+warning: --depth is ignored in local clones; use file:// instead.
+done.
+Note: switching to '11afb78ae8b41dcc2838aa3c6591277b6feb4a2c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Cloning into '/tmp/tmp.RxgR2bXojI/cache/go-workflow-stack/v9.9.9'...
+warning: --depth is ignored in local clones; use file:// instead.
+done.
+Note: switching to '11afb78ae8b41dcc2838aa3c6591277b6feb4a2c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+template contract tests: ok
+local template Linux/WSL verification: ok
+RUN: git diff --exit-code
+RELIABILITY_TEMPLATE_LINUX_PASSED

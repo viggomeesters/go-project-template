@@ -1,0 +1,17 @@
+{
+  "tag": "v0.3.17",
+  "commit": "9d185d2e741957d18264fb02690c932caeb45c41",
+  "stack_ref": "v0.3.32",
+  "stack_commit": "35f20653ea490c718264f3e63a0edb295c164790",
+  "release": {
+    "isDraft": false,
+    "isPrerelease": false,
+    "publishedAt": "2026-09-14T17:38:45Z",
+    "tagName": "v0.3.17",
+    "url": "https://github.com/viggomeesters/go-project-template/releases/tag/v0.3.17"
+  },
+  "readback": {
+    "path": ".go/runs/reliability-template-01/completion/release-7c99e897121245ef9f90e524b7ef7633.json",
+    "sha256": "329af6ac656a1956e2c0c057e02ac73a21f488c7a34ab184ba5b3c9762d1f437"
+  }
+}

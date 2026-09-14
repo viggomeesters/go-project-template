@@ -1,0 +1,26 @@
+{
+  "schema": "go-workflow.release-evidence.v1",
+  "status": "verified",
+  "task_id": "reliability-template-01",
+  "project": "go-project-template",
+  "contract_digest": "43f5e7a4e492c4bc18746442de8f419e012ed3778e62f37eadd69777fe109bce",
+  "content_digest": "f49e79119857be81b97b8d2f8c771d588763c0d0817b0dfaa5c00a2257846565",
+  "profile": {
+    "name": "template-source-maintenance",
+    "provider": "git-tag",
+    "remote": "origin",
+    "branch": "main"
+  },
+  "remote_url": "https://github.com/viggomeesters/go-project-template.git",
+  "tag": "v0.3.17",
+  "commit": "9d185d2e741957d18264fb02690c932caeb45c41",
+  "tag_object": "0c8373595a309a82705596722f88b58d229ca3e6",
+  "branch_commit": "9d185d2e741957d18264fb02690c932caeb45c41",
+  "refs": {
+    "refs/heads/main": "9d185d2e741957d18264fb02690c932caeb45c41",
+    "refs/tags/v0.3.17": "0c8373595a309a82705596722f88b58d229ca3e6",
+    "refs/tags/v0.3.17^{}": "9d185d2e741957d18264fb02690c932caeb45c41"
+  },
+  "publication": null,
+  "observed_at": "2026-09-14T17:39:05.046799+00:00"
+}

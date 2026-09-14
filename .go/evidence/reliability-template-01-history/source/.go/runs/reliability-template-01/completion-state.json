@@ -1,0 +1,145 @@
+{
+  "schema": "go-workflow.managed-run.v1",
+  "task_id": "reliability-template-01",
+  "project": "go-project-template",
+  "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+  "owner": "codex-astra-high",
+  "run_id": "reliability-template-01-development",
+  "workspace": {
+    "task_id": "reliability-template-01",
+    "owner": "codex-astra-high",
+    "run_id": "reliability-template-01-development",
+    "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+    "path": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+    "branch": "codex/reliability-template-01",
+    "base_branch": "main",
+    "base_commit": "de42086fcb003767da0b247bee8816b53c0b77c4",
+    "schema": "go-workflow.workspace-state.v1",
+    "common_dir": "/Users/viggomeesters/Dev/go-project-template/.git",
+    "repository_id": "b29c93800b56459ba2d24e26aa04e4e7",
+    "generation": "0a275b33dafe420880834fece207338c",
+    "state": "ready"
+  },
+  "phase": "complete",
+  "attempt": 1,
+  "check_index": 0,
+  "checks": [
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "reliability-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "status": "passed",
+        "command": "bash scripts/check.sh",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+        "revision": "9d185d2e741957d18264fb02690c932caeb45c41",
+        "worktree_digest": "f49e79119857be81b97b8d2f8c771d588763c0d0817b0dfaa5c00a2257846565",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/reliability-template-01/completion/command-98a1552118954b06a6b341b4fc6d4cf9.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/reliability-template-01/completion/command-98a1552118954b06a6b341b4fc6d4cf9.json",
+        "sha256": "479e772497b176d47bb2b19cd61c08ce4dc00d7bf32ea37c190c6a8fdcee4ac7"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "reliability-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "status": "passed",
+        "command": "bash scripts/test-guided-onboarding.sh",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+        "revision": "9d185d2e741957d18264fb02690c932caeb45c41",
+        "worktree_digest": "f49e79119857be81b97b8d2f8c771d588763c0d0817b0dfaa5c00a2257846565",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/reliability-template-01/completion/command-ff8fbd7be38742fda45177516faec8a9.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/reliability-template-01/completion/command-ff8fbd7be38742fda45177516faec8a9.json",
+        "sha256": "7946991e5c4f9b59a40959fe03faee54ccd7b75c9dd299b6c68360ef9c3ae5a0"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "reliability-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "status": "passed",
+        "command": "git diff --check",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+        "revision": "9d185d2e741957d18264fb02690c932caeb45c41",
+        "worktree_digest": "f49e79119857be81b97b8d2f8c771d588763c0d0817b0dfaa5c00a2257846565",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/reliability-template-01/completion/command-b243cbecc6dd41b6b2b7db1715ced08d.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/reliability-template-01/completion/command-b243cbecc6dd41b6b2b7db1715ced08d.json",
+        "sha256": "fa58d72aab7bb3111b5a9793159696c35f76babf67522484958ef97c2778ba8f"
+      }
+    }
+  ],
+  "phase_evidence": [],
+  "effects": {},
+  "budgets": [],
+  "history": [
+    {
+      "event": "new_verification_capture",
+      "previous_inflight": null
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Pin the latest completed stack release and keep current onboarding documentation/version hashes consistent.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R2",
+      "text": "Fresh template copies use guided settings and correct task scopes to deliver a verified first local release without inherited maintenance tasks or execution authority.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R3",
+      "text": "Publish an immutable template release with current checks, critic and readback; archive maintenance records as non-executable source history.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    }
+  ],
+  "models": {},
+  "task_hash": "43f5e7a4e492c4bc18746442de8f419e012ed3778e62f37eadd69777fe109bce",
+  "code": {},
+  "execution_cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+  "controller": {
+    "host": "mac-1.home",
+    "pid": 84720
+  },
+  "worker_group": null,
+  "inflight": null
+}

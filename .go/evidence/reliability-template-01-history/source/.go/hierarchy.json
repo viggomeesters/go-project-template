@@ -1,0 +1,72 @@
+{
+  "schema": "go-workflow.repo-local.hierarchy.v1",
+  "kind": "hierarchy",
+  "project": "go-project-template",
+  "epics": [
+    {
+      "id": "workflow-contract",
+      "title": "Workflow Contract",
+      "features": [
+        {
+          "id": "schema-validation",
+          "title": "Schema validation",
+          "tasks": [
+            "task-schema-smoke",
+            "prove-v038-task-lifecycle-defaults"
+          ]
+        },
+        {
+          "id": "abc-template",
+          "title": "Draagbare A/B/C-projectlifecycle",
+          "description": "Completed source maintenance, archived outside the runnable starter queue.",
+          "tasks": [
+            "reliability-template-01"
+          ],
+          "status": "completed",
+          "source_history_ref": ".go/evidence/abc-source-history-final/manifest.json"
+        }
+      ],
+      "tasks": [
+        "bootstrap-stack-check",
+        "fix-env-go-stack-bootstrap",
+        "local-only-reproducible-template",
+        "adopt-v030-runtime-contract",
+        "enforce-project-stack-ref-source",
+        "normalize-template-data-file-modes",
+        "pin-v032-hotfix",
+        "pin-v033-native-hermes",
+        "pin-v034-package-provenance",
+        "isolate-template-bootstrap-runtime",
+        "pin-v035-task-first",
+        "pin-go-project-template-to-go-workflow-stack-v0.",
+        "pin-go-project-template-to-released-go-workflow",
+        "pin-go-project-template-to-v038-defaults",
+        "pin-stack-v0310-shareable-delivery",
+        "pin-stack-v0311-automatic-delivery",
+        "GPT-STACKPRE001"
+      ],
+      "planned_direction": "A/B/C starter onboarding and full lifecycle proof shipped in template v0.3.15/v0.3.16 with stack v0.3.26; completed source tasks are archived."
+    },
+    {
+      "id": "complete-advice-to-outcome-model",
+      "title": "Portable advice-to-outcome template contract",
+      "description": "Expose the completed runtime behavior to every fresh project clone.",
+      "features": [],
+      "tasks": [
+        "advice-model-07-template",
+        "advice-model-10-authority-source-template",
+        "advice-model-12-template-pin-v038"
+      ]
+    },
+    {
+      "id": "architecture-lane",
+      "title": "Architecture Lane Starter Contract",
+      "description": "Expose the released conditional architecture lane to fresh project clones without forcing ceremony on ordinary tasks.",
+      "features": [],
+      "tasks": [
+        "adopt-v0313-architecture-lane",
+        "adopt-v0314-governing-decision-gate"
+      ]
+    }
+  ]
+}

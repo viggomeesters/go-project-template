@@ -1,0 +1,15 @@
+{
+  "id": "reliability-improvements",
+  "status": "completed",
+  "task_id": "reliability-template-01",
+  "stack_release": "v0.3.32",
+  "template_release": "v0.3.17",
+  "history_ref": ".go/evidence/reliability-template-01-history/manifest.json",
+  "implementation": "Guided exact task intake, verified current version/commit pairing, first local release and existing lifecycle campaigns passed on macOS/Linux. Historical live evidence remains bound to v0.3.26.",
+  "non_goals": [
+    "Model escalation or persistent-session/subagent adapters",
+    "Live consumer migrations",
+    "GitHub Actions",
+    "Global skill mutations"
+  ]
+}

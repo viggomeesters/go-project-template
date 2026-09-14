@@ -1,0 +1,14 @@
+{
+  "task_id": "reliability-template-01",
+  "project": "go-project-template",
+  "contract_digest": "43f5e7a4e492c4bc18746442de8f419e012ed3778e62f37eadd69777fe109bce",
+  "revision": "19fe27bd683e4b94b3f259be51b9d7c4b8f06571",
+  "content_digest": "d0748e798101b95b3b1becd0a98e620c351b5e0154433acbfe75faf641524325",
+  "command": "bash scripts/check.sh",
+  "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+  "elapsed_seconds": 8.276491958997212,
+  "returncode": 0,
+  "stdout": "python3 \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-05-candidate\"/cli/go.py validate .\nok: /Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01/.go\npython3 \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-05-candidate\"/cli/go.py readback .\nProject: Go Project Template (go-project-template)\nNorth star: A clone-local agent contract proves repo-local continuation.\nWedge: Self-contained project OS, not a central workflow database.\nPrinciples: json-first; abc-release-evidence; abc-explicit-model-contract; abc-durable-worker-context; abc-task-workspace; abc-final-candidate-proof; abc-selective-legacy-reuse\nEpics: workflow-contract; complete-advice-to-outcome-model; architecture-lane\nArchitecture: briefs=2; open_deviations=0; active_waivers=0\nNext task: task-schema-smoke — Prove the cloned template can execute its repo-local contract\npython3 \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-05-candidate\"/cli/go.py pairing template --template \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01\" --stack-repo \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-05-candidate\" --json\n{\n  \"stack_ref\": \"v0.3.32\",\n  \"stack_commit\": \"35f20653ea490c718264f3e63a0edb295c164790\",\n  \"baseline_template_commit\": \"06678be4fdc95dc671d6adbc1a50b3f073d66b5c\",\n  \"baseline_template_ref\": \"v0.3.16\"\n}\npython3 \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-05-candidate\"/cli/go.py status . --json >/tmp/go-project-template-status.json\ncd \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-05-candidate\" && stack_cli=\"$PWD/cli/go.py\" && cd / && python3 \"$stack_cli\" template-check \"/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01\" --json >/tmp/go-project-template-pairing.json\narchitecture lane template contract: ok\nadvice-to-outcome template contract: ok\n",
+  "stderr": "",
+  "timed_out": false
+}

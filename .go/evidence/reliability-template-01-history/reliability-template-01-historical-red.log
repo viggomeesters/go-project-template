@@ -1,0 +1,4 @@
+WARN `--no-project` was provided, but no project was found
+Traceback (most recent call last):
+  File "<stdin>", line 26, in <module>
+AssertionError

@@ -1,0 +1,87 @@
+{
+  "schema": "go-workflow.executed-verification.v1",
+  "task_id": "reliability-template-01",
+  "project": "go-project-template",
+  "contract_digest": "43f5e7a4e492c4bc18746442de8f419e012ed3778e62f37eadd69777fe109bce",
+  "revision": "19fe27bd683e4b94b3f259be51b9d7c4b8f06571",
+  "content_digest": "d0748e798101b95b3b1becd0a98e620c351b5e0154433acbfe75faf641524325",
+  "checks": [
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "reliability-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "status": "passed",
+        "command": "bash scripts/check.sh",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+        "revision": "19fe27bd683e4b94b3f259be51b9d7c4b8f06571",
+        "worktree_digest": "d0748e798101b95b3b1becd0a98e620c351b5e0154433acbfe75faf641524325",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/reliability-template-01/completion/command-3236eaa2ec054370ac70e24d87ab40f4.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/reliability-template-01/completion/command-3236eaa2ec054370ac70e24d87ab40f4.json",
+        "sha256": "603b851aa7875f491a7dd5576949e314e2efb8e581e8dd9b740649664d04c157"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "reliability-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "status": "passed",
+        "command": "bash scripts/test-guided-onboarding.sh",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+        "revision": "19fe27bd683e4b94b3f259be51b9d7c4b8f06571",
+        "worktree_digest": "d0748e798101b95b3b1becd0a98e620c351b5e0154433acbfe75faf641524325",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/reliability-template-01/completion/command-9d7183d4cb494b3cb7f2d1d0a6401326.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/reliability-template-01/completion/command-9d7183d4cb494b3cb7f2d1d0a6401326.json",
+        "sha256": "4abb4a583a01469bcb47ed9080e1bad00dad2ba06c7a6c8e2db70931e1459676"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "reliability-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "status": "passed",
+        "command": "git diff --check",
+        "cwd": "/Users/viggomeesters/Documents/Codex/2026-09-13/vr/work/reliability-template-01",
+        "revision": "19fe27bd683e4b94b3f259be51b9d7c4b8f06571",
+        "worktree_digest": "d0748e798101b95b3b1becd0a98e620c351b5e0154433acbfe75faf641524325",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/reliability-template-01/completion/command-69a5882040094c199529789eef378224.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/reliability-template-01/completion/command-69a5882040094c199529789eef378224.json",
+        "sha256": "2f07c5142f9c6f3c13bf5128a46e8668eacfeec8a751ce6504175207c27f52e1"
+      }
+    }
+  ],
+  "content_unchanged": true,
+  "status": "passed"
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "go-workflow.critic-review.v1",
+  "task_id": "reliability-template-01",
+  "project": "go-project-template",
+  "contract_digest": "43f5e7a4e492c4bc18746442de8f419e012ed3778e62f37eadd69777fe109bce",
+  "revision": "9d185d2e741957d18264fb02690c932caeb45c41",
+  "content_digest": "f49e79119857be81b97b8d2f8c771d588763c0d0817b0dfaa5c00a2257846565",
+  "status": "passed",
+  "reviewer": "codex-astra-high",
+  "review_mode": "same_agent",
+  "summary": "Reviewed exact v0.3.32 pin and generated README commit validation; deliberately stale docs/pins are rejected. Guided questions/settings are read-only, preserve explicit choices and add actual version/changelog paths to the supplied task scope. Real CLI adoption replaces only the new copied template contract; exact brief promotion leaves the first task open/unclaimed with pending outcomes. Deterministic native CLI double proves a complete local v1.2.0 release, raw verification, readback and single-worktree cleanup without live model calls or inherited source authority. Existing ordinary/linked runtime two-release, critic repair, resume and failure campaigns pass on macOS/Linux. Archived live evidence is checked against its actual annotated v0.3.26 runtime, not falsely attributed to current code. No default model/account/push/deployment policy is added. Published Git tree contains only the reusable open smoke; canonical source owns this untracked maintenance task. Same-agent review; current candidate gates pass, publication/readback remain pending.",
+  "blocking_findings": [],
+  "reviewed_paths": [
+    "AGENTS.md",
+    "CHANGELOG.md",
+    "Makefile",
+    "README.md",
+    "docs/abc-onboarding.md",
+    "docs/releases/v0.3.17.md",
+    "examples/abc/onboarding-answers.example.json",
+    "scripts/test-abc-template.sh",
+    "scripts/test-guided-onboarding.sh"
+  ]
+}
