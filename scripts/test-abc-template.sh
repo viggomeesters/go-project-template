@@ -32,15 +32,22 @@ from go_workflow.worktrees import integration_slot,WorkspaceError
 spec=importlib.util.spec_from_file_location('campaign',stack/'fixtures/abc-campaign/campaign.py');campaign=importlib.util.module_from_spec(spec);spec.loader.exec_module(campaign)
 live=read(stack/'.go/evidence/abc-10-live/manifest.json');assert live['status']=='passed'
 live_ref='v0.3.26'
-live_commit=git(stack,'rev-parse',live_ref+'^{commit}')
-assert git(stack,'cat-file','-t','refs/tags/'+live_ref)=='tag'
-assert live_commit=='b2d235610691eead011cc738f278887a99e4bbe0'
-for name,digest in live['successful_source']['files_sha256'].items():
- archived=subprocess.check_output(['git','-C',str(stack),'show',live_commit+':'+name])
- assert hashlib.sha256(archived).hexdigest()==digest,name
+upstream=git(stack,'remote','get-url','origin')
 results=[]
 with tempfile.TemporaryDirectory(prefix='go-template-abc-') as temp:
- temp=Path(temp);runtime=temp/'runtime';linked_runtime=temp/'linked runtime'
+ temp=Path(temp);runtime=temp/'runtime';linked_runtime=temp/'linked runtime';historical=temp/'historical runtime'
+ # A ref-specific bootstrap cache may contain only the current tag. Fetch the
+ # one immutable historical proof tag into a disposable repository instead of
+ # mutating that cache or weakening the archived live-source comparison.
+ call(['git','init','--quiet',historical],temp)
+ call(['git','-C',historical,'fetch','--quiet','--no-tags',upstream,
+       'refs/tags/'+live_ref+':refs/tags/'+live_ref],temp)
+ live_commit=git(historical,'rev-parse',live_ref+'^{commit}')
+ assert git(historical,'cat-file','-t','refs/tags/'+live_ref)=='tag'
+ assert live_commit=='b2d235610691eead011cc738f278887a99e4bbe0'
+ for name,digest in live['successful_source']['files_sha256'].items():
+  archived=subprocess.check_output(['git','-C',str(historical),'show',live_commit+':'+name])
+  assert hashlib.sha256(archived).hexdigest()==digest,name
  call(['git','clone','--quiet','--no-checkout',stack,runtime],temp);git(runtime,'checkout','--detach','--quiet',pin)
  git(runtime,'worktree','add','--quiet','--detach',linked_runtime,pin)
  call(['make','-C',root,'check'],temp,{**env,'GO_STACK':str(linked_runtime)})
