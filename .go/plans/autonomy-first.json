@@ -1,10 +1,10 @@
 {
   "id": "autonomy-first",
-  "status": "completed",
-  "implementation_status": "released_and_verified",
+  "status": "planned",
+  "implementation_status": "not_started",
   "coordinator_project": "go-workflow-stack",
   "coordinator_ref": "../go-workflow-stack/.go/plans/autonomy-first.json",
-  "authority": "historical_source_maintenance",
+  "authority": "planning_only",
   "tasks": [
     "autonomy-template-01"
   ],
@@ -17,5 +17,5 @@
       }
     ]
   },
-  "boundary": "Archived source-maintenance record; not a runnable consumer campaign, model default, deployment grant or task queue."
+  "boundary": "Template source planning; no consumer migration, chosen product models, live deployment or parallel builders."
 }
