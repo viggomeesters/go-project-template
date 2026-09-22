@@ -5,7 +5,7 @@
   "shareable_delivery": "auto",
   "id": "autonomy-template-01",
   "project": "go-project-template",
-  "status": "archived_source_intake",
+  "status": "open",
   "summary": "Adopt verified serial autonomy in fresh project onboarding",
   "description": "Source-maintenance follow-up to go-workflow-stack autonomy-01 through autonomy-09. Planning only. Pin the released proven stack and expose bounded goal, vision/architecture relevance, outcome evidence and night-run setup without user-specific defaults. See .go/plans/autonomy-first.json.",
   "scope": {

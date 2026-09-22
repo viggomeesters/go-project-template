@@ -71,7 +71,7 @@ assert git(stack, "rev-parse", "HEAD") == runtime_commit
 assert git(stack, "cat-file", "-t", "refs/tags/" + pin) == "tag"
 source_state = tree(root / ".go")
 
-choices_example = read(root / "examples/autonomy/campaign-answers.example.json")
+choices_example = read(root / "docs/examples/autonomy-campaign-answers.json")
 encoded_example = json.dumps(choices_example)
 for placeholder in (
     "CHOOSE_GOAL", "CHOOSE_SUPPORTED_MODEL", "CHOOSE_SHARED_WALL_SECONDS",
@@ -95,8 +95,6 @@ with tempfile.TemporaryDirectory(prefix="go-template-autonomy-") as temporary:
     ]
     assert not list((starter / ".go/tasks/active").glob("*.json"))
     assert read(starter / ".go/project.json")["stack_ref"] == pin
-    assert not (starter / ".go/plans/autonomy-first.json").exists()
-    assert (starter / ".go/evidence/autonomy-template-01/source-task.json").is_file()
     git(starter, "config", "user.name", "Autonomy onboarding fixture")
     git(starter, "config", "user.email", "autonomy-onboarding@example.invalid")
     git(starter, "checkout", "-B", "main")

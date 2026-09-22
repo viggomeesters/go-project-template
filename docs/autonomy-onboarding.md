@@ -13,7 +13,7 @@ does not create a campaign.
 
 ## Bind a campaign only after intake
 
-Use `examples/autonomy/campaign-answers.example.json` as a questionnaire, not as
+Use `docs/examples/autonomy-campaign-answers.json` as a questionnaire, not as
 an executable contract. Every `CHOOSE_*` value must be replaced from actual
 user or repository authority. In particular:
 

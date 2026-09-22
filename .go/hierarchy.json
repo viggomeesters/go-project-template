@@ -71,9 +71,9 @@
       "title": "Betrouwbare autonomie van opdracht tot geleverde uitkomst",
       "description": "Released bounded serial campaign onboarding with explicit authority, truthful outcome proof and complete per-task delivery. Parallel work remains deferred.",
       "features": [],
-      "tasks": [],
-      "status": "completed",
-      "source_history_ref": ".go/evidence/autonomy-template-01/source-task.json"
+      "tasks": [
+        "autonomy-template-01"
+      ]
     }
   ]
 }
