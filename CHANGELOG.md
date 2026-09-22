@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.19 — verified bounded serial autonomy onboarding
+
+- Pin immutable stack v0.3.43 and expose its measured serial autonomy through explicit project onboarding.
+- Add a campaign questionnaire for goal, models, shared budget, release and deployment authority without active defaults.
+- Prove a fresh clone refuses missing release authority before worker launch, then completes two local releases and an outcome-bound goal audit through one controller.
+- Archive source-maintenance intake outside the runnable starter queue; keep only `task-schema-smoke` open.
+- State the synthetic/local evidence boundary and the separate measured native-Codex proof without claiming overnight or production reliability.
+
 ## 0.3.18 — mandatory root AGENTS.md gateway
 
 - Add the bounded, versioned root `AGENTS.md` gateway required by repositories that own `.go/` state.

@@ -62,6 +62,15 @@
       "status": "accepted",
       "implementation_status": "released_and_verified",
       "plan_ref": ".go/plans/abc-lifecycle.json"
+    },
+    {
+      "id": "bounded-serial-autonomy",
+      "statement": "A campaign may continue serially only inside an explicit goal, task allowlist, cumulative budget and separate release/deployment grants.",
+      "rationale": "A stack pin or broad vision is not execution authority, and an empty queue is not proof that the goal was achieved.",
+      "enforcement": "Stack v0.3.43 validates versioned campaign contracts, stops on unknown authority or effects, and requires outcome-bound goal audit. Template v0.3.19 proves fresh-clone configuration, refusal and two local releases with deterministic workers.",
+      "status": "accepted",
+      "implementation_status": "released_and_verified",
+      "evidence_ref": "docs/autonomy-onboarding.md"
     }
   ]
 }

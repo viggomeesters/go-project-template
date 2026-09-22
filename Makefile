@@ -16,3 +16,7 @@ check-abc:
 .PHONY: check-guided
 check-guided:
 	bash scripts/test-guided-onboarding.sh
+
+.PHONY: check-autonomy
+check-autonomy:
+	bash scripts/test-autonomy-onboarding.sh

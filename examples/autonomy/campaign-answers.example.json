@@ -1,0 +1,38 @@
+{
+  "goal": "CHOOSE_GOAL",
+  "non_goals": [
+    "CHOOSE_EXPLICIT_NON_GOAL"
+  ],
+  "models": [
+    {
+      "id": "CHOOSE_SUPPORTED_MODEL",
+      "effort": "CHOOSE_SUPPORTED_EFFORT"
+    }
+  ],
+  "budget": {
+    "wall_seconds": "CHOOSE_SHARED_WALL_SECONDS",
+    "max_tasks": "CHOOSE_SHARED_TASK_LIMIT",
+    "max_attempts": "CHOOSE_SHARED_ATTEMPT_LIMIT"
+  },
+  "release": {
+    "profiles": [
+      "CHOOSE_RELEASE_PROFILE"
+    ],
+    "allow_push": "CHOOSE_TRUE_OR_FALSE",
+    "source_ref": "CHOOSE_AUTHORITY_SOURCE"
+  },
+  "deployment": {
+    "mode": "CHOOSE_DEPLOYMENT_MODE",
+    "targets": [],
+    "source_ref": null,
+    "reason": "CHOOSE_REASON_WHEN_NONE"
+  },
+  "stop_conditions": [
+    "goal_verified",
+    "budget_exhausted",
+    "no_eligible_tasks",
+    "authority_required",
+    "unsafe_repository",
+    "unknown_external_effect"
+  ]
+}

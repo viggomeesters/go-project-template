@@ -13,7 +13,7 @@
   "vision": {
     "one_line": "A copyable `.go/` project-state template for repo-local agent workflows.",
     "north_star": "Agentic engineering state is clone-readable, repo-local, and verifiable without a central task database.",
-    "promise": "A fresh clone explains the workflow contract, validates locally, and shows what proof is required before claiming success."
+    "promise": "A fresh clone explains the workflow contract, validates locally, and shows what authority and proof are required before serial work can claim success."
   },
   "principles": [
     {
@@ -126,5 +126,5 @@
       "meaning": "Local validation gates pass."
     }
   ],
-  "residual_risk_wording": "This repo is an early public spike; real-project pilots are still needed before broad migration."
+  "residual_risk_wording": "The bounded serial flow has deterministic fresh-clone coverage and one short synthetic native-Codex proof; varied repositories, longer unattended runs and hosted effects remain unproven."
 }

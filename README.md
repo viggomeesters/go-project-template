@@ -7,8 +7,8 @@ A minimal starter repository for projects that carry their own repo-local `.go/`
 Use this repo as the copyable template when starting a new project that should be understandable by agents from the repository alone. It pairs with [`go-workflow-stack`](https://github.com/viggomeesters/go-workflow-stack), which provides the CLI, schemas, validators, and reusable workflow rules.
 
 <!-- go-stack-pairing:start -->
-Pinned Go stack: [`v0.3.39`](https://github.com/viggomeesters/go-workflow-stack/releases/tag/v0.3.39).
-Runtime commit: `35f20653ea490c718264f3e63a0edb295c164790`.
+Pinned Go stack: [`v0.3.43`](https://github.com/viggomeesters/go-workflow-stack/releases/tag/v0.3.43).
+Runtime commit: `f031040ebefcdb31a0b643248344090d8651ac6e`.
 <!-- go-stack-pairing:end -->
 
 Stale repository pins must be updated before route, task creation, claim, or product edits.
@@ -25,6 +25,11 @@ version source, permitted release destination, checks and workspace policy are
 project choices. The released stack supports fresh workers in one task worktree;
 persistent-session and subagent adapters remain deferred. The v0.3.26 live proof
 used Terra High and Astra Medium for separate local releases.
+
+For a bounded multi-task goal, continue with [serial autonomy onboarding](docs/autonomy-onboarding.md).
+The starter never supplies a default goal, campaign budget, model, push grant or
+deployment target. One controller may continue across explicitly permitted tasks
+only after those choices are bound in a validated campaign contract.
 
 For project work, `Go` is the single public repository-work command:
 
@@ -153,7 +158,7 @@ Edit the `.go/` files:
 - `.go/architecture/events.jsonl`: append-only classification, review, conformance, deviation, and waiver events.
 - `.go/tasks/open/*.json`: first executable tasks with explicit architecture impact where relevant.
 
-Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run `bash scripts/check.sh` for the full stack/template pairing check. The template test executes `task-schema-smoke` in an isolated fresh copy and asserts completed work state, approved review state, and structured runtime/billing-attributed finish evidence while preserving the source task as the reusable open fixture.
+Run `bash scripts/validate-go.sh` for the narrow clone-local contract check. Run `bash scripts/check.sh` for the full stack/template pairing and bounded autonomy checks. The template test executes `task-schema-smoke` in an isolated fresh copy and asserts completed work state, approved review state, and structured runtime/billing-attributed finish evidence while preserving the source task as the reusable open fixture. The autonomy check separately proves explicit fresh-clone configuration, fail-closed missing authority, two serial local releases and a grounded goal audit without model calls.
 
 This template intentionally uses `bash scripts/validate-go.sh` as `.go/project.json`'s per-task `default_verification`. The broader `scripts/check-linux.sh` remains the outer repository/pairing gate. This lets auto-finish run a bounded project audit without recursively invoking another template-check. Projects created from this template retain capacity planning, separate work/review state, runtime/billing-attributed finish evidence, and automatically build deterministic standalone stakeholder HTML for substantial approved agent tasks. The pinned runtime defaults disclosure to restricted, supports explicit `required`/`none` overrides, versions successors immutably, and serializes approval/build/ship/rollback per epic.
 

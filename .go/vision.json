@@ -47,10 +47,13 @@
   "proposed_directions": [
     {
       "id": "autonomy-first",
-      "status": "planned",
-      "implementation_status": "not_started",
-      "plan_ref": ".go/plans/autonomy-first.json",
-      "target": "Expose released and live-proven serial autonomy through explicit project onboarding; no consumer profiles, hidden task queue or maintenance tasks in distributed starter."
+      "status": "completed",
+      "implementation_status": "released_and_verified",
+      "evidence_ref": "docs/autonomy-onboarding.md",
+      "stack_release": "v0.3.43",
+      "template_release": "v0.3.19",
+      "target": "Expose released and live-proven serial autonomy through explicit project onboarding; no consumer profiles, hidden task queue or maintenance tasks in distributed starter.",
+      "completion_note": "Fresh-clone proof selects goal, models, cumulative budget and release/deployment authority; missing authority fails before workers and one serial controller completes two local releases plus goal audit. Deterministic/local and measured live-proof limits remain explicit."
     }
   ]
 }

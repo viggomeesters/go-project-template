@@ -64,3 +64,5 @@ test -f "$TMP_REPO/.go/recommendations/applied/recommendation-"*.json
 test -f "$TMP_REPO/.go/tasks/open/template-advice-proof.json"
 "$PYTHON" "$GO_STACK/cli/go.py" validate "$TMP_REPO" >/dev/null
 echo "advice-to-outcome template contract: ok"
+
+bash "$REPO_ROOT/scripts/test-autonomy-onboarding.sh"
