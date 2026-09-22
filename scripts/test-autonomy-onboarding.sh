@@ -95,7 +95,8 @@ with tempfile.TemporaryDirectory(prefix="go-template-autonomy-") as temporary:
     ]
     assert not list((starter / ".go/tasks/active").glob("*.json"))
     assert read(starter / ".go/project.json")["stack_ref"] == pin
-    assert "autonomy-template-01" not in json.dumps(tree(starter / ".go"))
+    assert not (starter / ".go/plans/autonomy-first.json").exists()
+    assert (starter / ".go/evidence/autonomy-template-01/source-task.json").is_file()
     git(starter, "config", "user.name", "Autonomy onboarding fixture")
     git(starter, "config", "user.email", "autonomy-onboarding@example.invalid")
     git(starter, "checkout", "-B", "main")
