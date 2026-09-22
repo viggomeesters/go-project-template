@@ -7,7 +7,7 @@ A minimal starter repository for projects that carry their own repo-local `.go/`
 Use this repo as the copyable template when starting a new project that should be understandable by agents from the repository alone. It pairs with [`go-workflow-stack`](https://github.com/viggomeesters/go-workflow-stack), which provides the CLI, schemas, validators, and reusable workflow rules.
 
 <!-- go-stack-pairing:start -->
-Pinned Go stack: [`v0.3.32`](https://github.com/viggomeesters/go-workflow-stack/releases/tag/v0.3.32).
+Pinned Go stack: [`v0.3.39`](https://github.com/viggomeesters/go-workflow-stack/releases/tag/v0.3.39).
 Runtime commit: `35f20653ea490c718264f3e63a0edb295c164790`.
 <!-- go-stack-pairing:end -->
 

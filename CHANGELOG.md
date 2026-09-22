@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.18 — mandatory root AGENTS.md gateway
+
+- Add the bounded, versioned root `AGENTS.md` gateway required by repositories that own `.go/` state.
+- Preserve all template-specific instructions outside the managed block.
+- Pin stack v0.3.39, whose adopt, migration and stack-update paths install or repair the gateway safely.
+
 ## 0.3.17 — guided first release and verified current pairing
 
 - Pin immutable stack v0.3.32 with automatic README version/commit verification.
