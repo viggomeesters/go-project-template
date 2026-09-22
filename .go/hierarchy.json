@@ -65,6 +65,15 @@
         "adopt-v0313-architecture-lane",
         "adopt-v0314-governing-decision-gate"
       ]
+    },
+    {
+      "id": "autonomy-first",
+      "title": "Betrouwbare autonomie van opdracht tot geleverde uitkomst",
+      "description": "Planning only: bounded serial campaigns with vision/architecture traceability, recovery, truthful outcome proof and complete per-task delivery. Parallel work deferred.",
+      "features": [],
+      "tasks": [
+        "autonomy-template-01"
+      ]
     }
   ]
 }

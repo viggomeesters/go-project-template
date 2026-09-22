@@ -1,0 +1,128 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "shareable_delivery": "auto",
+  "id": "autonomy-template-01",
+  "project": "go-project-template",
+  "status": "open",
+  "summary": "Adopt verified serial autonomy in fresh project onboarding",
+  "description": "Source-maintenance follow-up to go-workflow-stack autonomy-01 through autonomy-09. Planning only. Pin the released proven stack and expose bounded goal, vision/architecture relevance, outcome evidence and night-run setup without user-specific defaults. See .go/plans/autonomy-first.json.",
+  "scope": {
+    "read": [
+      "**"
+    ],
+    "modify": [
+      "AGENTS.md",
+      "README.md",
+      "CHANGELOG.md",
+      "docs/**",
+      "scripts/**",
+      "Makefile",
+      ".go/project.json",
+      ".go/vision.json",
+      ".go/architecture-principles.json",
+      ".go/hierarchy.json",
+      ".go/tasks/**",
+      ".go/plans/autonomy-first.json",
+      ".go/evidence/autonomy-template-01/**"
+    ]
+  },
+  "acceptance": [
+    "Wait for the stack live-proof task and exact released stack ref with verified receipt; do not introduce new consumer behavior by merely updating a pin.",
+    "A fresh disposable clone explicitly chooses goal, models, cumulative budget and release/deployment authority, then can follow exploration-to-delivery through repo-local state. Default remains serial; unknown product choices remain unknown.",
+    "Starter vision and architecture explain actual product outcomes, conditional decisions and matching proof without mandatory bureaucracy. No maintenance queue, source model/account or private pilot evidence leaks into published starter payload.",
+    "Prove fresh-clone onboarding, refusal before missing authority, multi-task continuation and compatible serial smoke with local checks. Keep source project_mode template and reusable task-schema-smoke.",
+    "Complete scoped commit/push and immutable source release/readback; preserve canonical maintenance records until closure and archive them outside the runnable starter queue before distributing the starter. No GitHub Actions."
+  ],
+  "verification": [
+    "bash scripts/validate-go.sh",
+    "bash scripts/check.sh",
+    "git diff --check"
+  ],
+  "claim": {
+    "agent": null,
+    "claimed_at": null
+  },
+  "work_status": "pending",
+  "review_status": "none",
+  "review_history": [],
+  "evidence": [],
+  "execution_contract": {
+    "schema": "go-workflow.execution-contract.v1",
+    "task_kind": "product",
+    "model": {
+      "id": "gpt-6-astra",
+      "effort": "high"
+    },
+    "release": {
+      "mode": "required",
+      "profile": "template-source-maintenance"
+    },
+    "workspace": {
+      "mode": "task_worktree",
+      "base_branch": "main",
+      "control_state": "repo_local_single_writer"
+    }
+  },
+  "dependencies": [
+    {
+      "project": "go-workflow-stack",
+      "task_id": "autonomy-09",
+      "requires": "done_with_required_release_evidence"
+    }
+  ],
+  "outcome_tracking_version": 1,
+  "intent_source": {
+    "text": "Source-maintenance follow-up to go-workflow-stack autonomy-01 through autonomy-09. Planning only. Pin the released proven stack and expose bounded goal, vision/architecture relevance, outcome evidence and night-run setup without user-specific defaults. See .go/plans/autonomy-first.json.",
+    "sha256": "985f46d3920bdb10a33f78eacc3484caae09966510d2ccd42d5217f75fd74978",
+    "source_ref": "repo-local-intake:autonomy-template-01"
+  },
+  "requested_outcomes": [
+    {
+      "id": "R1",
+      "text": "Wait for the stack live-proof task and exact released stack ref with verified receipt; do not introduce new consumer behavior by merely updating a pin.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R2",
+      "text": "A fresh disposable clone explicitly chooses goal, models, cumulative budget and release/deployment authority, then can follow exploration-to-delivery through repo-local state. Default remains serial; unknown product choices remain unknown.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R3",
+      "text": "Starter vision and architecture explain actual product outcomes, conditional decisions and matching proof without mandatory bureaucracy. No maintenance queue, source model/account or private pilot evidence leaks into published starter payload.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R4",
+      "text": "Prove fresh-clone onboarding, refusal before missing authority, multi-task continuation and compatible serial smoke with local checks. Keep source project_mode template and reusable task-schema-smoke.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    },
+    {
+      "id": "R5",
+      "text": "Complete scoped commit/push and immutable source release/readback; preserve canonical maintenance records until closure and archive them outside the runnable starter queue before distributing the starter. No GitHub Actions.",
+      "source": "intake_acceptance",
+      "status": "pending",
+      "evidence": []
+    }
+  ],
+  "architecture": {
+    "impact": "material",
+    "scope_refs": [
+      "abc-onboarding"
+    ],
+    "concerns": [],
+    "decision_ids": [],
+    "conformance_required": true,
+    "human_gate": "none"
+  }
+}

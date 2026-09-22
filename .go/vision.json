@@ -43,5 +43,14 @@
     "stack_release": "v0.3.26",
     "template_release": "v0.3.16",
     "completion_note": "Thirteen ABC tasks completed. Opt-in product lifecycle, explicit task/critic models, durable context, primary controller with owned worktrees and serial verified release. Fresh phase workers supported; persistent-session/subagent adapters remain deferred."
-  }
+  },
+  "proposed_directions": [
+    {
+      "id": "autonomy-first",
+      "status": "planned",
+      "implementation_status": "not_started",
+      "plan_ref": ".go/plans/autonomy-first.json",
+      "target": "Expose released and live-proven serial autonomy through explicit project onboarding; no consumer profiles, hidden task queue or maintenance tasks in distributed starter."
+    }
+  ]
 }

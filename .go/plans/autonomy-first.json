@@ -1,0 +1,21 @@
+{
+  "id": "autonomy-first",
+  "status": "planned",
+  "implementation_status": "not_started",
+  "coordinator_project": "go-workflow-stack",
+  "coordinator_ref": "../go-workflow-stack/.go/plans/autonomy-first.json",
+  "authority": "planning_only",
+  "tasks": [
+    "autonomy-template-01"
+  ],
+  "dependencies": {
+    "autonomy-template-01": [
+      {
+        "project": "go-workflow-stack",
+        "task_id": "autonomy-09",
+        "requires": "done_with_required_release_evidence"
+      }
+    ]
+  },
+  "boundary": "Template source planning; no consumer migration, chosen product models, live deployment or parallel builders."
+}
