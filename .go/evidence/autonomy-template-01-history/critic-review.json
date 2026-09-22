@@ -1,0 +1,27 @@
+{
+  "schema": "go-workflow.critic-review.v1",
+  "task_id": "autonomy-template-01",
+  "project": "go-project-template",
+  "contract_digest": "0537a129b1394bd6c5f69a276dcba9e7eb1abaaa368fb473208c708c25347257",
+  "revision": "498cee3c758c295dde4997678fc110d77a5116e7",
+  "content_digest": "41180dbcc722aa97a5bfbfba169d4d32b79230a6818cba33116e238874fa04a3",
+  "status": "passed",
+  "reviewer": "codex-astra-high",
+  "review_mode": "same_agent",
+  "summary": "Hardening review passed for the exact v0.3.19 distribution candidate. The starter pins annotated stack v0.3.43 at f031040 and keeps project_mode template with no execution defaults, model/account choice, campaign goal, budget, push grant or deployment target. Guided onboarding remains the first explicit project-configuration step; the new questionnaire and documentation then bind a versioned serial campaign to actual goal, model, cumulative budget, release/deployment authority, outcomes, vision/principles and accepted decisions. The committed fresh-clone fixture proves unanswered onboarding is read-only, rejects missing release authority before worker launch, and then drives two dependent local releases plus an achieved goal audit through one controller; deterministic workers make no model or hosted calls. Existing guided first-release coverage passes, ordinary and linked A/B/C campaigns pass with 18 recovery regressions, and the historical live hash check now fetches only immutable v0.3.26 into a disposable repository when a ref-specific cache lacks that tag. Source maintenance task/plan records are archived under non-executable evidence, while published runnable state contains only task-schema-smoke. Claims are explicitly limited to synthetic local Git and the separate 437.987-second native-Codex proof; no overnight, broad-model, hosted-effect or production guarantee is made. Declared exact-candidate verification passes and no blocking finding remains.",
+  "blocking_findings": [],
+  "reviewed_paths": [
+    ".go/architecture-principles.json",
+    ".go/vision.json",
+    "CHANGELOG.md",
+    "Makefile",
+    "README.md",
+    "docs/autonomy-onboarding.md",
+    "docs/examples/autonomy-campaign-answers.json",
+    "docs/releases/v0.3.19.md",
+    "docs/vision.json",
+    "scripts/check.sh",
+    "scripts/test-abc-template.sh",
+    "scripts/test-autonomy-onboarding.sh"
+  ]
+}

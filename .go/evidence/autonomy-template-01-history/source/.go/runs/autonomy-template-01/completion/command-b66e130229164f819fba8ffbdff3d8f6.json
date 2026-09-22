@@ -1,0 +1,22 @@
+{
+  "task_id": "autonomy-template-01",
+  "project": "go-project-template",
+  "contract_digest": "0537a129b1394bd6c5f69a276dcba9e7eb1abaaa368fb473208c708c25347257",
+  "revision": "498cee3c758c295dde4997678fc110d77a5116e7",
+  "content_digest": "41180dbcc722aa97a5bfbfba169d4d32b79230a6818cba33116e238874fa04a3",
+  "command": "bash scripts/validate-go.sh",
+  "cwd": "/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-managed-verify-xt2cj59u/candidate",
+  "elapsed_seconds": 1.2372197080403566,
+  "returncode": 0,
+  "stdout": "ok: /private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-managed-verify-xt2cj59u/candidate/.go\n",
+  "stderr": "",
+  "timed_out": false,
+  "verification_source": {
+    "schema": "go-workflow.verification-source.v1",
+    "candidate_digest": "13aa419b089a25c0be14a208354321b844832365efd46713dbc5eb1a2bd009bb",
+    "tracked_content_sha256": "e2e11e72314c875f17ff1ecf7bd8318c575e382c3c687af5a04ca87300da688c",
+    "changed_files_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "changed_files": [],
+    "isolation": "unregistered_disposable_checkout"
+  }
+}

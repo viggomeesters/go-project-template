@@ -1,0 +1,49 @@
+{
+  "schema": "go-workflow.delivery.v1",
+  "delivery_id": "autonomy-first-v1",
+  "project": {
+    "id": "go-project-template",
+    "name": "Go Project Template"
+  },
+  "assignment": {
+    "kind": "epic",
+    "id": "autonomy-first",
+    "title": "Betrouwbare autonomie van opdracht tot geleverde uitkomst"
+  },
+  "release": {
+    "version": 1,
+    "status": "released",
+    "created_at": "2026-09-22T17:10:23+02:00",
+    "supersedes": null
+  },
+  "disclosure": {
+    "class": "restricted",
+    "scan_status": "passed"
+  },
+  "sections": {
+    "summary": "Released bounded serial campaign onboarding with explicit authority, truthful outcome proof and complete per-task delivery. Parallel work remains deferred.",
+    "delivered_scope": [
+      "Adopt verified serial autonomy in fresh project onboarding"
+    ],
+    "excluded_scope": [
+      "Geen aanvullende uitgesloten scope vastgelegd."
+    ],
+    "evidence": [
+      {
+        "label": "Adopt verified serial autonomy in fresh project onboarding",
+        "summary": "summary=Adopted stack v0.3.43 and verified bounded serial autonomy onboarding in a fresh template clone; changed_files=.go/architecture-principles.json,.go/evidence/autonomy-template-01/source-plan.json,.go/evidence/autonomy-template-01/source-task.json,.go/hierarchy.json,.go/vision.json,CHANGELOG.md,Makefile,README.md,docs/autonomy-onboarding.md,docs/examples/autonomy-campaign-answers.json,docs/releases/v0.3.19.md,docs/vision.json,scripts/check.sh,scripts/test-abc-template.sh,scripts/test-autonomy-onboarding.sh; verification_command=bash scripts/validate-go.sh && bash scripts/check.sh && git diff --check plus make check-guided, make check-abc, critic, completion verify and clean Linux v0.3.19 clone check; verification_result=passed on commit 498cee3c758c295dde4997678fc110d77a5116e7; critic=passed with no blockers at .go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json; runtime=Codex desktop; model=gpt-6-astra high; billing_mode=subscription; release=v0.3.19 published and immutable readback verified at .go/runs/autonomy-template-01/completion/release-fef7d7fd688b4353b2849aa1fc1a13a2.json; github_actions=not used"
+      }
+    ],
+    "limitations": [
+      "Alleen bewijs dat in .go is vastgelegd wordt in deze levering vertegenwoordigd."
+    ],
+    "next_steps": [
+      "Review deze levering met de opdrachtgever."
+    ]
+  },
+  "provenance": {
+    "source": ".go",
+    "source_sha256": "91f674e3f72acb4f893c073d052d694499d4a5f0a078013e5dcd82bc517096c7",
+    "html_sha256": "17acef1734e88f59da0e53445a8b9e4339dc7c1edacdca066d45ba021ce8ec01"
+  }
+}

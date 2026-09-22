@@ -1,0 +1,36 @@
+{
+  "task_id": "autonomy-template-01",
+  "project": "go-project-template",
+  "contract_digest": "0537a129b1394bd6c5f69a276dcba9e7eb1abaaa368fb473208c708c25347257",
+  "revision": "c434ca04d073ad752613bf79710d60efcf5b32e0",
+  "content_digest": "41180dbcc722aa97a5bfbfba169d4d32b79230a6818cba33116e238874fa04a3",
+  "command": "bash scripts/validate-go.sh",
+  "cwd": "/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-managed-verify-3rxtgs_k/candidate",
+  "elapsed_seconds": 1.0296754169976339,
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "error: dependency state unavailable or invalid: [Errno 2] No such file or directory: '/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-managed-verify-3rxtgs_k/go-workflow-stack/.go/project.json'\n",
+  "timed_out": false,
+  "verification_source": {
+    "schema": "go-workflow.verification-source.v1",
+    "candidate_digest": "a91d881f31fc0de23433b465ea198a9a6aed3834e94ee6910207635010ac41c9",
+    "tracked_content_sha256": "a29c77569fb34e240c8256907e4baeef4dc1263a490b6db8954fa3812b87d271",
+    "changed_files_sha256": "ea8303d04b028ae0f4874981b33fd2e4865e6e762cfdac27593ac353ba4a82b5",
+    "changed_files": [
+      ".go/architecture-principles.json",
+      ".go/hierarchy.json",
+      ".go/vision.json",
+      "CHANGELOG.md",
+      "Makefile",
+      "README.md",
+      "docs/autonomy-onboarding.md",
+      "docs/examples/autonomy-campaign-answers.json",
+      "docs/releases/v0.3.19.md",
+      "docs/vision.json",
+      "scripts/check.sh",
+      "scripts/test-abc-template.sh",
+      "scripts/test-autonomy-onboarding.sh"
+    ],
+    "isolation": "unregistered_disposable_checkout"
+  }
+}

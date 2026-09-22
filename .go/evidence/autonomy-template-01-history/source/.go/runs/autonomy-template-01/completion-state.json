@@ -1,0 +1,203 @@
+{
+  "schema": "go-workflow.managed-run.v1",
+  "task_id": "autonomy-template-01",
+  "project": "go-project-template",
+  "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+  "owner": "codex-astra-high",
+  "run_id": "autonomy-template-01-20260922",
+  "workspace": {
+    "task_id": "autonomy-template-01",
+    "owner": "codex-astra-high",
+    "run_id": "autonomy-template-01-20260922",
+    "control_repo": "/Users/viggomeesters/Dev/go-project-template",
+    "path": "/Users/viggomeesters/Documents/Codex/2026-09-22/autonomy/work/autonomy-template-01",
+    "branch": "codex/autonomy-template-01",
+    "base_branch": "main",
+    "base_commit": "b06ddcbb8d31ff996c12022cb79794a0692bc099",
+    "schema": "go-workflow.workspace-state.v1",
+    "common_dir": "/Users/viggomeesters/Dev/go-project-template/.git",
+    "repository_id": "b29c93800b56459ba2d24e26aa04e4e7",
+    "generation": "e8f49f3e45d34e9a944f0ed9f0dc57fc",
+    "state": "ready"
+  },
+  "phase": "complete",
+  "attempt": 1,
+  "check_index": 0,
+  "checks": [
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "autonomy-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "status": "passed",
+        "command": "bash scripts/validate-go.sh",
+        "cwd": "/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-managed-verify-xt2cj59u/candidate",
+        "revision": "498cee3c758c295dde4997678fc110d77a5116e7",
+        "worktree_digest": "41180dbcc722aa97a5bfbfba169d4d32b79230a6818cba33116e238874fa04a3",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/autonomy-template-01/completion/command-b66e130229164f819fba8ffbdff3d8f6.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/autonomy-template-01/completion/command-b66e130229164f819fba8ffbdff3d8f6.json",
+        "sha256": "55e0b24dbdd134cd58a913d1f4adcd35113eb12fb4a9312fa15291fc1e3167ed"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "autonomy-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "status": "passed",
+        "command": "bash scripts/check.sh",
+        "cwd": "/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-managed-verify-uc74ehlr/candidate",
+        "revision": "498cee3c758c295dde4997678fc110d77a5116e7",
+        "worktree_digest": "41180dbcc722aa97a5bfbfba169d4d32b79230a6818cba33116e238874fa04a3",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/autonomy-template-01/completion/command-51aa19d1140340008b7286d7f83dbabb.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/autonomy-template-01/completion/command-51aa19d1140340008b7286d7f83dbabb.json",
+        "sha256": "9b7bd8b0f5fbd459338070be281c7ac83f12b364e7d3f8b341dfe1f8e8840dba"
+      }
+    },
+    {
+      "verification": {
+        "schema": "go-workflow.verification-evidence.v1",
+        "task_id": "autonomy-template-01",
+        "phase_id": "verify",
+        "requirement_ids": [
+          "R1",
+          "R2",
+          "R3",
+          "R4",
+          "R5"
+        ],
+        "status": "passed",
+        "command": "git diff --check",
+        "cwd": "/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-managed-verify-pg45tc6s/candidate",
+        "revision": "498cee3c758c295dde4997678fc110d77a5116e7",
+        "worktree_digest": "41180dbcc722aa97a5bfbfba169d4d32b79230a6818cba33116e238874fa04a3",
+        "exit_code": 0,
+        "evidence": [
+          ".go/runs/autonomy-template-01/completion/command-fa2cda1f0c6442efb7fb102c0064eb7d.json"
+        ]
+      },
+      "raw": {
+        "path": ".go/runs/autonomy-template-01/completion/command-fa2cda1f0c6442efb7fb102c0064eb7d.json",
+        "sha256": "fffbb21a2c82281111aa185a4fef900228deb6da64c36d6c12d1df1cc60eb4f1"
+      }
+    }
+  ],
+  "phase_evidence": [],
+  "effects": {},
+  "budgets": [],
+  "history": [
+    {
+      "event": "new_verification_capture",
+      "previous_inflight": null
+    },
+    {
+      "event": "new_verification_capture",
+      "previous_inflight": null
+    },
+    {
+      "event": "new_verification_capture",
+      "previous_inflight": null
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "text": "Wait for the stack live-proof task and exact released stack ref with verified receipt; do not introduce new consumer behavior by merely updating a pin.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:44+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "text": "A fresh disposable clone explicitly chooses goal, models, cumulative budget and release/deployment authority, then can follow exploration-to-delivery through repo-local state. Default remains serial; unknown product choices remain unknown.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:44+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "text": "Starter vision and architecture explain actual product outcomes, conditional decisions and matching proof without mandatory bureaucracy. No maintenance queue, source model/account or private pilot evidence leaks into published starter payload.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:44+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "text": "Prove fresh-clone onboarding, refusal before missing authority, multi-task continuation and compatible serial smoke with local checks. Keep source project_mode template and reusable task-schema-smoke.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:45+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "text": "Complete scoped commit/push and immutable source release/readback; preserve canonical maintenance records until closure and archive them outside the runnable starter queue before distributing the starter. No GitHub Actions.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:45+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/release-fef7d7fd688b4353b2849aa1fc1a13a2.json"
+        }
+      ]
+    }
+  ],
+  "models": {},
+  "task_hash": "0537a129b1394bd6c5f69a276dcba9e7eb1abaaa368fb473208c708c25347257",
+  "code": {},
+  "execution_cwd": "/private/var/folders/41/n6zt7fp15nn9rd905h7_l8c00000gn/T/go-managed-verify-pg45tc6s/candidate",
+  "controller": {
+    "host": "mac.home",
+    "pid": 75558
+  },
+  "worker_group": null,
+  "inflight": null
+}

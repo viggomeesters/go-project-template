@@ -1,0 +1,255 @@
+{
+  "schema": "go-workflow.repo-local.task.v1",
+  "kind": "task",
+  "execution_mode": "agent",
+  "shareable_delivery": "auto",
+  "id": "autonomy-template-01",
+  "project": "go-project-template",
+  "status": "done",
+  "summary": "Adopt verified serial autonomy in fresh project onboarding",
+  "description": "Source-maintenance follow-up to go-workflow-stack autonomy-01 through autonomy-09. Planning only. Pin the released proven stack and expose bounded goal, vision/architecture relevance, outcome evidence and night-run setup without user-specific defaults. See .go/plans/autonomy-first.json.",
+  "scope": {
+    "read": [
+      "**"
+    ],
+    "modify": [
+      "AGENTS.md",
+      "README.md",
+      "CHANGELOG.md",
+      "docs/**",
+      "scripts/**",
+      "Makefile",
+      ".go/project.json",
+      ".go/vision.json",
+      ".go/architecture-principles.json",
+      ".go/hierarchy.json",
+      ".go/tasks/**",
+      ".go/plans/autonomy-first.json",
+      ".go/evidence/autonomy-template-01/**"
+    ]
+  },
+  "acceptance": [
+    "Wait for the stack live-proof task and exact released stack ref with verified receipt; do not introduce new consumer behavior by merely updating a pin.",
+    "A fresh disposable clone explicitly chooses goal, models, cumulative budget and release/deployment authority, then can follow exploration-to-delivery through repo-local state. Default remains serial; unknown product choices remain unknown.",
+    "Starter vision and architecture explain actual product outcomes, conditional decisions and matching proof without mandatory bureaucracy. No maintenance queue, source model/account or private pilot evidence leaks into published starter payload.",
+    "Prove fresh-clone onboarding, refusal before missing authority, multi-task continuation and compatible serial smoke with local checks. Keep source project_mode template and reusable task-schema-smoke.",
+    "Complete scoped commit/push and immutable source release/readback; preserve canonical maintenance records until closure and archive them outside the runnable starter queue before distributing the starter. No GitHub Actions."
+  ],
+  "verification": [
+    "bash scripts/validate-go.sh",
+    "bash scripts/check.sh",
+    "git diff --check"
+  ],
+  "claim": {
+    "agent": "codex-astra-high",
+    "claimed_at": "2026-09-22T16:40:09+02:00",
+    "base_commit": "aac0781b2a5b596fd4063e69272cd2bd6a04ce6c"
+  },
+  "work_status": "completed",
+  "review_status": "approved",
+  "review_history": [
+    {
+      "created_at": "2026-09-22T17:10:21+02:00",
+      "agent": "codex-astra-high",
+      "status": "approved",
+      "evidence": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json",
+      "transaction_id": "e6a4bb6d8c174aaaa84a13586ba2bda3",
+      "delivery": {
+        "delivery_id": "autonomy-first-v1",
+        "html": ".go/deliveries/autonomy-first-v1/index.html",
+        "manifest": ".go/deliveries/autonomy-first-v1/manifest.json",
+        "source_sha256": "91f674e3f72acb4f893c073d052d694499d4a5f0a078013e5dcd82bc517096c7",
+        "html_sha256": "17acef1734e88f59da0e53445a8b9e4339dc7c1edacdca066d45ba021ce8ec01"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "schema": "go-workflow.finish-evidence.v1",
+      "created_at": "2026-09-22T17:10:15+02:00",
+      "task_id": "autonomy-template-01",
+      "agent": "codex-astra-high",
+      "summary": "summary=Adopted stack v0.3.43 and verified bounded serial autonomy onboarding in a fresh template clone; changed_files=.go/architecture-principles.json,.go/evidence/autonomy-template-01/source-plan.json,.go/evidence/autonomy-template-01/source-task.json,.go/hierarchy.json,.go/vision.json,CHANGELOG.md,Makefile,README.md,docs/autonomy-onboarding.md,docs/examples/autonomy-campaign-answers.json,docs/releases/v0.3.19.md,docs/vision.json,scripts/check.sh,scripts/test-abc-template.sh,scripts/test-autonomy-onboarding.sh; verification_command=bash scripts/validate-go.sh && bash scripts/check.sh && git diff --check plus make check-guided, make check-abc, critic, completion verify and clean Linux v0.3.19 clone check; verification_result=passed on commit 498cee3c758c295dde4997678fc110d77a5116e7; critic=passed with no blockers at .go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json; runtime=Codex desktop; model=gpt-6-astra high; billing_mode=subscription; release=v0.3.19 published and immutable readback verified at .go/runs/autonomy-template-01/completion/release-fef7d7fd688b4353b2849aa1fc1a13a2.json; github_actions=not used",
+      "changed_files": [
+        ".go/architecture-principles.json",
+        ".go/evidence/autonomy-template-01/source-plan.json",
+        ".go/evidence/autonomy-template-01/source-task.json",
+        ".go/hierarchy.json",
+        ".go/vision.json",
+        "CHANGELOG.md",
+        "Makefile",
+        "README.md",
+        "docs/autonomy-onboarding.md",
+        "docs/examples/autonomy-campaign-answers.json",
+        "docs/releases/v0.3.19.md",
+        "docs/vision.json",
+        "scripts/check.sh",
+        "scripts/test-abc-template.sh",
+        "scripts/test-autonomy-onboarding.sh"
+      ],
+      "no_diff": false,
+      "git": {
+        "claim_base_commit": "aac0781b2a5b596fd4063e69272cd2bd6a04ce6c",
+        "observed_head_commit": "498cee3c758c295dde4997678fc110d77a5116e7"
+      },
+      "verification": {
+        "command": "bash scripts/validate-go.sh && bash scripts/check.sh && git diff --check plus make check-guided, make check-abc, critic, completion verify and clean Linux v0.3.19 clone check",
+        "result": "passed on commit 498cee3c758c295dde4997678fc110d77a5116e7"
+      },
+      "runtime": {
+        "agent": "codex-astra-high",
+        "runtime": "Codex desktop",
+        "model": "gpt-6-astra high",
+        "billing_mode": "subscription"
+      },
+      "usage": {
+        "schema": "go-workflow.usage-attribution.v1",
+        "runtime_kind": "Codex desktop",
+        "billing_mode": "subscription",
+        "owner": "codex-astra-high",
+        "model": "gpt-6-astra high",
+        "token_estimate": null,
+        "api_equivalent_cost_usd": null,
+        "provider_invoice_cost_usd": null,
+        "cost_label": "api_equivalent_not_invoice_cost"
+      },
+      "review": {
+        "outcome": "passed with no blockers at .go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json",
+        "skip_reason": null
+      }
+    }
+  ],
+  "execution_contract": {
+    "schema": "go-workflow.execution-contract.v1",
+    "task_kind": "product",
+    "model": {
+      "id": "gpt-6-astra",
+      "effort": "high"
+    },
+    "release": {
+      "mode": "required",
+      "profile": "template-source-maintenance"
+    },
+    "workspace": {
+      "mode": "task_worktree",
+      "base_branch": "main",
+      "control_state": "repo_local_single_writer"
+    }
+  },
+  "dependencies": [
+    {
+      "project": "go-workflow-stack",
+      "task_id": "autonomy-09",
+      "requires": "done_with_required_release_evidence"
+    }
+  ],
+  "outcome_tracking_version": 1,
+  "intent_source": {
+    "text": "Source-maintenance follow-up to go-workflow-stack autonomy-01 through autonomy-09. Planning only. Pin the released proven stack and expose bounded goal, vision/architecture relevance, outcome evidence and night-run setup without user-specific defaults. See .go/plans/autonomy-first.json.",
+    "sha256": "985f46d3920bdb10a33f78eacc3484caae09966510d2ccd42d5217f75fd74978",
+    "source_ref": "repo-local-intake:autonomy-template-01"
+  },
+  "requested_outcomes": [
+    {
+      "id": "R1",
+      "text": "Wait for the stack live-proof task and exact released stack ref with verified receipt; do not introduce new consumer behavior by merely updating a pin.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:44+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json"
+        }
+      ]
+    },
+    {
+      "id": "R2",
+      "text": "A fresh disposable clone explicitly chooses goal, models, cumulative budget and release/deployment authority, then can follow exploration-to-delivery through repo-local state. Default remains serial; unknown product choices remain unknown.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:44+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json"
+        }
+      ]
+    },
+    {
+      "id": "R3",
+      "text": "Starter vision and architecture explain actual product outcomes, conditional decisions and matching proof without mandatory bureaucracy. No maintenance queue, source model/account or private pilot evidence leaks into published starter payload.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:44+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json"
+        }
+      ]
+    },
+    {
+      "id": "R4",
+      "text": "Prove fresh-clone onboarding, refusal before missing authority, multi-task continuation and compatible serial smoke with local checks. Keep source project_mode template and reusable task-schema-smoke.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:45+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json"
+        }
+      ]
+    },
+    {
+      "id": "R5",
+      "text": "Complete scoped commit/push and immutable source release/readback; preserve canonical maintenance records until closure and archive them outside the runnable starter queue before distributing the starter. No GitHub Actions.",
+      "source": "intake_acceptance",
+      "status": "verified",
+      "evidence": [
+        {
+          "created_at": "2026-09-22T17:08:45+02:00",
+          "agent": "codex-astra-high",
+          "summary": ".go/runs/autonomy-template-01/completion/release-fef7d7fd688b4353b2849aa1fc1a13a2.json"
+        }
+      ]
+    }
+  ],
+  "architecture": {
+    "impact": "material",
+    "scope_refs": [
+      "abc-onboarding"
+    ],
+    "concerns": [],
+    "decision_ids": [],
+    "conformance_required": true,
+    "human_gate": "none"
+  },
+  "completion_evidence": {
+    "schema": "go-workflow.completion-evidence.v1",
+    "verification": {
+      "path": ".go/runs/autonomy-template-01/completion/verification-69d9731a6f524477aba9595843056bfe.json",
+      "sha256": "5b48551d3da1d43ed19080c0706cd403727f434553b9bbf9d1ecdd5b2bfa8fab"
+    },
+    "critic": {
+      "path": ".go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json",
+      "sha256": "8752b88fdd532ef515739b3df2ebbf6d8efb847e86c17320e486c5d131a7b1ef"
+    },
+    "release": {
+      "path": ".go/runs/autonomy-template-01/completion/release-fef7d7fd688b4353b2849aa1fc1a13a2.json",
+      "sha256": "5145a91c83411e5bce8ba23aff647eff285405f3e244a4c95cc87e60741cd16e"
+    }
+  },
+  "release_receipt": {
+    "schema": "go-workflow.release-receipt.v1",
+    "status": "verified",
+    "task_id": "autonomy-template-01",
+    "project": "go-project-template",
+    "commit": "498cee3c758c295dde4997678fc110d77a5116e7",
+    "tag": "v0.3.19",
+    "evidence": [
+      ".go/runs/autonomy-template-01/completion/release-fef7d7fd688b4353b2849aa1fc1a13a2.json"
+    ]
+  }
+}

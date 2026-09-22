@@ -1,0 +1,24 @@
+{
+  "schema": "go-workflow.source-maintenance-archive.v1",
+  "task_id": "autonomy-template-01",
+  "status": "completed",
+  "executable": false,
+  "release": "v0.3.19",
+  "release_commit": "498cee3c758c295dde4997678fc110d77a5116e7",
+  "stack_release": "v0.3.43",
+  "stack_commit": "f031040ebefcdb31a0b643248344090d8651ac6e",
+  "canonical_task_record": "source/.go/tasks/done/autonomy-template-01.json",
+  "key_files_sha256": {
+    "critic-review.json": "8752b88fdd532ef515739b3df2ebbf6d8efb847e86c17320e486c5d131a7b1ef",
+    "source/.go/tasks/done/autonomy-template-01.json": "242bf59893e3cd2975424d711b2edb5d76e72b85123c772699817c7926820420",
+    "source/.go/runs/autonomy-template-01/completion-state.json": "8de61258fa90613712243f63f62838a5ff3fcd878d0ccc893945cc9fd57d3b13",
+    "source/.go/runs/autonomy-template-01/completion/critic-32befcaaa0d744f88913c9708f4ab387.json": "8752b88fdd532ef515739b3df2ebbf6d8efb847e86c17320e486c5d131a7b1ef",
+    "source/.go/runs/autonomy-template-01/completion/release-fef7d7fd688b4353b2849aa1fc1a13a2.json": "5145a91c83411e5bce8ba23aff647eff285405f3e244a4c95cc87e60741cd16e",
+    "source/.go/runs/autonomy-template-01/completion/verification-69d9731a6f524477aba9595843056bfe.json": "5b48551d3da1d43ed19080c0706cd403727f434553b9bbf9d1ecdd5b2bfa8fab",
+    "source/.go/workspaces/autonomy-template-01.json": "2546b3b11246865104dd5674008d0803c340aa3a41a2a3807c906239b91cc4f8",
+    "source/.go/deliveries/autonomy-first-v1/manifest.json": "c62c54ed95db8464b2da3978b2f7bf6a6420201a4dde2359cc5d5126e5c1c8ae",
+    "source/.go/hierarchy.json": "d924495b523f2fc38cc591a111ee91cbcca992d4b915f5e997b50046ad462753"
+  },
+  "archive_policy": "The completed source-maintenance task, completion proof, cleaned workspace record and restricted delivery were moved outside the runnable starter queue only after immutable release readback and approval. The reusable task-schema-smoke remains open.",
+  "reconstruction": "Restore the archived source/.go paths only in a disposable clone when inspecting lifecycle history; never import this source execution authority into a newly onboarded project."
+}
